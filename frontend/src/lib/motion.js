@@ -59,11 +59,12 @@ export function initMotion() {
       observerCleanups.splice(0).forEach((fn) => fn());
       clearTimers();
       showAllReveals();
-    } else if (!html.classList.contains('motion-init')) {
+    } else {
       html.classList.add('motion-init');
       document
         .querySelectorAll('[data-reveal].is-visible')
         .forEach((el) => el.classList.remove('is-visible'));
+      observerCleanups.splice(0).forEach((fn) => fn());
       observeReveals();
     }
   };
