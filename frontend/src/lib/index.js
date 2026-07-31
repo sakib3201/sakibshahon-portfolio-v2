@@ -1,1 +1,1 @@
-// place files you want to import through the `$lib` alias in this folder.
+export { siteMeta, socialLinks, impactStats, productsShipped, projects, archiveProjects, skills, experience, awards, youtube, aboutTimeline } from './data.js';
