@@ -103,6 +103,32 @@ export function initMotion() {
     });
   }
 
+  if (!reducedQuery.matches && 'IntersectionObserver' in window) {
+    const loopEls = /** @type {Array<HTMLElement>} */ (
+      Array.from(
+        document.querySelectorAll(
+          '.shimmer, .medallion-float, .draw-needle, .loop-pause, [data-loop-pause]'
+        )
+      )
+    );
+    if (loopEls.length > 0) {
+      loopEls.forEach((el) => {
+        el.style.animationPlayState = 'paused';
+      });
+      const loopObserver = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            const el = /** @type {HTMLElement} */ (entry.target);
+            el.style.animationPlayState = entry.isIntersecting ? '' : 'paused';
+          }
+        },
+        { threshold: 0 }
+      );
+      loopEls.forEach((el) => loopObserver.observe(el));
+      observerCleanups.push(() => loopObserver.disconnect());
+    }
+  }
+
   return () => {
     baseCleanups.splice(0).forEach((fn) => fn());
     observerCleanups.splice(0).forEach((fn) => fn());
