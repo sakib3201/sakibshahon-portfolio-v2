@@ -152,7 +152,7 @@ The gradient stops and borders below are deliberate in-family shades of the toke
 
 ## Typography
 
-**Display/Brush Font:** Yuji Syuku (fallback Zen Kaku Gothic New, serif) — weight 400, loaded via Google Fonts. Brush calligraphy: the name in the hero, the "CAN DO" motto, vertical panel titles, the seal glyph 雅. Brush writes identity.
+**Display/Brush Font:** Yuji Syuku (fallback Zen Kaku Gothic New, serif) — weight 400, loaded via Google Fonts. Brush calligraphy: the name in the hero, the "CAN DO" motto, vertical panel titles, the seal glyph 鍛錬 (forging discipline). Brush writes identity.
 **Body Font:** Zen Kaku Gothic New (Segoe UI, sans-serif) — weights 400/500/700. All body, headings, and UI text.
 **Label/Mono Font:** Red Hat Mono (Courier New, monospace) — weights 400/500, annotation only.
 
@@ -232,7 +232,7 @@ The form language is the tattooist's: near-square corners on panels and plates, 
 - **Mobile:** A full-screen `lacquer` overlay with rows separated by needle hairlines; external rows are `goldbright`, internal `inktext`. Escape closes it; body scroll locks while open.
 
 ### Signature Components
-- **The Back Piece (hero):** The first viewport is the back piece turning in 3D: the name as the central gold medallion (perspective-settle, then rise), the six product plaques inked along the spine (`lacquer-raised` gold-edge pills with horizontal Yuji Syuku titles, N° numbers, needle ticks), the "CAN DO" motto band with a rotating shimmer on "CAN DO", and impact figures as gold-leaf engravings. The cinnabar hanko stamps itself in from the top-right of the medallion (`hero-hanko-stamp`, with an ink bloom after). Entrance plays once per session (`sessionStorage`), skipped entirely under `prefers-reduced-motion`.
+- **The Back Piece (hero):** The first viewport is the back piece turning in 3D: the name as the central gold medallion (perspective-settle, then rise), the six product plaques inked along the spine (`lacquer-raised` gold-edge pills with horizontal Yuji Syuku titles, N° numbers, needle ticks), the "CAN DO" motto band with a rotating shimmer on "CAN DO", and impact figures as gold-leaf engravings. The cinnabar hanko (鍛錬, forging discipline) stamps itself in from the top-right of the medallion (`hero-hanko-stamp`, with an ink bloom after). The seal is alive: hover or press unrolls a golden-black proverb strip from beneath it (scaleY from the seal, cinnabar thread, ink bloom) — 七転び八起き, "fall seven times, rise eight" — and pressing the name re-stamps the seal. Entrance plays once per session (`sessionStorage`), skipped entirely under `prefers-reduced-motion`; the quote reveal is hover/pointer driven and collapses to a plain reveal under reduced motion.
 - **The Family Ledger (timeline):** Entries alternate around a center needle-line spine with gold medallion dots. The current role is a `skin-sheet` page with `inkonpaper` text and a cinnabar seal badge; earlier roles are ruled `skin-sheet` pages.
 - **The Audience (contact):** A `skin-sheet` letter — the form as ruled lines, a portrait in a double frame (lacquer border, paper mat), and the gold-plate "Request an audience" action. About's portrait repeats the frame with a slight rotation.
 - **Diamond lists:** 0.6rem outline diamonds (inline SVG, `stroke-width: 1.2`) mark every metric and highlight row — `gold` on dark, `inkonpaper` on paper.

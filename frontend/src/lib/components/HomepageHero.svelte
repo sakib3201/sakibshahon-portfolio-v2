@@ -14,6 +14,18 @@
   let entrancePlayed = false;
   let hankoEl = /** @type {HTMLSpanElement | undefined} */ (undefined);
   let destroyHeroMotion = () => {};
+  let quoteOpen = false;
+
+  const stampWord = "鍛錬";
+  const stampQuote = {
+    jp: "七転び八起き",
+    en: "Fall seven times, rise eight"
+  };
+  const stampAriaLabel = `Motivational seal: ${stampWord} — ${stampQuote.jp}: ${stampQuote.en}`;
+
+  function toggleQuote() {
+    quoteOpen = !quoteOpen;
+  }
 
   onMount(() => {
     destroyHeroMotion = initHeroMotion();
@@ -96,14 +108,31 @@
             >
               {name}
             </h1>
-            <span
-              bind:this={hankoEl}
-              class="hanko hero-hanko inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 absolute -top-2 right-0 {entrancePlayed ? 'hero-entering' : ''}"
-              aria-hidden="true"
-              onanimationend={onHankoEnd}
+            <button
+              type="button"
+              class="hero-stamp-group group absolute -top-2 right-0 p-0 m-0 border-0 bg-transparent cursor-pointer"
+              class:is-quote-open={quoteOpen}
+              aria-label={stampAriaLabel}
+              aria-expanded={quoteOpen}
+              onclick={toggleQuote}
             >
-              <span class="brush text-base md:text-lg">雅</span>
-            </span>
+              <span
+                bind:this={hankoEl}
+                class="hanko hero-hanko inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 {entrancePlayed ? 'hero-entering' : ''}"
+                aria-hidden="true"
+                onanimationend={onHankoEnd}
+              >
+                <span class="brush flex flex-col items-center leading-none text-[0.8rem] md:text-[0.95rem]">
+                  <span>{stampWord[0]}</span>
+                  <span>{stampWord[1]}</span>
+                </span>
+              </span>
+              <span class="hero-quote skin-sheet rounded-sm px-4 py-3" aria-hidden="true">
+                <span class="block brush gold-text text-base md:text-lg">{stampQuote.jp}</span>
+                <span class="mt-1.5 block needle-line-h opacity-50" aria-hidden="true"></span>
+                <span class="mt-2 block marginalia text-inkonpaper normal-case whitespace-nowrap">{stampQuote.en}</span>
+              </span>
+            </button>
           </div>
         </div>
       </div>
