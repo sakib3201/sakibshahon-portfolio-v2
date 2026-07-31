@@ -1,31 +1,14 @@
-<section class="hero min-h-[60vh] flex items-center text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl md:text-5xl font-bold rounded">
-        <span class="text-cyan-400"> Solutions I have crafted </span>
-      </h1>
-      <h2 class="text-xl md:text-2xl mt-4">
-        <span class="text-blue-400 hover:underline"> Websites </span>
-        <span class="text-amber-500 hover:underline"> Data analytics</span>
-        <span class="text-emerald-500 hover:underline"> AI & ML </span>
-      </h2>
-      <p class="mt-4 text-lg text-slate-300 rounded leading-relaxed">
-        Each project I have build taught me new things and helped me grow as
-        a software engineer and in a way as person too. <br />
-        If you have a project in mind, I would love to help you bring it to
-        life. Specially if it
-        <em class="text-cyan-400 font-bold">solves a problem</em> or
-        <em class="text-blue-400 font-bold">helps people</em> in some way.
-      </p>
+<section class="relative bg-ink text-paper overflow-hidden">
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(52% 42% at 50% 0%, rgba(201,162,94,0.16) 0%, rgba(201,162,94,0.05) 55%, transparent 100%);"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-16 lg:pb-20">
+    <div class="text-center">
+      <h1 class="embossed serif font-semibold text-4xl md:text-6xl tracking-[-0.02em]">The archive</h1>
+      <p class="marginalia text-linendim mt-5">Selected works and experiments, bound for reference</p>
     </div>
   </div>
 </section>
-
-<style>
-  .hero {
-    background: linear-gradient(to bottom right, #111827, #1e293b, #000000);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-</style>
