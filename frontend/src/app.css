@@ -107,10 +107,8 @@ body {
 
   .paper-sheet {
     background-color: var(--color-paper);
-    background-image:
-      linear-gradient(90deg, rgba(44, 33, 23, 0.05) 1px, transparent 1px),
-      linear-gradient(180deg, rgba(44, 33, 23, 0.035) 1px, transparent 1px);
-    background-size: 32px 32px;
+    background-image: linear-gradient(180deg, rgba(44, 33, 23, 0.035) 1px, transparent 1px);
+    background-size: 100% 28px;
     color: var(--color-inkonpaper);
     border: 1px solid #c4b394;
     box-shadow: var(--shadow-leaf);
