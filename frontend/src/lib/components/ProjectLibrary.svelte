@@ -1,38 +1,28 @@
 <script>
-  import ProjectLibraryCards from "./ProjectLibraryCard.svelte";
+  import ProjectCard from "./ProjectCard.svelte";
+  import ProjectLibraryCard from "./ProjectLibraryCard.svelte";
   import { projects, archiveProjects } from "$lib/data.js";
 </script>
 
-<div class="project_library_collection py-16">
+<section class="relative bg-ink text-paper pb-20 lg:pb-28">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
-        Featured Projects
-      </h2>
-      <p class="text-xl text-slate-300 max-w-2xl mx-auto">
-        A collection of projects that showcase my skills and passion for creating exceptional digital experiences.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+    <div class="grid grid-cols-1 gap-8 lg:gap-10 max-w-6xl mx-auto">
       {#each projects as project (project.title)}
-        <ProjectLibraryCards {project} />
+        <ProjectCard {project} />
       {/each}
     </div>
 
-    <div class="text-center mt-24 mb-16">
-      <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
-        Archive & Experiments
+    <div class="text-center mt-24 lg:mt-32">
+      <h2 class="embossed serif font-semibold text-3xl md:text-5xl tracking-[-0.02em]">
+        University &amp; experimental
       </h2>
-      <p class="text-xl text-slate-300 max-w-2xl mx-auto">
-        University and experimental projects.
-      </p>
+      <p class="marginalia text-linendim mt-4">Shelf copies from earlier bindings</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-12 max-w-6xl mx-auto">
       {#each archiveProjects as project (project.title)}
-        <ProjectLibraryCards {project} />
+        <ProjectLibraryCard {project} />
       {/each}
     </div>
   </div>
-</div>
+</section>
