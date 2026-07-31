@@ -20,5 +20,12 @@ export default [
 	{
 		files: ['**/*.svelte', '**/*.svelte.js'],
 		languageOptions: { parserOptions: { svelteConfig } }
+	},
+	{
+		rules: {
+			// Site uses mixed internal/hash/external hrefs (e.g. "/about", "#contact", dev.to);
+			// SvelteKit's resolve() mangles hash fragments, so this rule is intentionally off.
+			'svelte/no-navigation-without-resolve': 'off'
+		}
 	}
 ];
