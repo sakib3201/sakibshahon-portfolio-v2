@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   import { siteMeta, productsShipped } from "$lib/data.js";
 
   const name = siteMeta.name;
@@ -8,6 +9,46 @@
     { href: siteMeta.resumeUrl, text: "Download résumé", external: true },
     { href: "#contact", text: "Request an audience" }
   ];
+
+  let entrancePlayed = false;
+
+  onMount(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let played = false;
+    try {
+      played = sessionStorage.getItem("hero-entrance-played") === "1";
+    } catch {
+      played = false;
+    }
+    if (played) return;
+    try {
+      sessionStorage.setItem("hero-entrance-played", "1");
+    } catch {
+      played = false;
+    }
+    entrancePlayed = true;
+  });
+
+  /** @param {AnimationEvent & { currentTarget: HTMLElement }} e */
+  function onSettleEnd(e) {
+    if (e.animationName === "hero-settle") e.currentTarget.classList.remove("hero-settle");
+  }
+
+  /** @param {AnimationEvent & { currentTarget: HTMLElement }} e */
+  function onNameRiseEnd(e) {
+    if (e.animationName === "hero-name-rise") e.currentTarget.classList.remove("hero-name-rise");
+  }
+
+  /** @param {AnimationEvent & { currentTarget: HTMLElement }} e */
+  function onMottoRiseEnd(e) {
+    if (e.animationName === "hero-motto-rise") e.currentTarget.classList.remove("hero-motto-rise");
+  }
+
+  /** @param {AnimationEvent & { currentTarget: HTMLElement }} e */
+  function onHankoEnd(e) {
+    if (e.animationName !== "hero-hanko-stamp") return;
+    e.currentTarget.classList.replace("hero-entering", "hero-entered");
+  }
 </script>
 
 <section class="relative sumi-ground text-inktext overflow-hidden">
@@ -24,12 +65,25 @@
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 md:pt-20 pb-0">
     <div class="text-center">
-      <div class="perspective-scene">
-        <h1
-          class="brush gold-text text-5xl md:text-7xl lg:text-8xl leading-tight tracking-[0.02em]"
-        >
-          {name}
-        </h1>
+      <div
+        class="perspective-scene {entrancePlayed ? 'hero-settle' : ''}"
+        onanimationend={onSettleEnd}
+      >
+        <div class="medallion-float relative">
+          <h1
+            class="brush gold-text text-5xl md:text-7xl lg:text-8xl leading-tight tracking-[0.02em] {entrancePlayed ? 'hero-name-rise' : ''}"
+            onanimationend={onNameRiseEnd}
+          >
+            {name}
+          </h1>
+          <span
+            class="hanko hero-hanko inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 absolute -top-2 right-0 {entrancePlayed ? 'hero-entering' : ''}"
+            aria-hidden="true"
+            onanimationend={onHankoEnd}
+          >
+            <span class="brush text-base md:text-lg">雅</span>
+          </span>
+        </div>
       </div>
 
       <p class="marginalia text-goldbright mt-4">{siteMeta.role}</p>
@@ -71,7 +125,10 @@
       </div>
     </div>
 
-    <div class="perspective-scene">
+    <div
+      class="perspective-scene {entrancePlayed ? 'hero-motto-rise' : ''}"
+      onanimationend={onMottoRiseEnd}
+    >
       <div class="motto-band px-4 sm:px-8 pt-5 pb-1">
         <div class="needle-line-h mb-4 opacity-60" aria-hidden="true"></div>
         <p class="marginalia text-gold/80 text-center mb-4">Inked on the back piece — shipped and running</p>
