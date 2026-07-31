@@ -614,20 +614,23 @@ body {
   animation: hero-punch-ring 1.3s ease-out 4.45s both;
 }
 
-.hero-punchline.punch-restamp {
-  animation: hero-punch-restamp 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+/* Re-strike on demand: pressing the band replays the whole impression —
+   the band slams down again, the words re-ink, the bloom and rings re-fire.
+   Delays drop to near-zero so the replay is immediate. */
+.hero-punchline.punch-replay {
+  animation: hero-punch-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
 
-.hero-punchline.punch-restamp .punch-bloom {
-  animation: hero-punch-bloom 0.9s ease-out 0.05s both;
+.hero-punchline.punch-replay .punch-bloom {
+  animation: hero-punch-bloom 0.9s ease-out 0.45s both;
 }
 
-.hero-punchline.punch-restamp .punch-ring {
-  animation: hero-punch-ring 1.1s ease-out 0.1s both;
+.hero-punchline.punch-replay .punch-ring {
+  animation: hero-punch-ring 1.1s ease-out 0.7s both;
 }
 
-.hero-punchline.punch-restamp .punch-ring-big {
-  animation: hero-punch-ring 1.3s ease-out 0.35s both;
+.hero-punchline.punch-replay .punch-ring-big {
+  animation: hero-punch-ring 1.3s ease-out 0.95s both;
 }
 
 @keyframes hero-punch-in {
@@ -641,18 +644,6 @@ body {
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes hero-punch-restamp {
-  0% {
-    transform: translateY(0) scale(1.06);
-  }
-  55% {
-    transform: translateY(0) scale(0.95);
-  }
-  100% {
     transform: translateY(0) scale(1);
   }
 }

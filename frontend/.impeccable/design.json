@@ -48,7 +48,7 @@
       { "name": "hero-punch-in", "value": "hero-punch-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 3.55s both", "purpose": "The punchline band slapping down like a seal press — drop, compress, settle; its words then ink in blur-to-sharp (0.22s stagger), 'CAN DO' as the bright strike point." },
       { "name": "hero-punch-bloom", "value": "hero-punch-bloom 0.9s ease-out 3.85s both", "purpose": "The gold bloom flash released at the punchline strike; re-fires on re-stamp." },
       { "name": "hero-punch-ring", "value": "hero-punch-ring 1.1s ease-out 4.15s both", "purpose": "Two gold ink rings radiating from the punchline strike (1.1s small + 1.3s big at 4.45s) — the impression rippling out; re-fires on re-stamp." },
-      { "name": "hero-punch-restamp", "value": "hero-punch-restamp 0.35s cubic-bezier(0.22, 1, 0.36, 1) both", "purpose": "Pressing the punchline band re-strikes it — squash and re-fire of bloom and rings." },
+      { "name": "hero-punch-replay", "value": "hero-punch-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both + words re-ink 0.25s + i*0.22s + bloom 0.45s + rings 0.7s/0.95s", "purpose": "Pressing the punchline band replays the full impression — band slam, words re-inking, bloom and rings re-firing on demand." },
       { "name": "reveal-pulse", "value": "reveal-pulse 0.3s cubic-bezier(0.22, 1, 0.36, 1) both", "purpose": "Pulse reveal for medallions and seals." },
       { "name": "gold-sweep", "value": "transition: transform 0.6s ease", "purpose": "The light sweep across gold-plate buttons on hover/focus." },
       { "name": "shimmer-sweep", "value": "shimmer-sweep 5s ease-in-out infinite", "purpose": "Impact figures gold shimmer (ImpactStats) — loop-pause gated, off-screen paused." },

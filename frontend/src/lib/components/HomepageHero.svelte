@@ -95,12 +95,17 @@
     hankoEl.classList.add("hero-restamp");
   }
 
-  function restampPunchline() {
+  function replayPunchline() {
     if (!punchlineEl) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    punchlineEl.classList.remove("punch-restamp");
+    const words = Array.from(punchlineEl.querySelectorAll(".punch-word"));
+    words.forEach((word) => word.classList.remove("punch-word-in"));
+    punchlineEl.classList.remove("punch-entering", "punch-replay");
     void punchlineEl.offsetWidth;
-    punchlineEl.classList.add("punch-restamp");
+    punchlineEl.classList.add("punch-entering", "punch-replay");
+    words.forEach((word, i) => {
+      entranceTimers.push(window.setTimeout(() => word.classList.add("punch-word-in"), 250 + i * 220));
+    });
   }
 
   function createSakura() {
@@ -221,7 +226,7 @@
         bind:this={punchlineEl}
         class="hero-punchline relative motto-band inline-block mt-6 px-7 py-2.5 rotate-[-0.6deg] neon-rim cursor-pointer text-center {entrancePlayed ? 'punch-entering' : ''}"
         aria-label={siteMeta.tagline}
-        onclick={restampPunchline}
+        onclick={replayPunchline}
       >
         <span class="punch-bloom" aria-hidden="true"></span>
         <span class="punch-ring" aria-hidden="true"></span>
