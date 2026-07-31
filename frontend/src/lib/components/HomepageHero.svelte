@@ -133,7 +133,7 @@
         <div class="needle-line-h mb-4 opacity-60" aria-hidden="true"></div>
         <p class="marginalia text-gold/80 text-center mb-4">Inked on the back piece — shipped and running</p>
         <ul
-          class="flex flex-wrap justify-center items-end gap-3 md:gap-4"
+          class="flex flex-wrap justify-center items-center gap-3 md:gap-4"
           aria-label="Products inked on the back piece"
         >
           {#each productsShipped as product, i (product.name)}
@@ -147,15 +147,12 @@
               >
                 <span class="sr-only">{product.name}</span>
                 <span
-                  class="lacquer-raised gold-edge block w-[2.9rem] md:w-14 h-40 md:h-52 rounded-t-full"
+                  class="lacquer-raised gold-edge block rounded-full px-5 py-3 md:px-6 md:py-3.5"
                   aria-hidden="true"
                 >
-                  <span class="flex flex-col items-center justify-between h-full py-4">
-                    <span class="needle-line h-4"></span>
-                    <span
-                      class="brush gold-text text-sm md:text-base"
-                      style="writing-mode: vertical-rl; transform: rotate(180deg);"
-                    >
+                  <span class="flex items-center gap-3 md:gap-4">
+                    <span class="needle-line h-4 flex-shrink-0"></span>
+                    <span class="brush gold-text text-sm md:text-base whitespace-nowrap">
                       {product.name}
                     </span>
                     <span class="marginalia text-goldbright text-[0.55rem]">N°{String(i + 1).padStart(2, "0")}</span>
