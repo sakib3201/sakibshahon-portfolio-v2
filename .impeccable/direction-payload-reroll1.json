@@ -1,0 +1,110 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned The Prompt Log. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Prompt Log",
+      "kicker": "THE ROLL",
+      "lineage": "the AI chat transcript: role-tagged turns, model labels, token counts, timestamps — the era's native document",
+      "thesis": "The portfolio is the conversation that shipped: every product a turn in the log, and the visitor reads the evidence in the format the AI era actually records.",
+      "palette": [
+        "#0d1117",
+        "#e6e1d3",
+        "#ffb020",
+        "#7ee2a8"
+      ],
+      "materials": [
+        "graphite console ground",
+        "bone-white log type",
+        "amber phosphor accents",
+        "muted signal-green role tags",
+        "hairline turn dividers"
+      ],
+      "viewport": "A session already in progress: the SYSTEM turn states the name, role and CAN DO tagline, the implied visitor question hangs above a logged reply whose first turns are the shipped products, and impact metrics render as telemetry lines with real figures.",
+      "risk": "A literal chat skin risks tool-monoculture; every element must read as the log at data density, not a fake chat window.",
+      "case": null
+    },
+    {
+      "id": "challenger-nixie",
+      "label": "Nixie Laboratory Counter",
+      "kicker": "CHALLENGER",
+      "lineage": "nixie-tube lab counters: stacked glass-envelope digits, engraved panel caps, blackened steel chassis",
+      "thesis": "The career as an instrument rack: each metric owns a tube bank, each product a calibrated panel, and the numbers glow as physical plasma.",
+      "palette": [
+        "#ff7a1a",
+        "#141414",
+        "#8a8a8a",
+        "#2a2a2a"
+      ],
+      "materials": [
+        "neon-orange digit glow",
+        "blackened steel chassis",
+        "clear glass envelopes",
+        "hairline anode mesh",
+        "engraved panel labels"
+      ],
+      "viewport": "An instrument rack: the hero name engraved on the top panel, impact metrics as glowing tube banks, each product a rack module with its own calibration plate.",
+      "risk": "Memorable and precise; risks reading as a lab relic unless the motion of cross-fading digits commits fully.",
+      "case": "Wins identity with the engineering audience — numbers as instruments is exactly how AI engineers verify claims; keeps figures legible for clients.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-nixie-laboratory-counter-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-nixie-laboratory-counter.webp"
+    },
+    {
+      "id": "challenger-datamatics",
+      "label": "Data Sublime",
+      "kicker": "CHALLENGER",
+      "lineage": "Ikeda-style datamatics: dense barcode columns, sine lattices, monospace numerics, pure black and white",
+      "thesis": "The work as a data field: barcode columns and sine lattices at full density, numbers packed in tabular columns, and the occasional full-frame inversion.",
+      "palette": [
+        "#000000",
+        "#ffffff"
+      ],
+      "materials": [
+        "pixel-crisp bar fields",
+        "hairline sine lattices",
+        "dense tabular numerics",
+        "full-frame inversion"
+      ],
+      "viewport": "A black field of hairline bars and monospace columns; the name is set in dense data type, products scan as barcode fields, metrics read from tabular columns.",
+      "risk": "The most audacious card, and the coldest: non-technical clients may not find the product story behind the data sublime.",
+      "case": "Beats every card on memorability and the AI-data mood; fuses poorly on product clarity — installed software is not a barcode.",
+      "hero": "https://impeccable.style/worlds/cards/ikeda-datamatics-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/ikeda-datamatics.webp"
+    },
+    {
+      "id": "challenger-stenberg",
+      "label": "Stenberg Poster",
+      "kicker": "CHALLENGER",
+      "lineage": "Stenberg brothers film posters: photomontage scale jumps, racing constructivist caps, one violent diagonal",
+      "thesis": "The career as a film bill: scale jumps make the shipped work loom, type races along the diagonal, and the page tilts with each chapter.",
+      "palette": [
+        "#e8452c",
+        "#0d0d0d",
+        "#f3ead8",
+        "#6b6b6b"
+      ],
+      "materials": [
+        "sovkino red alarm ink",
+        "coal-black ground",
+        "halftone photomontage",
+        "tilted display caps",
+        "scale-jump composition"
+      ],
+      "viewport": "A full-bleed bill: the name set huge on the tilt, each product a montage element scaled by impact, the CAN DO tagline wedged into the composition.",
+      "risk": "Maximum boldness, minimum calm — the diagonal must re-settle between sections or the page exhausts the visitor.",
+      "case": "Fuses for energy and stands apart from every other portfolio; loses the product-clarity axis — a WordPress plugin at an impossible angle is drama, not proof.",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-stenberg-poster-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/posters-covers-sleeves-stenberg-poster.webp"
+    }
+  ],
+  "reroll": true,
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "What this category ships, executed impeccably: dark gradient hero, big name, code motif, rounded cards.",
+    "viewport": "The arrangement a visitor expects, at full craft.",
+    "sketch": null
+  },
+  "steer": true
+}

@@ -1,0 +1,130 @@
+{
+  "title": "Choose your world — cyberpunk mafia anime",
+  "question": "Pinned world: cyberpunk mafia anime. These five are hand-crafted for you from our conversation. Take one, or re-roll for a fresh hand.",
+  "options": [
+    {
+      "id": "hand-syndicate",
+      "label": "The Syndicate Dossier",
+      "kicker": "HAND-CRAFTED",
+      "lineage": "yakuza record rooms after dark: case folders, hanko seals, red ink, CRT terminals behind venetian blinds",
+      "thesis": "The portfolio as a capo's case files: every shipped product is a sealed file stamped CLOSED-DELIVERED, and the numbers are the family's books.",
+      "palette": [
+        "#0d0a08",
+        "#e8dcc0",
+        "#c02818",
+        "#ff3d6e"
+      ],
+      "materials": [
+        "manila case folders",
+        "hanko red-ink stamps",
+        "ruled paper forms",
+        "neon bleeding through blinds",
+        "CRT scanlines"
+      ],
+      "viewport": "A lamp-lit record room: the name on a brass plaque as the case cabinet's owner, six case files on the desk each stamped with a shipped product, the CAN DO motto stamped on the cabinet, metrics inked as ledger columns.",
+      "risk": "Needs real stamped-record density, not a paper texture slapped on cards; every stamp must carry a true figure.",
+      "case": null
+    },
+    {
+      "id": "hand-wanted",
+      "label": "The Wanted Wall",
+      "kicker": "HAND-CRAFTED",
+      "lineage": "Akira-era bounty boards: photocopied WANTED posters, paper grain, red seals, neon kanji, CCTV static",
+      "thesis": "The portfolio as a back-alley bounty wall: each product is a wanted poster with its bounty in installs, and the engineer is the most-wanted name on the board.",
+      "palette": [
+        "#0b0b0e",
+        "#f3ead8",
+        "#d22b1f",
+        "#39e6d8"
+      ],
+      "materials": [
+        "photocopy paper grain",
+        "WANTED poster layout",
+        "red wanted seals",
+        "neon kanji signage",
+        "CCTV static grain"
+      ],
+      "viewport": "A dark alley wall: the name poster centered under a neon kanji sign, each product below as its own poster with bounty figures (20k+ installs), the CAN DO tagline rubber-stamped across the wall, metrics as bounty totals.",
+      "risk": "The strongest meme of the set; reads cheeky unless the poster craft goes full density with real figures as bounties.",
+      "case": null
+    },
+    {
+      "id": "hand-netdeck",
+      "label": "The Chrome Sleeve",
+      "kicker": "HAND-CRAFTED",
+      "lineage": "edgerunner cyberdecks: boot sequences, HUD chrome, phosphor readouts, implant loadouts, neural sync",
+      "thesis": "The portfolio as a neural interface booting: products are installed chrome, skills are augmentations, and impact metrics are system telemetry.",
+      "palette": [
+        "#050708",
+        "#1a2e2b",
+        "#7df9c4",
+        "#ffb020"
+      ],
+      "materials": [
+        "HUD frame chrome",
+        "phosphor-green readouts",
+        "hex sync grids",
+        "implant schematics",
+        "glitch displacements"
+      ],
+      "viewport": "A boot sequence: the name as the deck's identity line, CAN DO as the boot message, six products as installed-chrome modules with telemetry bars (installs, cost delta, velocity), metrics as a live system readout.",
+      "risk": "The most obvious cyberpunk lane; must commit to deck grammar (boot, sync, telemetry) and never fall back to neon gradients over rounded cards.",
+      "case": null
+    },
+    {
+      "id": "hand-heist",
+      "label": "The Crew Board",
+      "kicker": "HAND-CRAFTED",
+      "lineage": "Akudama-Drive job boards: mission walls, case photos, red string, blueprint grids, fixer call sheets",
+      "thesis": "The portfolio as a fixer's job board: every shipped product is an executed heist with its status stamp, and the metrics are the crew's payout score.",
+      "palette": [
+        "#0e0e12",
+        "#e6e0d4",
+        "#ff5c39",
+        "#4fa3ff"
+      ],
+      "materials": [
+        "corkboard texture",
+        "case-file photos",
+        "red string maps",
+        "blueprint grid paper",
+        "stamped call sheets"
+      ],
+      "viewport": "A mission wall: the name as the crew's call sign across the top, each product pinned as a completed job with its heist ledger (20k+ installs, 35% cost cut), CAN DO as the crew rule, impact stats as the scoreboard.",
+      "risk": "Jobs-to-products maps cleanly, but the metaphor can overpromise; status stamps must stay factual (shipped, not 'score earned').",
+      "case": null
+    },
+    {
+      "id": "hand-ink",
+      "label": "The Yakuza Ink",
+      "kicker": "HAND-CRAFTED",
+      "lineage": "irezumi full-body suits: sumi ink, gold leaf, needle lines, skin-paper, neon glow after dark",
+      "thesis": "The portfolio as a boss's tattoo suite: each product is a panel of ink on the back piece, revealed panel by panel, and the numbers are set in gold leaf.",
+      "palette": [
+        "#0f0d0a",
+        "#e9e2d2",
+        "#111111",
+        "#c9a25e"
+      ],
+      "materials": [
+        "sumi black ink",
+        "needle linework",
+        "gold-leaf figures",
+        "skin-tone paper",
+        "neon rim light"
+      ],
+      "viewport": "The back piece: the name as the central medallion, six product panels inked as scenes down the spine, CAN DO inked as the motto band, metrics as gold-leaf engravings beside each panel.",
+      "risk": "The most artful card and the hardest to keep scannable; each ink panel must carry its product's facts inside the artwork, not beside it.",
+      "case": null
+    }
+  ],
+  "reroll": true,
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "What this category ships, executed impeccably: dark gradient hero, big name, code motif, rounded cards.",
+    "viewport": "The arrangement a visitor expects, at full craft.",
+    "sketch": null
+  },
+  "steer": true
+}
