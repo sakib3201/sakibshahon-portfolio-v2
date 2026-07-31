@@ -1,6 +1,6 @@
 <script>
   import ProjectLibraryCards from "./ProjectLibraryCard.svelte";
-  import { projects } from "$lib/data.js";
+  import { projects, archiveProjects } from "$lib/data.js";
 </script>
 
 <div class="project_library_collection py-16">
@@ -16,6 +16,21 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
       {#each projects as project (project.title)}
+        <ProjectLibraryCards {project} />
+      {/each}
+    </div>
+
+    <div class="text-center mt-24 mb-16">
+      <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-4">
+        Archive & Experiments
+      </h2>
+      <p class="text-xl text-slate-300 max-w-2xl mx-auto">
+        University and experimental projects.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+      {#each archiveProjects as project (project.title)}
         <ProjectLibraryCards {project} />
       {/each}
     </div>
