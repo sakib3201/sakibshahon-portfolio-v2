@@ -22,7 +22,7 @@
   --font-mono: 'Red Hat Mono', 'Courier New', monospace;
 
   --shadow-lacquer: inset 0 1px 0 rgba(233, 226, 210, 0.06), inset 0 -1px 2px rgba(0, 0, 0, 0.7),
-    0 3px 6px rgba(0, 0, 0, 0.5);
+    0 1px 2px rgba(0, 0, 0, 0.45), 0 12px 28px rgba(0, 0, 0, 0.38);
   --shadow-deep: 0 18px 40px rgba(0, 0, 0, 0.6);
   --shadow-gold: inset 0 1px 0 rgba(255, 235, 190, 0.3), inset 0 -1px 2px rgba(60, 40, 10, 0.55),
     0 2px 4px rgba(0, 0, 0, 0.5);
@@ -175,8 +175,13 @@ body {
 
   .skin-sheet {
     background-color: var(--color-paper);
-    background-image: linear-gradient(180deg, rgba(36, 28, 18, 0.04) 1px, transparent 1px);
-    background-size: 100% 30px;
+    background-image:
+      radial-gradient(110% 70% at 50% 0%, rgba(255, 250, 235, 0.35), transparent 55%),
+      radial-gradient(130% 110% at 50% 100%, rgba(36, 28, 18, 0.1), transparent 62%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+      linear-gradient(180deg, rgba(36, 28, 18, 0.04) 1px, transparent 1px);
+    background-size: auto, auto, 140px 140px, 100% 30px;
+    background-repeat: no-repeat, no-repeat, repeat, repeat;
     color: var(--color-inkonpaper);
     border: 1px solid #b7ac92;
     box-shadow: var(--shadow-deep);

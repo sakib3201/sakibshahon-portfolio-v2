@@ -5,6 +5,8 @@
 </script>
 
 <section class="relative bg-sumi text-inktext py-20 lg:py-28">
+  <div class="needle-line-h absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
+
   <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16" data-reveal>
       <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">The ledger</h2>
@@ -52,7 +54,7 @@
                         <h3 class={`brush text-xl leading-tight ${entry.highlight ? "gold-text" : "text-inkonpaper"}`}>
                           {entry.company}
                         </h3>
-                        <p class={`brush italic ${entry.highlight ? "text-inktextdim" : "text-inkonpaper/75"}`}>
+                        <p class={`brush italic ${entry.highlight ? "text-inktextdim" : "text-inkonpaper/90"}`}>
                           {entry.role}
                         </p>
                       </div>
@@ -63,12 +65,12 @@
                   </div>
 
                   {#if entry.badge}
-                    <span class="hanko inline-block px-3 py-1 marginalia mb-4">
+                    <span class="hanko inline-block px-3 py-1 brush text-base mb-4">
                       {entry.badge}
                     </span>
                   {/if}
 
-                  <p class={`leading-relaxed mb-5 text-[1.02rem] ${entry.highlight ? "text-inktextdim" : "text-inkonpaper/85"}`}>
+                  <p class={`leading-relaxed mb-5 text-[1.02rem] ${entry.highlight ? "text-inktextdim" : "text-inkonpaper/90"}`}>
                     {entry.description}
                   </p>
 

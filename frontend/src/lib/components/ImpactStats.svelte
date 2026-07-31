@@ -2,7 +2,7 @@
   import { impactStats } from '$lib/data.js';
 </script>
 
-<section class="relative sumi-ground text-inktext py-16 lg:py-20 overflow-hidden">
+<section class="relative sumi-ground text-inktext py-20 lg:py-28 overflow-hidden">
   <div
     class="absolute inset-x-0 bottom-0 h-64 pointer-events-none"
     style="background: radial-gradient(80% 100% at 50% 100%, rgba(201,162,94,0.08) 0%, transparent 70%);"

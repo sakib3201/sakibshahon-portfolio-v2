@@ -8,15 +8,15 @@
   const imageFailed = $state({});
 </script>
 
-<section id="youtube" class="scroll-mt-24 relative bg-lacquer text-inktext py-16 lg:py-20 overflow-hidden" data-reveal>
+<section id="youtube" class="scroll-mt-24 relative bg-lacquer text-inktext py-20 lg:py-28 overflow-hidden" data-reveal>
   <div class="needle-line-h absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="brush gold-text text-4xl md:text-5xl tracking-[0.02em]">
+    <div class="text-center mb-16">
+      <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">
         Watch on YouTube
       </h2>
-      <p class="marginalia text-inktextdim mt-4">{youtube.handle}</p>
+      <p class="marginalia text-inktextdim mt-5">{youtube.handle}</p>
 
       <div class="skin-sheet inline-block mt-6 px-5 py-2 rounded-sm rotate-[0.4deg]">
         <p class="brush text-inkonpaper text-base md:text-lg">{youtube.blurb}</p>
