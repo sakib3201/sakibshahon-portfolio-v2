@@ -1,11 +1,19 @@
 <script>
-	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
+	import { onDestroy } from 'svelte';
 	import '../app.css';
 	import { initMotion } from '../lib/motion.js';
 
 	let { children } = $props();
 
-	onMount(() => initMotion());
+	let destroyMotion = () => {};
+
+	afterNavigate(() => {
+		destroyMotion();
+		destroyMotion = initMotion();
+	});
+
+	onDestroy(() => destroyMotion());
 </script>
 
 <svelte:head>

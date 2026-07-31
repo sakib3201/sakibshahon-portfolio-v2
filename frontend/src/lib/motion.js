@@ -1,19 +1,47 @@
+const REVEAL_DURATION_MS = 700;
+
 export function initMotion() {
   if (typeof window === 'undefined') return () => {};
 
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const html = document.documentElement;
+  const reducedQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   /** @type {Array<() => void>} */
-  const cleanup = [];
+  const observerCleanups = [];
+  /** @type {Array<() => void>} */
+  const baseCleanups = [];
+  /** @type {Array<number>} */
+  const timers = [];
 
-  if (!reduced && 'IntersectionObserver' in window) {
+  const clearTimers = () => {
+    while (timers.length > 0) {
+      window.clearTimeout(timers.pop());
+    }
+  };
+
+  const showAllReveals = () => {
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      el.classList.add('is-visible');
+      const target = /** @type {HTMLElement} */ (el);
+      target.style.transitionDelay = '';
+    });
+  };
+
+  const observeReveals = () => {
     const revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const el = /** @type {HTMLElement} */ (entry.target);
-            const delay = el.dataset.revealDelay ?? '0';
-            el.style.transitionDelay = `${delay}ms`;
+            const delay = Number(el.dataset.revealDelay ?? 0);
+            if (delay > 0) {
+              el.style.transitionDelay = `${delay}ms`;
+              timers.push(
+                window.setTimeout(() => {
+                  el.style.transitionDelay = '';
+                }, delay + REVEAL_DURATION_MS)
+              );
+            }
             el.classList.add('is-visible');
             observer.unobserve(el);
           }
@@ -22,12 +50,30 @@ export function initMotion() {
       { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
     );
     revealEls.forEach((el) => observer.observe(el));
-    cleanup.push(() => observer.disconnect());
-  } else {
-    document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
-  }
+    observerCleanups.push(() => observer.disconnect());
+  };
 
-  if (!reduced && window.matchMedia('(pointer: fine)').matches) {
+  const syncWithMotionPreference = () => {
+    if (reducedQuery.matches) {
+      html.classList.remove('motion-init');
+      observerCleanups.splice(0).forEach((fn) => fn());
+      clearTimers();
+      showAllReveals();
+    } else if (!html.classList.contains('motion-init')) {
+      html.classList.add('motion-init');
+      document
+        .querySelectorAll('[data-reveal].is-visible')
+        .forEach((el) => el.classList.remove('is-visible'));
+      observeReveals();
+    }
+  };
+
+  reducedQuery.addEventListener('change', syncWithMotionPreference);
+  baseCleanups.push(() => reducedQuery.removeEventListener('change', syncWithMotionPreference));
+
+  syncWithMotionPreference();
+
+  if (!reducedQuery.matches && window.matchMedia('(pointer: fine)').matches) {
     const tiltEls = /** @type {Array<HTMLElement>} */ (
       Array.from(document.querySelectorAll('[data-tilt]'))
     );
@@ -49,7 +95,7 @@ export function initMotion() {
       el.addEventListener('pointermove', onMove);
       el.addEventListener('pointerleave', onLeave);
     });
-    cleanup.push(() => {
+    baseCleanups.push(() => {
       tiltEls.forEach((el) => {
         el.removeEventListener('pointermove', onMove);
         el.removeEventListener('pointerleave', onLeave);
@@ -57,5 +103,9 @@ export function initMotion() {
     });
   }
 
-  return () => cleanup.forEach((fn) => fn());
+  return () => {
+    baseCleanups.splice(0).forEach((fn) => fn());
+    observerCleanups.splice(0).forEach((fn) => fn());
+    clearTimers();
+  };
 }
