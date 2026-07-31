@@ -6,7 +6,7 @@
       <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">
         Write to me
       </h2>
-      <p class="marginalia text-inktextdim mt-6">A reply travels back by return post</p>
+      <p class="marginalia text-inktextdim mt-5">A reply travels back by return post</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">

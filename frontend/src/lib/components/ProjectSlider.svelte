@@ -4,8 +4,10 @@
 </script>
 
 <section id="projects" class="scroll-mt-24 relative bg-sumi text-inktext py-20 lg:py-28">
+  <div class="needle-line-h absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
+
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14">
+    <div class="text-center mb-16">
       <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">Featured projects</h2>
       <p class="marginalia text-inktextdim mt-5">Two works I built and keep referring back to</p>
     </div>

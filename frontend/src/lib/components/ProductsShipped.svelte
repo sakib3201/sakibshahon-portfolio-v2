@@ -50,18 +50,18 @@
             <div class="w-10 flex-shrink-0 flex flex-col items-center justify-between py-4 bg-black/30" aria-hidden="true">
               <span class="needle-line h-8 opacity-50"></span>
               <span
-                class="brush gold-text/90 text-xs"
+                class="brush gold-text text-xs"
                 style="writing-mode: vertical-rl; transform: rotate(180deg);"
               >
                 {product.name}
               </span>
-              <span class="marginalia text-gold/60 text-[0.55rem]">N°</span>
+              <span class="marginalia text-goldbright text-[0.55rem]">N°</span>
             </div>
 
             <div class="flex-1 p-6 md:p-7 min-w-0">
               <div class="flex items-start justify-between gap-3 mb-4">
                 <h3 class="brush gold-text text-2xl leading-tight">{product.name}</h3>
-                <span class="hanko rounded-sm px-2.5 py-1 marginalia flex-shrink-0">
+                <span class="hanko rounded-sm px-2.5 py-1 brush text-base flex-shrink-0">
                   {product.tag}
                 </span>
               </div>

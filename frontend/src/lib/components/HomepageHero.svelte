@@ -158,7 +158,7 @@
                     >
                       {product.name}
                     </span>
-                    <span class="marginalia text-gold/70 text-[0.55rem]">N°{String(i + 1).padStart(2, "0")}</span>
+                    <span class="marginalia text-goldbright text-[0.55rem]">N°{String(i + 1).padStart(2, "0")}</span>
                   </span>
                 </span>
               </a>
