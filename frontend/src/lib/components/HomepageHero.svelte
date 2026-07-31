@@ -1,149 +1,113 @@
 <script>
-  import { siteMeta } from "$lib/data.js";
+  import { siteMeta, productsShipped } from "$lib/data.js";
 
   const name = siteMeta.name;
-  const letters = name.split('');
 
-  const navigationItems = [
-    {
-      href: "#products",
-      text: "View products",
-      icon: "M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z",
-      description: "View products I've shipped"
-    },
-    {
-      href: "#skills",
-      text: "Skills",
-      icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
-      description: "Explore my expertise"
-    },
-    {
-      href: "#contact",
-      text: "Contact me",
-      icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
-      description: "Get in touch"
-    },
-    {
-      href: siteMeta.resumeUrl,
-      text: "Resume",
-      icon: "M12 10v6m0 0l4-4m-4 4l-4-4m6-2a2 2 0 100 4 2 2 0 000-4z",
-      description: "Download my CV",
-      external: true
-    },
-    {
-      href: "https://dev.to/sakib3201",
-      text: "Blogs",
-      icon: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z",
-      description: "Read my articles",
-      external: true
-    }
+  /** @param {string} title */
+  const spineLabel = (title) => title.replace('AI', 'AI').replace('Timetics AI', 'Timetics AI').slice(0, 12);
+
+  const ctas = [
+    { href: "#products", text: "View the shelf" },
+    { href: siteMeta.resumeUrl, text: "Download résumé", external: true },
+    { href: "#contact", text: "Write to me" }
   ];
 </script>
 
-<div class="relative bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white overflow-hidden">
-  <!-- Background decorative elements -->
-  <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-slate-900/10 rounded-full blur-3xl"></div>
+<section class="relative bg-ink text-paper overflow-hidden">
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(52% 42% at 50% 0%, rgba(201,162,94,0.16) 0%, rgba(201,162,94,0.05) 55%, transparent 100%);"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(120% 60% at 50% 110%, rgba(0,0,0,0.55) 0%, transparent 60%);"
+    aria-hidden="true"
+  ></div>
 
-  <!-- Hero Content -->
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="Homepage text-center py-32">
-      <!-- Eyebrow -->
-      <p class="text-lg md:text-xl tracking-widest uppercase text-cyan-400 font-semibold mb-6">
-        {siteMeta.role}
-      </p>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-0">
+    <div class="text-center">
+      <h1 class="gilded serif font-semibold leading-tight text-5xl md:text-7xl lg:text-[5.5rem] tracking-[-0.02em]">
+        {name}
+      </h1>
 
-      <!-- Animated Name -->
-      <div class="Home_page_name text-7xl md:text-8xl font-bold mb-8">
-        {#each letters as letter, i (i)}
-          <span
-            class="inline-block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-300 transition-all duration-300"
-            style="animation-delay: {i * 0.1}s"
-          >
-            {letter === ' ' ? '\u00A0' : letter}
-          </span>
-        {/each}
+      <p class="marginalia text-foil mt-5">{siteMeta.role}</p>
+
+      <div
+        class="paper-sheet inline-block mt-7 px-6 py-3 rounded-sm rotate-[-0.6deg]"
+        aria-label={siteMeta.tagline}
+      >
+        <p class="serif text-xl md:text-2xl text-inkonpaper">
+          The <span class="font-semibold text-leatherdeep">“CAN DO”</span> Software Artisan
+        </p>
       </div>
 
-      <!-- Personal Description -->
-      <div id="personal_description" class="mt-6 text-2xl md:text-3xl mb-4">
-        The <span class="font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"><b>&quot;CAN DO&quot;</b></span> Software Artisan
-      </div>
-
-      <!-- Subline -->
-      <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-16">
-        I ship AI-powered WordPress and SaaS products — including systems behind 20k+ plugin installs — and I can build yours.
+      <p class="max-w-2xl mx-auto mt-6 text-lg md:text-xl text-linen leading-relaxed">
+        I ship AI-powered WordPress and SaaS products — including systems behind 20k+ plugin installs — and I can build
+        yours.
       </p>
 
-      <!-- Enhanced Navigation Buttons -->
-      <div class="Grp_Button flex flex-wrap justify-center gap-4 md:gap-6 pb-20">
-        {#each navigationItems as item (item.href)}
+      <div class="flex flex-wrap justify-center gap-4 md:gap-5 mt-10 pb-16">
+        {#each ctas as item (item.href)}
           <a
             href={item.href}
             target={item.external ? "_blank" : "_self"}
             rel={item.external ? "noopener noreferrer" : ""}
-            class="group relative px-8 py-4 bg-gradient-to-r from-slate-800/50 to-slate-700/50 hover:from-cyan-600 hover:to-blue-600 border border-slate-600 hover:border-cyan-400 text-white font-semibold text-lg rounded-2xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+            class={`inline-flex items-center gap-2 px-7 py-3 serif text-lg transition-all duration-300 ${
+              item.text === "View the shelf"
+                ? "ribbon text-foilbright hover:text-white hover:-translate-y-0.5 hover:shadow-xl"
+                : "border border-thread/50 text-linen hover:text-foilbright hover:border-foil/80 hover:-translate-y-0.5"
+            }`}
           >
-            <span class="flex items-center justify-center space-x-3">
-              <svg class="w-6 h-6 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}></path>
+            {item.text}
+            {#if item.external}
+              <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-              <span>{item.text}</span>
-              {#if item.external}
-                <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                </svg>
-              {/if}
-            </span>
-
-            <!-- Tooltip -->
-            <div class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
-              {item.description}
-              <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-slate-900"></div>
-            </div>
+            {/if}
           </a>
         {/each}
       </div>
     </div>
+
+    <div class="wood-shelf rounded-t-sm px-4 sm:px-8 pt-6 pb-1">
+      <div class="stitch-t mb-5 opacity-60" aria-hidden="true"></div>
+      <p class="marginalia text-foil/80 text-center mb-4">On the shelf — shipped and running</p>
+      <ul
+        class="flex flex-wrap justify-center items-end gap-4 md:gap-5"
+        aria-label="Products on the shelf"
+      >
+        {#each productsShipped as product, i (product.name)}
+          <li class="group relative">
+            <a
+              href="#products"
+              class="block"
+              aria-label="{product.name} — view product"
+            >
+              <span class="sr-only">{product.name}</span>
+              <span
+                class="volume block w-[2.9rem] md:w-14 h-40 md:h-52 rounded-r-md transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-2xl"
+                style="background: linear-gradient(90deg, #2a1a0e 0%, #3c2413 12%, #6d4327 45%, #5a351e 100%); box-shadow: inset 3px 0 0 rgba(255,205,150,0.14), 4px 6px 12px rgba(0,0,0,0.5);"
+                aria-hidden="true"
+              >
+                <span
+                  class="flex flex-col items-center justify-between h-full py-4"
+                >
+                  <span class="stitch-v h-4 opacity-60"></span>
+                  <span
+                    class="serif text-foilbright/95 text-sm md:text-base font-medium"
+                    style="writing-mode: vertical-rl; transform: rotate(180deg); text-shadow: 0 1px 0 rgba(255,240,205,0.25);"
+                  >
+                    {spineLabel(product.name)}
+                  </span>
+                  <span class="marginalia text-thread/70 text-[0.55rem]">N°{String(i + 1).padStart(2, "0")}</span>
+                </span>
+              </span>
+            </a>
+          </li>
+        {/each}
+      </ul>
+      <div class="mt-2 h-2 wood-shelf" aria-hidden="true"></div>
+    </div>
   </div>
-</div>
-
-<style>
-  #personal_description {
-    color: #cbd5e0;
-    font-weight: 300;
-    letter-spacing: 0.025em;
-  }
-
-  .Home_page_name span {
-    display: inline-block;
-    animation: wave 2s infinite ease-in-out;
-  }
-
-  @keyframes wave {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .Home_page_name span {
-      animation: none;
-    }
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .Home_page_name {
-      font-size: 3.5rem;
-    }
-
-    #personal_description {
-      font-size: 1.25rem;
-    }
-  }
-</style>
+</section>

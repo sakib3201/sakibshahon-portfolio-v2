@@ -3,26 +3,29 @@
   import { projects } from "$lib/data.js";
 </script>
 
-<div class="bg-gray-900 text-white py-10">
-  <div
-    id="projects"
-    class="scroll-mt-24 flex justify-center items-center mt-10 mb-5 text-5xl font-montseratt font-bold"
-  >
-    Featured projects
-  </div>
+<section id="projects" class="scroll-mt-24 relative bg-ink text-paper py-20 lg:py-28">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="embossed serif font-semibold text-4xl md:text-6xl tracking-[-0.02em]">Featured projects</h2>
+      <p class="marginalia text-linendim mt-5">Two works I built and keep referring back to</p>
+    </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    {#each projects as project (project.title)}
-      <ProjectCard {project} />
-    {/each}
-  </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
+      {#each projects as project (project.title)}
+        <ProjectCard {project} />
+      {/each}
+    </div>
 
-  <div class="flex justify-center items-center m-5 mb-8">
-    <a
-      href="/projects"
-      class="inline-block px-8 py-4 rounded-2xl border border-blue-400 text-white hover:bg-blue-400 hover:text-black transition-all duration-300 hover:scale-105 shadow-md"
-    >
-      View all Projects
-    </a>
+    <div class="flex justify-center mt-14">
+      <a
+        href="/projects"
+        class="inline-flex items-center gap-2 px-8 py-3 border border-thread/50 text-linen hover:text-foilbright hover:border-foil/80 serif text-lg transition-all duration-300 hover:-translate-y-0.5"
+      >
+        Browse the full archive
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
   </div>
-</div>
+</section>

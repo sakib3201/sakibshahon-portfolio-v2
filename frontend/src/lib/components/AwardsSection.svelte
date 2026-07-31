@@ -10,62 +10,43 @@
   });
 </script>
 
-<section
-  id="awards"
-  class="scroll-mt-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white py-20 relative overflow-hidden"
->
-  <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+<section id="awards" class="scroll-mt-24 relative bg-ground text-paper py-20 lg:py-28 overflow-hidden">
+  <div class="stitch-t absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-6">
-        Awards & Recognition
-      </h2>
-      <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        Recognitions from competitive programming and global hackathons.
-      </p>
+      <h2 class="embossed serif font-semibold text-4xl md:text-6xl tracking-[-0.02em]">The display case</h2>
+      <p class="marginalia text-linendim mt-5">Competitive programming and global hackathons</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-8">
       {#each awards as award (award.title)}
-        <div
-          class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/30 shadow-xl transition-all duration-500 hover:shadow-2xl hover:shadow-slate-900/50 hover:-translate-y-2 p-6"
-        >
-          <div class="flex items-center justify-center w-16 h-16 mb-4 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl shadow-lg">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d={iconPaths[award.icon] ?? iconPaths.trophy}
-              ></path>
-            </svg>
-          </div>
-
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-            <h3 class="text-xl font-semibold text-white">
-              {#if award.href}
-                <a
-                  href={award.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-cyan-300 transition-colors duration-300"
-                >
-                  {award.title}
-                </a>
-              {:else}
-                {award.title}
-              {/if}
-            </h3>
-            <span class="text-xs font-semibold text-cyan-400 bg-slate-800/60 px-3 py-1 rounded-full">
-              {award.year}
+        <div class="plate rounded-sm p-7 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <span class="flex items-center justify-center w-14 h-14 rounded-full border border-black/40 bg-black/20" aria-hidden="true">
+              <svg class="w-7 h-7 text-foilbright" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d={iconPaths[award.icon] ?? iconPaths.trophy}></path>
+              </svg>
             </span>
+            <span class="marginalia text-paper/80 bg-black/25 rounded-sm px-2.5 py-1">{award.year}</span>
           </div>
 
-          <p class="text-sm text-slate-300 leading-relaxed">{award.description}</p>
+          <h3 class="serif text-xl font-semibold text-paper leading-snug mb-3">
+            {#if award.href}
+              <a
+                href={award.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-foilbright transition-colors duration-200"
+              >
+                {award.title}
+              </a>
+            {:else}
+              {award.title}
+            {/if}
+          </h3>
 
-          <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-cyan-500/10 to-transparent"></div>
+          <p class="serif text-paper/85 leading-relaxed">{award.description}</p>
         </div>
       {/each}
     </div>

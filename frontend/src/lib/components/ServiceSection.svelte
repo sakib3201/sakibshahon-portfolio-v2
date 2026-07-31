@@ -11,73 +11,59 @@
   });
 </script>
 
-<section
-  id="skills"
-  class="scroll-mt-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white py-20 relative overflow-hidden"
->
-  <!-- Background decorative elements -->
-  <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+<section id="skills" class="scroll-mt-24 relative bg-ground text-paper py-20 lg:py-28 overflow-hidden">
+  <div class="stitch-t absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Header Section -->
     <div class="text-center mb-16">
-      <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-6">
-        My Skillset
-      </h2>
-      <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        Comprehensive expertise across multiple domains, delivering end-to-end solutions from concept to deployment.
+      <h2 class="embossed serif font-semibold text-4xl md:text-6xl tracking-[-0.02em]">The reference shelf</h2>
+      <p class="max-w-2xl mx-auto mt-5 text-lg text-linen leading-relaxed">
+        Four working disciplines, from API to polished UI — WordPress plugins to SaaS.
       </p>
     </div>
 
-    <!-- Skills Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8 mb-16">
       {#each skills as skill (skill.title)}
-        <div class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/30 shadow-xl transition-all duration-500 hover:shadow-2xl hover:shadow-slate-900/50 hover:-translate-y-2">
-          <!-- Card Header -->
-          <div class="p-6 pb-4">
-            <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl shadow-lg">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icons[skill.icon] ?? icons.code}></path>
+        <article class="leather-sheet group relative flex flex-col rounded-r-md overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+          <div class="flex items-center justify-center pt-7 pb-4">
+            <span
+              class="plate flex items-center justify-center w-16 h-16 rounded-full"
+              aria-hidden="true"
+            >
+              <svg class="w-8 h-8 text-foilbright" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d={icons[skill.icon] ?? icons.code}></path>
               </svg>
-            </div>
-
-            <h3 class="text-2xl font-bold text-center text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 mb-3">
-              {skill.title}
-            </h3>
-
-            <p class="text-slate-300 text-center leading-relaxed mb-6">
-              {skill.blurb}
-            </p>
+            </span>
           </div>
 
-          <!-- Skills List -->
-          <div class="px-6 pb-6">
-            <ul class="space-y-3 text-slate-400">
+          <div class="px-7 pb-3 text-center">
+            <h3 class="embossed serif text-2xl mb-2">{skill.title}</h3>
+            <p class="serif text-linen leading-relaxed mb-5 text-[1.02rem]">{skill.blurb}</p>
+          </div>
+
+          <div class="mx-7 mb-7">
+            <ul class="space-y-2.5 pt-4 border-t border-thread/25">
               {#each skill.items as item (item)}
-                <li class="flex items-start">
-                  <span class="w-2 h-2 bg-cyan-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span class="text-sm leading-relaxed">{item}</span>
+                <li class="flex items-start gap-2.5 text-sm text-linen leading-snug">
+                  <span class="text-foil mt-0.5 flex-shrink-0" aria-hidden="true">✦</span>
+                  <span>{item}</span>
                 </li>
               {/each}
             </ul>
           </div>
-
-          <!-- Decorative corner accent -->
-          <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-cyan-500/10 to-transparent"></div>
-        </div>
+        </article>
       {/each}
     </div>
 
-    <!-- Enhanced CTA Button -->
     <div class="text-center">
-      <a href="/about#skills" class="group relative inline-block px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-lg rounded-2xl shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 transition-all duration-300 hover:scale-105">
-        <span class="flex items-center justify-center">
-          View Skills in Detail
-          <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
-        </span>
+      <a
+        href="/about#skills"
+        class="ribbon inline-flex items-center gap-2 px-8 py-3.5 serif text-lg text-foilbright hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+      >
+        View skills in detail
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
       </a>
     </div>
   </div>

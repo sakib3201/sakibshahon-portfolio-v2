@@ -4,6 +4,15 @@
 
   const imageFailed = /** @type {Record<string, boolean>} */ ($state({}));
 
+  /** @param {string} name */
+  const monogram = (name) =>
+    name
+      .split(' ')
+      .filter((w) => /[A-Za-z]/.test(w[0]))
+      .map((w) => w[0])
+      .join('')
+      .toUpperCase();
+
   onMount(() => {
     for (const product of productsShipped) {
       const img = /** @type {HTMLImageElement | null} */ (
@@ -16,82 +25,97 @@
   });
 </script>
 
-<section
-  id="products"
-  class="scroll-mt-24 bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white py-20 relative overflow-hidden"
->
-  <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+<section id="products" class="scroll-mt-24 relative bg-ground text-paper py-20 lg:py-28 overflow-hidden">
+  <div class="stitch-t absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-6">
+      <h2 class="embossed serif font-semibold text-4xl md:text-6xl tracking-[-0.02em]">
         Products I've Shipped
       </h2>
-      <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        Work at Arraytics across SaaS and WordPress — booking, events, restaurants, and AI. Metrics below are from my
-        contributions unless labeled as product context.
-      </p>
+      <div class="paper-sheet inline-block mt-6 px-5 py-2 rounded-sm rotate-[0.4deg]">
+        <p class="serif text-inkonpaper text-base md:text-lg">
+          Work at Arraytics across SaaS and WordPress — booking, events, restaurants, and AI. Metrics below are from my
+          contributions unless labeled as product context.
+        </p>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8">
       {#each productsShipped as product (product.name)}
         <article
-          class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/30 shadow-xl transition-all duration-500 hover:shadow-2xl hover:shadow-slate-900/50 hover:-translate-y-2"
+          class="leather-sheet group relative flex rounded-r-md overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
         >
-          <div class="relative h-28 overflow-hidden bg-white">
-            {#if product.image && !imageFailed[product.name]}
-              <img
-                src={product.image}
-                alt="{product.name} logo"
-                class="h-full w-full object-contain p-4"
-                loading="lazy"
-                onerror={() => (imageFailed[product.name] = true)}
-              />
-            {:else}
-              <div class="flex items-center justify-center h-full">
-                <span class="bg-slate-800 text-white font-semibold px-4 py-2 rounded-xl">{product.name}</span>
-              </div>
-            {/if}
-            <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-cyan-500/10 to-transparent"></div>
+          <div class="w-10 flex-shrink-0 flex flex-col items-center justify-between py-4 bg-black/25" aria-hidden="true">
+            <span class="stitch-v h-8 opacity-50"></span>
+            <span
+              class="serif text-foilbright/90 text-xs font-medium"
+              style="writing-mode: vertical-rl; transform: rotate(180deg);"
+            >
+              {product.name}
+            </span>
+            <span class="marginalia text-thread/60 text-[0.55rem]">N°</span>
           </div>
 
-          <div class="p-6 relative">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-              <h3 class="text-xl font-bold text-white">{product.name}</h3>
-              <span class="text-xs font-semibold text-cyan-400 bg-slate-800/60 px-3 py-1 rounded-full">
+          <div class="flex-1 p-6 md:p-7 min-w-0">
+            <div class="flex items-start justify-between gap-3 mb-4">
+              <h3 class="embossed serif text-2xl leading-tight">{product.name}</h3>
+              <span class="paper-sheet rounded-sm px-2.5 py-1 marginalia text-inkonpaper flex-shrink-0">
                 {product.tag}
               </span>
             </div>
 
-            <p class="text-sm text-slate-300 leading-relaxed mb-4">{product.description}</p>
+            <div class="h-24 mb-5 overflow-hidden rounded-sm bg-paper/95 border border-black/30">
+              {#if product.image && !imageFailed[product.name]}
+                <img
+                  src={product.image}
+                  alt="{product.name} logo"
+                  class="h-full w-full object-contain p-3"
+                  loading="lazy"
+                  onerror={() => (imageFailed[product.name] = true)}
+                />
+              {:else}
+                <div class="flex items-center justify-center h-full">
+                  <span
+                    class="plate flex items-center justify-center w-16 h-16 rounded-sm serif text-2xl font-semibold text-foilbright"
+                    aria-hidden="true"
+                  >
+                    {monogram(product.name)}
+                  </span>
+                  <span class="sr-only">{product.name}</span>
+                </div>
+              {/if}
+            </div>
 
-            <p class="text-sm font-medium text-cyan-400 mb-4">{product.role}</p>
+            <p class="serif text-linen leading-relaxed mb-4 text-[1.05rem]">{product.description}</p>
 
-            <ul class="space-y-2 mb-4">
+            <p class="serif italic text-foilbright mb-4 text-[1.02rem]">{product.role}</p>
+
+            <ul class="space-y-2 mb-5">
               {#each product.metrics as metric (metric)}
-                <li class="flex items-start text-sm text-slate-300">
-                  <span class="text-cyan-400 mr-2 flex-shrink-0">✓</span>
+                <li class="flex items-start gap-2.5 text-sm md:text-[0.95rem] text-linen">
+                  <span class="text-foil mt-1 flex-shrink-0" aria-hidden="true">✦</span>
                   <span>{metric}</span>
                 </li>
               {/each}
             </ul>
 
             {#if product.productContext}
-              <p class="text-xs text-slate-400 italic mb-4">{product.productContext}</p>
+              <p class="marginalia text-linendim italic normal-case mb-4">{product.productContext}</p>
             {/if}
 
             <a
               href={product.links.product}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-1 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-sm font-semibold hover:from-cyan-500 hover:to-blue-500 transition-all duration-300"
+              class="ribbon inline-flex items-center gap-2 px-4 py-2 text-foilbright hover:text-white serif transition-all duration-300 hover:-translate-y-0.5"
             >
-              Visit product ↗
+              Visit product
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </a>
           </div>
-
-          <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-cyan-500/10 to-transparent"></div>
         </article>
       {/each}
     </div>

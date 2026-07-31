@@ -1,0 +1,112 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned The Shipping Ledger. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Shipping Ledger",
+      "kicker": "THE ROLL",
+      "lineage": "night-warehouse freight: waybills, stenciled crates, rubber stamps, hazard tape",
+      "thesis": "Every shipped product is a line item; the page is the manifest of work actually delivered.",
+      "palette": [
+        "#0d1117",
+        "#101418",
+        "#e8dcc0",
+        "#f5b52e",
+        "#d9481f"
+      ],
+      "materials": [
+        "stenciled crate wood",
+        "buff paper waybills",
+        "rubber-stamp ink",
+        "hazard-stripe tape",
+        "mono typewriter fields"
+      ],
+      "viewport": "The warehouse floor at night: a crate stack at center, the top crate's stencil label reading the name and role, a waybill card carrying the CAN DO tagline, products stenciled behind as crates, metrics as DECLARED VALUE stamps.",
+      "risk": "Reads gimmicky if stamps decorate instead of proving; every stamp must carry a real fact.",
+      "case": null
+    },
+    {
+      "id": "challenger-racing",
+      "label": "Endurance Garage",
+      "kicker": "CHALLENGER",
+      "lineage": "Gulf / Martini endurance-racing livery, pit boards, number roundels",
+      "thesis": "The career as a race season: stripes run nose to tail, the roundel anchors each product, the pit board calls the laps.",
+      "palette": [
+        "#1f2f6e",
+        "#0d1117",
+        "#f5b52e",
+        "#ffffff"
+      ],
+      "materials": [
+        "powder-blue bodywork",
+        "marigold stripe system",
+        "white number roundels",
+        "pit-board digits",
+        "sponsor panel patchwork"
+      ],
+      "viewport": "A grid of race cars in the garage, each car a shipped product with its roundel number, the pit board overhead ticking the impact metrics.",
+      "risk": "Strong identity, but WordPress/SaaS proof reads weaker; clients may miss the product story.",
+      "case": "Fuses well for identity and energy; loses the product-clarity axis — installed software is not a race car.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-endurance-livery-garage-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/pop-culture-shelf-endurance-livery-garage.webp"
+    },
+    {
+      "id": "challenger-onebit",
+      "label": "One-Bit Desktop",
+      "kicker": "CHALLENGER",
+      "lineage": "early one-bit computers: dithered grays, window chrome, marching ants",
+      "thesis": "The portfolio as a working desktop: windows for Products, Resume, Contact; dithers stand in for every tone.",
+      "palette": [
+        "#000000",
+        "#ffffff",
+        "#808080"
+      ],
+      "materials": [
+        "ordered stipple dither",
+        "one-pixel black chrome",
+        "pixel-caps title bars",
+        "marching-ants selection"
+      ],
+      "viewport": "Overlapping windows on the desktop: the manifest window open, its dither shearing as it moves.",
+      "risk": "Devs love it; clients don't read retro nostalgia, and 1984 implies backwards rather than forward AI.",
+      "case": "Wins memorability with the engineering audience; loses product clarity with the client audience.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-one-bit-desktop-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/medium-native-one-bit-desktop.webp"
+    },
+    {
+      "id": "challenger-shelf",
+      "label": "The Reading Shelf",
+      "kicker": "CHALLENGER",
+      "lineage": "skeuomorph leather bindings, linen grounds, wood shelves",
+      "thesis": "Digital work rendered as loved physical objects: each product a volume on a walnut shelf.",
+      "palette": [
+        "#4a3523",
+        "#c9b48f",
+        "#f3ead8",
+        "#e8dcc0"
+      ],
+      "materials": [
+        "saddle-tan leather headers",
+        "cream stitching",
+        "warm gray linen",
+        "walnut shelf wood",
+        "torn paper edges"
+      ],
+      "viewport": "A shelf of tooled volumes, each spine stamped with a product name; the active book sits raised with a true shadow.",
+      "risk": "Books read bookish, not engineered; a WordPress plugin as a leather volume strains the metaphor.",
+      "case": "Fuses poorly for product clarity — installed software is not a library.",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-skeuomorph-leather-studio-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/digital-design-canon-skeuomorph-leather-studio.webp"
+    }
+  ],
+  "reroll": true,
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "What this category ships, executed impeccably: dark gradient hero, big name, code motif, rounded cards.",
+    "viewport": "The arrangement a visitor expects, at full craft.",
+    "sketch": null
+  },
+  "steer": true
+}
