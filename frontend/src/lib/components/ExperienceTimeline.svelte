@@ -68,7 +68,8 @@
                         entry.highlight ? "bg-seal text-paper" : "bg-seal text-paper"
                       }`}
                     >
-                      ● {entry.badge}
+                      <svg class="inline-block w-2 h-2 mr-1.5 -mt-0.5" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><circle cx="4" cy="4" r="3" /></svg>
+                      {entry.badge}
                     </span>
                   {/if}
 
