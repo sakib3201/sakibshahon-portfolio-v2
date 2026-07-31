@@ -490,3 +490,74 @@ body {
 .parallax-node {
   backface-visibility: hidden;
 }
+
+/* Hero pointer interactions (initHeroMotion in heroMotion.js) */
+.hero-lamplight {
+  background-image: radial-gradient(
+    560px 340px at 50% 0%,
+    rgba(201, 162, 94, 0.18) 0%,
+    rgba(201, 162, 94, 0.06) 45%,
+    transparent 70%
+  );
+  background-repeat: no-repeat;
+  will-change: background-position;
+}
+
+.hero-name-block {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.hero-hanko.hero-restamp {
+  animation: hero-hanko-restamp 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-hanko.hero-restamp::after {
+  animation: hero-ink-bloom 0.8s ease-out both;
+}
+
+@keyframes hero-hanko-restamp {
+  0% {
+    transform: rotate(12deg) scale(1.6);
+  }
+  55% {
+    transform: rotate(7deg) scale(0.94);
+  }
+  100% {
+    transform: rotate(12deg) scale(1);
+  }
+}
+
+/* Product plaques: needle draws longer, gold blooms on hover/focus, press stamp */
+.hero-plaque {
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-plaque .needle-line {
+  transition:
+    height 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.group:hover .hero-plaque,
+.group:focus-within .hero-plaque {
+  border-color: rgba(232, 196, 126, 0.8);
+  box-shadow:
+    inset 0 0 0 1px rgba(232, 196, 126, 0.3),
+    0 0 24px rgba(201, 162, 94, 0.24),
+    var(--shadow-lacquer);
+  transform: translateY(-3px);
+}
+
+.group:hover .hero-plaque .needle-line,
+.group:focus-within .hero-plaque .needle-line {
+  height: 1.75rem;
+  opacity: 1;
+}
+
+.group .hero-plaque:active {
+  transform: scale(0.95);
+}

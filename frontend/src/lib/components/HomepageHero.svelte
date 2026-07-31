@@ -1,6 +1,7 @@
 <script>
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import { siteMeta, productsShipped } from "$lib/data.js";
+  import { initHeroMotion } from "$lib/heroMotion.js";
 
   const name = siteMeta.name;
 
@@ -11,8 +12,11 @@
   ];
 
   let entrancePlayed = false;
+  let hankoEl = /** @type {HTMLSpanElement | undefined} */ (undefined);
+  let destroyHeroMotion = () => {};
 
   onMount(() => {
+    destroyHeroMotion = initHeroMotion();
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let played = false;
     try {
@@ -28,6 +32,16 @@
     }
     entrancePlayed = true;
   });
+
+  onDestroy(() => destroyHeroMotion());
+
+  function restampHanko() {
+    if (!hankoEl) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    hankoEl.classList.remove("hero-restamp");
+    void hankoEl.offsetWidth;
+    hankoEl.classList.add("hero-restamp");
+  }
 
   /** @param {AnimationEvent & { currentTarget: HTMLElement }} e */
   function onSettleEnd(e) {
@@ -51,10 +65,15 @@
   }
 </script>
 
-<section class="relative sumi-ground text-inktext overflow-hidden">
+<section class="relative sumi-ground text-inktext overflow-hidden" data-hero-scene>
   <div
     class="absolute inset-0 pointer-events-none"
     style="background: radial-gradient(52% 42% at 50% 0%, rgba(201,162,94,0.14) 0%, rgba(201,162,94,0.04) 55%, transparent 100%);"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="hero-lamplight absolute inset-0 pointer-events-none"
+    data-hero-lamplight
     aria-hidden="true"
   ></div>
   <div
@@ -69,20 +88,23 @@
         class="perspective-scene {entrancePlayed ? 'hero-settle' : ''}"
         onanimationend={onSettleEnd}
       >
-        <div class="medallion-float relative">
-          <h1
-            class="brush gold-text text-5xl md:text-7xl lg:text-8xl leading-tight tracking-[0.02em] {entrancePlayed ? 'hero-name-rise' : ''}"
-            onanimationend={onNameRiseEnd}
-          >
-            {name}
-          </h1>
-          <span
-            class="hanko hero-hanko inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 absolute -top-2 right-0 {entrancePlayed ? 'hero-entering' : ''}"
-            aria-hidden="true"
-            onanimationend={onHankoEnd}
-          >
-            <span class="brush text-base md:text-lg">雅</span>
-          </span>
+        <div class="medallion-float relative" onpointerdown={restampHanko}>
+          <div class="hero-name-block" data-hero-name>
+            <h1
+              class="brush gold-text text-5xl md:text-7xl lg:text-8xl leading-tight tracking-[0.02em] {entrancePlayed ? 'hero-name-rise' : ''}"
+              onanimationend={onNameRiseEnd}
+            >
+              {name}
+            </h1>
+            <span
+              bind:this={hankoEl}
+              class="hanko hero-hanko inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 absolute -top-2 right-0 {entrancePlayed ? 'hero-entering' : ''}"
+              aria-hidden="true"
+              onanimationend={onHankoEnd}
+            >
+              <span class="brush text-base md:text-lg">雅</span>
+            </span>
+          </div>
         </div>
       </div>
 
@@ -147,7 +169,7 @@
               >
                 <span class="sr-only">{product.name}</span>
                 <span
-                  class="lacquer-raised gold-edge block rounded-full px-5 py-3 md:px-6 md:py-3.5"
+                  class="hero-plaque lacquer-raised gold-edge block rounded-full px-5 py-3 md:px-6 md:py-3.5"
                   aria-hidden="true"
                 >
                   <span class="flex items-center gap-3 md:gap-4">
