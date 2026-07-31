@@ -31,7 +31,7 @@
       </div>
 
       <div class="lg:col-span-7">
-        <div class="paper-sheet rounded-sm p-6 md:p-10">
+        <div class="paper-sheet torn rounded-sm p-6 md:p-10">
           <form action="https://api.web3forms.com/submit" method="POST" class="space-y-7">
             <input type="hidden" name="access_key" value="06898dee-aec1-4979-a6a1-194c5dc8d41d" />
             <input type="hidden" name="subject" value="Message from your portfolio" />

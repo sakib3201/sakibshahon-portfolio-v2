@@ -24,10 +24,10 @@
             <div class={`ml-12 md:ml-0 ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-2"}`}>
               <article
                 class={`relative rounded-sm overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl ${
-                  entry.highlight ? "leather-sheet" : "paper-sheet"
+                  entry.highlight ? "leather-sheet" : "paper-sheet ledger-rule"
                 }`}
               >
-                <div class={`p-6 md:p-8 ${entry.highlight ? "" : "text-inkonpaper"}`}>
+                <div class={`p-6 md:p-8 pl-14 md:pl-16 ${entry.highlight ? "" : "text-inkonpaper"}`}>
                   <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
                     <div class="flex items-center gap-4">
                       <div class="w-12 h-12 flex-shrink-0 rounded-sm overflow-hidden bg-paper border border-black/30">
@@ -80,7 +80,7 @@
                     <ul class="space-y-2 mb-5">
                       {#each entry.metrics as metric (metric)}
                         <li class={`flex items-start gap-2.5 text-[0.95rem] ${entry.highlight ? "text-linen" : "text-inkonpaper/90"}`}>
-                          <span class={entry.highlight ? "text-foil" : "text-leatherdeep"} aria-hidden="true">✦</span>
+                          <svg class={`diamond mt-1.5 ${entry.highlight ? "text-foil" : "text-leatherdeep"}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
                           <span>{metric}</span>
                         </li>
                       {/each}

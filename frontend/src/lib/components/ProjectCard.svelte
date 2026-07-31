@@ -53,7 +53,7 @@
         <ul class="space-y-2 mb-5">
           {#each project.highlights as highlight (highlight)}
             <li class="flex items-start gap-2.5 text-[0.95rem] text-inkonpaper/90">
-              <span class="text-leatherdeep mt-0.5 flex-shrink-0" aria-hidden="true">✦</span>
+              <svg class="diamond text-leatherdeep mt-1.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
               <span>{highlight}</span>
             </li>
           {/each}

@@ -50,7 +50,7 @@
   {@html personLdScript}
 </svelte:head>
 
-<main id="main-content" tabindex="-1" class="bg-gray-900">
+<main id="main-content" tabindex="-1" class="bg-ink">
   <Navbar />
   <HomepageHero />
   <ImpactStats />

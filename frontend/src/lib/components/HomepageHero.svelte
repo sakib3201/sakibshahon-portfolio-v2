@@ -25,35 +25,35 @@
     aria-hidden="true"
   ></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-0">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 md:pt-20 pb-0">
     <div class="text-center">
-      <h1 class="gilded serif font-semibold leading-tight text-5xl md:text-7xl lg:text-[5.5rem] tracking-[-0.02em]">
+      <h1 class="gilded serif font-semibold leading-tight text-4xl md:text-6xl lg:text-[5rem] tracking-[-0.02em]">
         {name}
       </h1>
 
-      <p class="marginalia text-foil mt-5">{siteMeta.role}</p>
+      <p class="marginalia text-foil mt-4">{siteMeta.role}</p>
 
       <div
-        class="paper-sheet inline-block mt-7 px-6 py-3 rounded-sm rotate-[-0.6deg]"
+        class="paper-sheet torn inline-block mt-6 px-5 py-2.5 rotate-[-0.6deg]"
         aria-label={siteMeta.tagline}
       >
-        <p class="serif text-xl md:text-2xl text-inkonpaper">
+        <p class="serif text-lg md:text-2xl text-inkonpaper">
           The <span class="font-semibold text-leatherdeep">“CAN DO”</span> Software Artisan
         </p>
       </div>
 
-      <p class="max-w-2xl mx-auto mt-6 text-lg md:text-xl text-linen leading-relaxed">
+      <p class="max-w-2xl mx-auto mt-5 text-lg md:text-xl text-linen leading-relaxed">
         I ship AI-powered WordPress and SaaS products — including systems behind 20k+ plugin installs — and I can build
         yours.
       </p>
 
-      <div class="flex flex-wrap justify-center gap-4 md:gap-5 mt-10 pb-16">
+      <div class="flex flex-wrap justify-center gap-4 md:gap-5 mt-8 pb-10">
         {#each ctas as item (item.href)}
           <a
             href={item.href}
             target={item.external ? "_blank" : "_self"}
             rel={item.external ? "noopener noreferrer" : ""}
-            class={`inline-flex items-center gap-2 px-7 py-3 serif text-lg transition-all duration-300 ${
+            class={`inline-flex items-center gap-2 px-6 py-2.5 serif text-lg transition-all duration-300 ${
               item.text === "View the shelf"
                 ? "ribbon text-foilbright hover:text-white hover:-translate-y-0.5 hover:shadow-xl"
                 : "border border-thread/50 text-linen hover:text-foilbright hover:border-foil/80 hover:-translate-y-0.5"
@@ -70,11 +70,11 @@
       </div>
     </div>
 
-    <div class="wood-shelf rounded-t-sm px-4 sm:px-8 pt-6 pb-1">
-      <div class="stitch-t mb-5 opacity-60" aria-hidden="true"></div>
+    <div class="wood-shelf rounded-t-sm px-4 sm:px-8 pt-5 pb-1">
+      <div class="stitch-t mb-4 opacity-60" aria-hidden="true"></div>
       <p class="marginalia text-foil/80 text-center mb-4">On the shelf — shipped and running</p>
       <ul
-        class="flex flex-wrap justify-center items-end gap-4 md:gap-5"
+        class="flex flex-wrap justify-center items-end gap-3 md:gap-4"
         aria-label="Products on the shelf"
       >
         {#each productsShipped as product, i (product.name)}

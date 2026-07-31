@@ -45,7 +45,7 @@
             <ul class="space-y-2.5 pt-4 border-t border-thread/25">
               {#each skill.items as item (item)}
                 <li class="flex items-start gap-2.5 text-sm text-linen leading-snug">
-                  <span class="text-foil mt-0.5 flex-shrink-0" aria-hidden="true">✦</span>
+                  <svg class="diamond text-foil mt-1.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
                   <span>{item}</span>
                 </li>
               {/each}
