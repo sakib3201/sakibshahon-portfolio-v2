@@ -5,8 +5,8 @@ colors:
   sumi: "#0f0d0a"
   lacquer: "#171310"
   lacquerdeep: "#0a0806"
-  paper: "#e9e2d2"
-  paperdim: "#d8cfbb"
+  paper: "#201a12"
+  paperdim: "#18130c"
   inktext: "#f0ead9"
   inktextdim: "#a99f8d"
   gold: "#c9a25e"
@@ -14,7 +14,7 @@ colors:
   golddeep: "#8d6d3a"
   cinnabar: "#c02818"
   neon: "#ff3d6e"
-  inkonpaper: "#241c12"
+  inkonpaper: "#ece5d3"
   blacktint: "#000000"
 typography:
   scale:
@@ -76,7 +76,7 @@ components:
     padding: "12px 24px"
   hanko-seal:
     backgroundColor: "{colors.cinnabar}"
-    textColor: "{colors.paper}"
+    textColor: "{colors.inktext}"
     rounded: "{rounded.sm}"
   lacquer-panel:
     backgroundColor: "gradient(165deg, #1d1813, #14100c, #0e0b08)"
@@ -96,22 +96,22 @@ components:
 
 The portfolio is a yakuza boss's back piece (irezumi), read at night. Work already delivered is ink already worn: six product panels run down the spine, impact is set in gold leaf, the career reads as the family ledger, and contact is an audience with the boss. The visitor reads the back piece panel by panel — each product a scene inked with its true figures in gold, the ledger carrying the numbers — and believes the engineer who ships AI into real products before reading a single claim.
 
-The system refuses the dark-hero-gradient dev-portfolio default and its code-motif hero. Surfaces are physical: sumi-black lacquer over skin-tone paper, gold-leaf engraving, cinnabar hanko seals, needle linework, and a single neon rim light after dark. Depth is built from layered material gradients and black-based cast shadows; the only glows in the world are the gold-leaf sheen, the cinnabar stamp's bloom, and the neon rim at the edges of interactive panels after dark.
+The system refuses the dark-hero-gradient dev-portfolio default and its code-motif hero. Surfaces are physical: sumi-black lacquer under golden-black paper sheets, gold-leaf engraving, cinnabar hanko seals, needle linework, and a single neon rim light after dark. Depth is built from layered material gradients and black-based cast shadows; the only glows in the world are the gold-leaf sheen, the cinnabar stamp's bloom, and the neon rim at the edges of interactive panels after dark.
 
 Voice is typographic first, but the brushes are Japanese rather than serif: Yuji Syuku brush calligraphy carries identity — the name, the "CAN DO" motto, vertical panel titles, the seal glyph — Zen Kaku Gothic New carries argument and body text, and Red Hat Mono is confined to marginalia, the small uppercase annotations that frame each section ("Inked on the back piece — shipped and running", "N°01" panel numbers, ledger captions). Dark, physical ink; restrained neon.
 
 **Key Characteristics:**
 - A back piece, not a dashboard: six ink panels down the spine, gold-leaf impact engravings, a family ledger of ruled paper, contact as an audience with the boss. No gradient-hero, no code motif.
-- Sumi-black lacquer by default with skin-tone `paper` sheets and cream `inktext` type; gold leaf for names and true figures; cinnabar only for seals.
+- Sumi-black lacquer by default with golden-black `paper` sheets and cream `inkonpaper` type; gold leaf for names and true figures; cinnabar only for seals.
 - Brush calligraphy (Yuji Syuku) for identity, Zen Kaku Gothic New for text, Red Hat Mono for marginalia — brush argues, sans explains, mono annotates.
-- Material surfaces: lacquer panels, gold plates, ruled skin sheets, all finished with layered gradients and the matching black-based shadow.
+- Material surfaces: lacquer panels, gold plates, ruled golden-black sheets, all finished with layered gradients and the matching black-based shadow.
 - Gold is engraved (inset highlights, `shadow-gold`), never glassy; the only glow permitted is the gold-leaf sheen, the hanko bloom, and the neon rim at 40-60% of its intensity.
 - Depth is both material and dimensional: 3D perspective scenes (`perspective-scene`, `depth-card`), mouse tilt, and scroll-linked parallax — the back piece turns as you read it.
 - Cards lift on hover with a translate and a deeper shadow — panels lean toward the reader.
 
 ## Colors
 
-One dark, physical ink family on warm skin paper: sumi-black lacquer grounds, cream paper voices, gold-leaf accents, one cinnabar seal red, and one neon rim light. The palette lives in warm black, warm cream, and brass gold — no cool grays, no blues, no pure whites — with a single restrained pink-red glow for the rim after dark.
+One dark, physical ink family on golden-black sheets: sumi-black lacquer grounds, cream ink voices on dark paper, gold-leaf accents, one cinnabar seal red, and one neon rim light. The palette lives in warm black, warm cream, and brass gold — no cool grays, no blues, no pure whites — with a single restrained pink-red glow for the rim after dark.
 
 ### Primary
 - **Sumi** (#0f0d0a): The page ground — the black ink of the back piece itself. `body` background, section base, `sumi-ground` with a faint gold radial wash from the top.
@@ -124,9 +124,9 @@ One dark, physical ink family on warm skin paper: sumi-black lacquer grounds, cr
 - **Neon** (#ff3d6e): The rim light after dark — borders and glows at panel rims only (see The Neon Rim Rule). Never text.
 
 ### Neutral
-- **Paper** (#e9e2d2): Skin-tone sheet — `skin-sheet` cards, timeline pages, portrait mat. With alpha, image-frame borders.
-- **Pale Paper** (#d8cfbb): Dim paper — secondary sheet tones, mat edges.
-- **Ink on Paper** (#241c12): All text on paper sheets — dark brown ink, never pure black.
+- **Paper** (#201a12): Golden-black sheet — `skin-sheet` cards, timeline pages, portrait mat. With alpha, image-frame borders. Never a bright paper; the sheet is dark ink warmed by gold.
+- **Dim Paper** (#18130c): The deeper sheet tone — mat edges, secondary sheet stops.
+- **Ink on Paper** (#ece5d3): All text on paper sheets — warm cream ink on the dark sheet, never pure white.
 - **Ink Text** (#f0ead9): Body type on dark — cream, slightly warmer than pure white.
 - **Dim Ink Text** (#a99f8d): Tertiary text on dark — lede dims, captions, footer notes.
 - **Shadow Black** (#000000): The shadow tint. Pure black only at alpha (0.38-0.8) inside the `lacquer`, `deep`, and `gold` shadow tokens — never a surface, never text.
@@ -137,8 +137,8 @@ The gradient stops and borders below are deliberate in-family shades of the toke
 - **Lacquer borders**: #2b241c (`lacquer-panel`), #362c20 (`lacquer-raised`).
 - **Gold material stops**: #6d5228, #57401f (gold gradient mids), #3a2c13 (gold plate/medallion border), #3c280a (gold inset shadow tint).
 - **Gold-leaf highlights**: #f5e3b0 (shimmer peak), #fff0cd / #ffebbe (text-shadow and inset highlights at 0.25-0.35 alpha).
-- **Warm whites** (highlight washes at 0.35-0.45 alpha): #fffaeb, #fffae6 (skin-sheet top wash, gold-plate sweep).
-- **Paper border**: #b7ac92 (skin-sheet rule).
+- **Gold washes** (highlight washes at 0.12-0.45 alpha): rgba(201,162,94,0.12) (skin-sheet top wash), #fffaeb, #fffae6 (gold-plate sweep).
+- **Sheet border**: #3a2c13 (skin-sheet gold-deep rule).
 - **Neon dark rim**: #3a2030 (idle `neon-rim` border, before the light comes on).
 
 ### Named Rules
@@ -148,7 +148,7 @@ The gradient stops and borders below are deliberate in-family shades of the toke
 
 **The Gold Rule.** One gold for one purpose: `gold` (#c9a25e) is the material — borders, needle lines, washes, diamond marks; `goldbright` (#e8c47e) is the voice — gilded text and numerals on dark; `golddeep` (#8d6d3a) is the engraving depth — gradient stops only. Never swap a voice for a material: text is never `gold`, and an engraved border is never `goldbright`.
 
-**The Ink-Surface Rule.** Gold belongs on dark; ink belongs on paper. Gilded text appears only on lacquer or sumi; paper sheets carry `inkonpaper` text with gold only in engraved plates set into the sheet. When the surface changes, the accent family changes with it.
+**The Ink-Surface Rule.** Gold belongs on dark; ink belongs on the sheet. Gilded text appears only on lacquer or sumi; `skin-sheet` surfaces carry `inkonpaper` text with gold only in engraved plates set into the sheet. When the surface changes, the accent family changes with it.
 
 ## Typography
 
@@ -220,19 +220,19 @@ The form language is the tattooist's: near-square corners on panels and plates, 
 - **Lacquer panel** (nav, footer, panels): `lacquer-panel` — 165deg lacquer gradient with a `#2b241c` border and the `lacquer` shadow. Hover lifts with `lacquer-raised` treatment (`#362c20` border, `deep` shadow).
 - **Lacquer raised** (products, impact, awards, service): `lacquer-raised` — the raised lacquer finish with the `deep` shadow; interactive panels add `neon-rim` so the rim light comes on at hover.
 - **Gold plate** (impact stats, awards): `gold-plate` gradient with `#3a2c13` border, `gold` shadow, `marginalia` captions on `paper/80`. Stat numerals are `goldbright` Yuji Syuku with a gilded highlight shadow and a `gold/30` hairline divider beneath.
-- **Skin sheet** (projects, ledger rows, YouTube cards, notes): `skin-sheet` — `paper` with a 140px-pitch noise texture, a top highlight wash, 30px-pitch ruled lines at 4% ink alpha, a `#b7ac92` border, and the `deep` shadow. Titles `inkonpaper`; an inset `paper/30` frame sits inside image wells. Hover lifts with `shadow-deep` and, on interactive sheets, the neon rim.
+- **Skin sheet** (projects, ledger rows, YouTube cards, notes): `skin-sheet` — golden-black `paper` with a 140px-pitch noise texture, a gold top wash, 30px-pitch ruled lines at 7% gold alpha, a `#3a2c13` border, and the `deep` shadow. Titles `inkonpaper` (cream); an inset `paper/30` frame sits inside image wells. Hover lifts with `shadow-deep` and, on interactive sheets, the neon rim.
 - **Medallion** (skills, awards, monograms): `medallion` — radial gold gradient (`#e8c47e → #c9a25e → #6d5228 → #57401f`), `#3a2c13` border, inset gold light and drop. The hero's medallion floats (`medallion-float`, 9s ease-in-out).
 
 ### Inputs / Fields
-- **Style:** The audience form sits on a `skin-sheet`. Fields are ruled lines, not boxes: transparent background, 1.125rem ink text, only a bottom border (`border-b inkonpaper/30`); placeholders at 40% ink.
-- **Focus:** Bottom rule deepens to `inkonpaper/70`. The global `goldbright` focus outline applies.
+- **Style:** The audience form sits on a `skin-sheet`. Fields are ruled lines, not boxes: transparent background, 1.125rem ink text, only a bottom border (`border-b inkonpaper/30`); placeholders at 50% ink.
+- **Focus:** Bottom rule deepens to `inkonpaper/80`. The global `goldbright` focus outline applies.
 
 ### Navigation
 - **Style:** A `lacquer-panel` band with a `needle-line-h` seam at the top and a bottom border. Brand is a `medallion` (44px, `goldbright` Yuji Syuku glyph) beside the name at sm+. Links are Zen Kaku Gothic New with a dashed gold needle underline that scales in from the left on hover (0.3s `cubic-bezier(0.22,1,0.36,1)`); text warms to `goldbright`. When scrolled, the band gains a shadow.
 - **Mobile:** A full-screen `lacquer` overlay with rows separated by needle hairlines; external rows are `goldbright`, internal `inktext`. Escape closes it; body scroll locks while open.
 
 ### Signature Components
-- **The Back Piece (hero):** The first viewport is the back piece turning in 3D: the name as the central gold medallion (perspective-settle, then rise), the six product panels inked along the spine (`lacquer-raised` rounded-top blocks, vertical Yuji Syuku titles, N° numbers, needle ticks), the "CAN DO" motto band with a rotating shimmer on "CAN DO", and impact figures as gold-leaf engravings. The cinnabar hanko stamps itself in from the top-right of the medallion (`hero-hanko-stamp`, with an ink bloom after). Entrance plays once per session (`sessionStorage`), skipped entirely under `prefers-reduced-motion`.
+- **The Back Piece (hero):** The first viewport is the back piece turning in 3D: the name as the central gold medallion (perspective-settle, then rise), the six product plaques inked along the spine (`lacquer-raised` gold-edge pills with horizontal Yuji Syuku titles, N° numbers, needle ticks), the "CAN DO" motto band with a rotating shimmer on "CAN DO", and impact figures as gold-leaf engravings. The cinnabar hanko stamps itself in from the top-right of the medallion (`hero-hanko-stamp`, with an ink bloom after). Entrance plays once per session (`sessionStorage`), skipped entirely under `prefers-reduced-motion`.
 - **The Family Ledger (timeline):** Entries alternate around a center needle-line spine with gold medallion dots. The current role is a `skin-sheet` page with `inkonpaper` text and a cinnabar seal badge; earlier roles are ruled `skin-sheet` pages.
 - **The Audience (contact):** A `skin-sheet` letter — the form as ruled lines, a portrait in a double frame (lacquer border, paper mat), and the gold-plate "Request an audience" action. About's portrait repeats the frame with a slight rotation.
 - **Diamond lists:** 0.6rem outline diamonds (inline SVG, `stroke-width: 1.2`) mark every metric and highlight row — `gold` on dark, `inkonpaper` on paper.

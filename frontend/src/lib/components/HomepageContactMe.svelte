@@ -55,7 +55,7 @@
                 name="email"
                 placeholder="your.email@example.com"
                 required
-                class="w-full bg-transparent text-inkonpaper text-lg py-2 rounded-none border border-t-0 border-l-0 border-r-0 border-b border-inkonpaper/30 placeholder:text-inkonpaper/40 focus:border-b-inkonpaper/70"
+                class="w-full bg-transparent text-inkonpaper text-lg py-2 rounded-none border border-t-0 border-l-0 border-r-0 border-b border-inkonpaper/30 placeholder:text-inkonpaper/50 focus:border-b-inkonpaper/80"
               />
             </div>
 
@@ -67,7 +67,7 @@
                 rows="6"
                 placeholder="Tell me about your project or just say hello!"
                 required
-                class="w-full bg-transparent text-inkonpaper text-lg py-2 px-0 resize-none rounded-none border border-t-0 border-l-0 border-r-0 border-b border-inkonpaper/30 placeholder:text-inkonpaper/40 focus:border-b-inkonpaper/70"
+                class="w-full bg-transparent text-inkonpaper text-lg py-2 px-0 resize-none rounded-none border border-t-0 border-l-0 border-r-0 border-b border-inkonpaper/30 placeholder:text-inkonpaper/50 focus:border-b-inkonpaper/80"
               ></textarea>
             </div>
 
