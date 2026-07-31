@@ -6,7 +6,6 @@ export function initMotion() {
   const cleanup = [];
 
   if (!reduced && 'IntersectionObserver' in window) {
-    /** @type {HTMLElement[]} */
     const revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,9 +28,7 @@ export function initMotion() {
   }
 
   if (!reduced && window.matchMedia('(pointer: fine)').matches) {
-    /** @type {HTMLElement[]} */
-    const tiltEls = Array.from(document.querySelectorAll('[data-tilt]'));
-
+    const tiltEls = /** @type {Array<HTMLElement>} */ (Array.from(document.querySelectorAll('[data-tilt]')));
     /** @param {PointerEvent} e */
     const onMove = (e) => {
       const el = /** @type {HTMLElement} */ (e.currentTarget);
@@ -41,13 +38,11 @@ export function initMotion() {
       const max = Number(el.dataset.tiltMax ?? 10);
       el.style.transform = `perspective(1000px) rotateX(${-py * max}deg) rotateY(${px * max}deg) translateZ(0)`;
     };
-
     /** @param {PointerEvent} e */
     const onLeave = (e) => {
       const el = /** @type {HTMLElement} */ (e.currentTarget);
       el.style.transform = '';
     };
-
     tiltEls.forEach((el) => {
       el.addEventListener('pointermove', onMove);
       el.addEventListener('pointerleave', onLeave);
