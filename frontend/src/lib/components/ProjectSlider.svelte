@@ -9,7 +9,9 @@
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">Featured projects</h2>
-      <p class="marginalia text-inktextdim mt-5">Two works I built and keep referring back to</p>
+      <p class="marginalia text-inktextdim mt-5">
+        Two builds, end to end — race analytics used by runners, and the platform behind a national research conference
+      </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">

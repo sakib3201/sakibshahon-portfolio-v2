@@ -34,9 +34,6 @@
     aria-hidden="true"
   ></div>
 
-  <!-- Navbar spacing -->
-  <div class="h-16 md:h-20"></div>
-
   <!-- Page content -->
   <div class="relative z-10">
     <Navbar />

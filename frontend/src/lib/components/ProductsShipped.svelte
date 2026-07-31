@@ -35,8 +35,8 @@
       </h2>
       <div class="skin-sheet inline-block mt-6 px-5 py-2 rounded-sm rotate-[0.4deg]">
         <p class="brush text-inkonpaper text-base md:text-lg">
-          Work at Arraytics across SaaS and WordPress — booking, events, restaurants, and AI. Metrics below are from my
-          contributions unless labeled as product context.
+          Shipped at Arraytics across SaaS and WordPress — booking, events, restaurants, and AI. Every metric below
+          comes from my own contributions unless labeled as product context.
         </p>
       </div>
     </div>

@@ -5,7 +5,7 @@
   const name = siteMeta.name;
 
   const ctas = [
-    { href: "#products", text: "See the ink" },
+    { href: "#products", text: "See the shipped work" },
     { href: siteMeta.resumeUrl, text: "Download résumé", external: true },
     { href: "#contact", text: "Request an audience" }
   ];
@@ -98,18 +98,18 @@
       </div>
 
       <p class="max-w-2xl mx-auto mt-5 text-lg md:text-xl text-inktextdim leading-relaxed">
-        I ship AI-powered WordPress and SaaS products — including systems behind 20k+ plugin installs — and I can build
-        yours.
+        I build AI-powered WordPress and SaaS products. The same engineering behind 20k+ plugin installs
+        and ~35% lower AI costs — now available for your project.
       </p>
 
       <div class="flex flex-wrap justify-center gap-4 md:gap-5 mt-8 pb-10">
-        {#each ctas as item (item.href)}
+            {#each ctas as item (item.href)}
           <a
             href={item.href}
             target={item.external ? "_blank" : "_self"}
             rel={item.external ? "noopener noreferrer" : ""}
             class={`inline-flex items-center gap-2 px-6 py-2.5 brush text-lg transition-all duration-300 ${
-              item.text === "See the ink"
+              item.text === "See the shipped work"
                 ? "gold-plate text-sumi hover:text-black hover:-translate-y-0.5 hover:shadow-xl"
                 : "gold-edge text-goldbright hover:text-white hover:-translate-y-0.5 neon-rim"
             }`}

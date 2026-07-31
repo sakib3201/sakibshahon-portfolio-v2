@@ -60,7 +60,7 @@
 
 <nav
   aria-label="Main navigation"
-  class={`fixed w-full z-50 transition-all duration-300 lacquer-panel border-b border-gold/20 ${
+  class={`fixed top-0 w-full z-50 transition-all duration-300 lacquer-panel border-b border-gold/20 ${
     scrolled ? 'shadow-deep' : ''
   }`}
   in:fade={{ duration: 300 }}

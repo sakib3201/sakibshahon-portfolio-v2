@@ -10,7 +10,7 @@
   <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16" data-reveal>
       <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">The ledger</h2>
-      <p class="marginalia text-inktextdim mt-5">Four years of shipped work, inked in order</p>
+      <p class="marginalia text-inktextdim mt-5">Three companies, four years of shipped work — read in order</p>
     </div>
 
     <div class="relative">
