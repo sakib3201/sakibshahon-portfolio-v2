@@ -168,21 +168,21 @@ export const skills = [
     icon: 'chart',
     blurb: 'Pipelines, scrapers, and visuals that turn data into decisions.',
     items: [
-      'Pandas, NumPy, SQL analytics',
-      'Seaborn & Matplotlib',
-      'Selenium & Beautiful Soup',
-      'Multi-threaded pipelines (Data Sapience: −34% server cost)'
+      'SQL analytics on Postgres, MySQL, MongoDB',
+      'Automated web scrapers and data pipelines',
+      'Data visualization for products and research',
+      'Multi-threaded pipelines — −34% server cost (Data Sapience)'
     ]
   },
   {
     title: 'Machine Learning',
     icon: 'brain',
-    blurb: 'Applied ML for products and research — from models to deployment.',
+    blurb: 'Applied ML inside shipped products — race analytics, training plans, and research software.',
     items: [
-      'PyTorch, TensorFlow / Keras, Scikit-learn',
-      'Forecasting and classical ML',
-      'NLP toolkits (NLTK, spaCy)',
-      'Model-serving minded CI/CD and Docker'
+      'Python ML for training plans and race analytics (Find My Race Pace)',
+      'Machine learning & data analytics software (Data Sapience Lab)',
+      'ML-driven features for runners and researchers',
+      'From model to product — shipped, not just trained'
     ]
   }
 ];
