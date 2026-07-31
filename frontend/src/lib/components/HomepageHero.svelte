@@ -14,6 +14,7 @@
   ];
 
   const stampWord = "鍛錬";
+  const punchWords = ["The", "“CAN DO”", "Software", "Artisan"];
   const stampQuotes = [
     { jp: "七転び八起き", romaji: "Nana korobi ya oki", en: "Fall seven times, rise eight" },
     { jp: "継続は力なり", romaji: "Keizoku wa chikara nari", en: "Persistence is power" },
@@ -31,6 +32,7 @@
   let stampQuoteIndex = 0;
   let hankoEl = /** @type {HTMLSpanElement | undefined} */ (undefined);
   let nameH1El = /** @type {HTMLHeadingElement | undefined} */ (undefined);
+  let punchlineEl = /** @type {HTMLButtonElement | undefined} */ (undefined);
   let destroyHeroMotion = () => {};
   /** @type {Array<{ left: string; size: string; dur: string; delay: string; sway: string; rot: string; opacity: string }>} */
   let sakuraPetals = [];
@@ -69,6 +71,10 @@
     words.forEach((word, i) => {
       entranceTimers.push(window.setTimeout(() => word.classList.add("hero-word-in"), 350 + i * 280));
     });
+    const punchWordsEls = Array.from(punchlineEl?.querySelectorAll(".punch-word") ?? []);
+    punchWordsEls.forEach((word, i) => {
+      entranceTimers.push(window.setTimeout(() => word.classList.add("punch-word-in"), 3700 + i * 220));
+    });
     entranceTimers.push(
       window.setTimeout(() => {
         entranceDone = true;
@@ -87,6 +93,14 @@
     hankoEl.classList.remove("hero-restamp");
     void hankoEl.offsetWidth;
     hankoEl.classList.add("hero-restamp");
+  }
+
+  function restampPunchline() {
+    if (!punchlineEl) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    punchlineEl.classList.remove("punch-restamp");
+    void punchlineEl.offsetWidth;
+    punchlineEl.classList.add("punch-restamp");
   }
 
   function createSakura() {
@@ -202,14 +216,22 @@
 
       <p class="marginalia text-goldbright mt-4">{siteMeta.role}</p>
 
-      <div
-        class="motto-band inline-block mt-6 px-7 py-2.5 rotate-[-0.6deg] neon-rim"
+      <button
+        type="button"
+        bind:this={punchlineEl}
+        class="hero-punchline relative motto-band inline-block mt-6 px-7 py-2.5 rotate-[-0.6deg] neon-rim cursor-pointer text-center {entrancePlayed ? 'punch-entering' : ''}"
         aria-label={siteMeta.tagline}
+        onclick={restampPunchline}
       >
+        <span class="punch-bloom" aria-hidden="true"></span>
+        <span class="punch-ring" aria-hidden="true"></span>
+        <span class="punch-ring-big" aria-hidden="true"></span>
         <p class="brush text-lg md:text-2xl gold-text">
-          The <span class="shimmer">“CAN DO”</span> Software Artisan
+          {#each punchWords as word, i (i)}
+            <span class="punch-word {i === 1 ? 'punch-strike' : ''}">{word}</span>{i < punchWords.length - 1 ? ' ' : ''}
+          {/each}
         </p>
-      </div>
+      </button>
 
       <p class="max-w-2xl mx-auto mt-5 text-lg md:text-xl text-inktextdim leading-relaxed">
         I build AI-powered WordPress and SaaS products. The same engineering behind 20k+ plugin installs

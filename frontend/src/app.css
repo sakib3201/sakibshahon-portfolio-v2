@@ -533,6 +533,158 @@ body {
   }
 }
 
+/* The punchline is an impression, not a decoration. The motto band slaps
+   down like a seal being pressed into paper — drop, compress, settle —
+   its words ink in blur-to-sharp, and the strike releases a gold bloom
+   with two ink rings radiating from the center. Press the band to
+   re-strike: the same impression, on demand. */
+.hero-punchline.punch-entering {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: hero-punch-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 3.55s both;
+}
+
+.hero-punchline.punch-entering .punch-word {
+  opacity: 0;
+  filter: blur(8px);
+}
+
+.hero-punchline.punch-entering .punch-word.punch-word-in {
+  opacity: 1;
+  filter: blur(0);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease;
+}
+
+.hero-punchline .punch-strike {
+  color: #f5e3b0;
+  text-shadow: 0 0 14px rgba(232, 196, 126, 0.45);
+}
+
+.hero-punchline:focus-visible {
+  outline: 2px solid var(--color-goldbright);
+  outline-offset: 3px;
+}
+
+.hero-punchline .punch-bloom,
+.hero-punchline .punch-ring,
+.hero-punchline .punch-ring-big {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-punchline .punch-bloom {
+  width: 120%;
+  height: 300%;
+  background: radial-gradient(
+    circle,
+    rgba(201, 162, 94, 0.5) 0%,
+    rgba(201, 162, 94, 0.14) 40%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%) scale(0.2);
+}
+
+.hero-punchline .punch-ring {
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(201, 162, 94, 0.65);
+}
+
+.hero-punchline .punch-ring-big {
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(201, 162, 94, 0.4);
+}
+
+.hero-punchline.punch-entering .punch-bloom {
+  animation: hero-punch-bloom 0.9s ease-out 3.85s both;
+}
+
+.hero-punchline.punch-entering .punch-ring {
+  animation: hero-punch-ring 1.1s ease-out 4.15s both;
+}
+
+.hero-punchline.punch-entering .punch-ring-big {
+  animation: hero-punch-ring 1.3s ease-out 4.45s both;
+}
+
+.hero-punchline.punch-restamp {
+  animation: hero-punch-restamp 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-punchline.punch-restamp .punch-bloom {
+  animation: hero-punch-bloom 0.9s ease-out 0.05s both;
+}
+
+.hero-punchline.punch-restamp .punch-ring {
+  animation: hero-punch-ring 1.1s ease-out 0.1s both;
+}
+
+.hero-punchline.punch-restamp .punch-ring-big {
+  animation: hero-punch-ring 1.3s ease-out 0.35s both;
+}
+
+@keyframes hero-punch-in {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(1.08);
+  }
+  48% {
+    opacity: 1;
+    transform: translateY(0) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-punch-restamp {
+  0% {
+    transform: translateY(0) scale(1.06);
+  }
+  55% {
+    transform: translateY(0) scale(0.95);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-punch-bloom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  40% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes hero-punch-ring {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  60% {
+    opacity: 0.35;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(5.5);
+  }
+}
+
 /* The seal opens its proverb: hovering or pressing the stamp unrolls a paper
    strip from the seal — scaleY from the seal corner, cinnabar thread, ink
    bloom. A generous circular hit zone (::before) surrounds the small seal;
