@@ -12,11 +12,11 @@
   };
 </script>
 
-<article class="paper-sheet rounded-sm overflow-hidden transition-all duration-500 hover:shadow-2xl group">
+<article class="lacquer-raised gold-edge neon-rim group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-deep">
   <div class="grid sm:grid-cols-[10rem_1fr]">
     <div class="relative">
       <div class="p-4 h-full">
-        <div class="relative h-32 sm:h-full min-h-32 overflow-hidden bg-woodlight border border-black/30">
+        <div class="relative h-32 sm:h-full min-h-32 overflow-hidden rounded-sm bg-sumi border border-gold/30">
           {#if project.imageSrc && !imageFailed}
             <img
               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -26,26 +26,25 @@
               onerror={handleImageError}
             />
           {:else}
-            <div class="flex items-center justify-center h-full p-6 bg-wood">
+            <div class="flex items-center justify-center h-full p-6 bg-sumi">
               <span
-                class="plate inline-flex items-center justify-center w-16 h-16 rounded-full serif text-2xl font-semibold text-foilbright"
+                class="medallion inline-flex items-center justify-center w-16 h-16 brush text-2xl text-sumi"
                 aria-hidden="true"
               >
                 {project.title.slice(0, 1)}
               </span>
             </div>
           {/if}
-          <div class="absolute inset-2.5 border border-paper/30 pointer-events-none" aria-hidden="true"></div>
         </div>
       </div>
     </div>
 
     <div class="p-5 md:p-6">
-      <h3 class="serif font-semibold text-inkonpaper leading-tight mb-2 text-lg md:text-xl">
+      <h3 class="brush gold-text leading-tight mb-2 text-lg md:text-xl">
         {project.title}
       </h3>
 
-      <p class="serif text-inkonpaper/80 leading-relaxed text-[0.95rem]">
+      <p class="text-inktextdim leading-relaxed text-[0.95rem]">
         {project.description}
       </p>
 
@@ -55,7 +54,7 @@
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            class="p-2 border border-inkonpaper/30 rounded-sm text-inkonpaper hover:bg-inkonpaper hover:text-paper transition-colors duration-200"
+            class="p-2 border border-gold/40 rounded-sm text-inktextdim hover:text-goldbright hover:border-gold/70 transition-colors duration-200"
             aria-label="View {project.title} on GitHub"
           >
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -69,7 +68,7 @@
             href={project.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            class="p-2 border border-inkonpaper/30 rounded-sm text-inkonpaper hover:bg-inkonpaper hover:text-paper transition-colors duration-200"
+            class="p-2 border border-gold/40 rounded-sm text-inktextdim hover:text-goldbright hover:border-gold/70 transition-colors duration-200"
             aria-label="Visit {project.title} live"
           >
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
@@ -83,7 +82,7 @@
             href={project.youtubeLink}
             target="_blank"
             rel="noopener noreferrer"
-            class="p-2 border border-inkonpaper/30 rounded-sm text-inkonpaper hover:bg-inkonpaper hover:text-paper transition-colors duration-200"
+            class="p-2 border border-gold/40 rounded-sm text-inktextdim hover:text-goldbright hover:border-gold/70 transition-colors duration-200"
             aria-label="Watch {project.title} on YouTube"
           >
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
