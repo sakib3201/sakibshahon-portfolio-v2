@@ -130,7 +130,7 @@
               <span class="hero-quote skin-sheet rounded-sm px-4 py-3" aria-hidden="true">
                 <span class="block brush gold-text text-base md:text-lg">{stampQuote.jp}</span>
                 <span class="mt-1.5 block needle-line-h opacity-50" aria-hidden="true"></span>
-                <span class="mt-2 block marginalia text-inkonpaper normal-case whitespace-nowrap">{stampQuote.en}</span>
+                <span class="mt-2 block marginalia text-inkonpaper normal-case">{stampQuote.en}</span>
               </span>
             </button>
           </div>

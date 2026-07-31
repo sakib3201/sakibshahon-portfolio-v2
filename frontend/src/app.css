@@ -529,11 +529,21 @@ body {
 }
 
 /* The seal opens its proverb: hovering or pressing the stamp unrolls a paper
-   strip from the seal — scaleY from the stamp's center, cinnabar thread,
-   ink bloom. Reduced motion collapses the unroll to a plain reveal. */
+   strip from the seal — scaleY from the seal corner, cinnabar thread, ink
+   bloom. A generous circular hit zone (::before) surrounds the small seal;
+   the strip is right-anchored to the seal and clamped to the viewport so it
+   never overflows the screen edge. Reduced motion collapses the unroll to a
+   plain reveal. */
 .hero-stamp-group {
   appearance: none;
   z-index: 40;
+}
+
+.hero-stamp-group::before {
+  content: '';
+  position: absolute;
+  inset: -3rem;
+  border-radius: 9999px;
 }
 
 .hero-stamp-group:focus-visible {
@@ -555,9 +565,10 @@ body {
 .hero-quote {
   position: absolute;
   top: calc(100% + 0.65rem);
-  left: 50%;
-  transform: translateX(-50%) scaleY(0);
-  transform-origin: 50% 0%;
+  right: 0;
+  max-width: min(20rem, calc(100vw - 2.5rem));
+  transform: scaleY(0);
+  transform-origin: 100% 0%;
   opacity: 0;
   transition:
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
@@ -567,7 +578,7 @@ body {
 .hero-quote::before {
   content: '';
   position: absolute;
-  left: 50%;
+  right: 1.5rem;
   top: -0.65rem;
   width: 1px;
   height: 0.65rem;
@@ -580,7 +591,7 @@ body {
 .hero-stamp-group:active .hero-quote,
 .hero-stamp-group.is-quote-open .hero-quote {
   opacity: 1;
-  transform: translateX(-50%) scaleY(1);
+  transform: scaleY(1);
 }
 
 .hero-stamp-group:hover::after,
