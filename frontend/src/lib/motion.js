@@ -28,7 +28,9 @@ export function initMotion() {
   }
 
   if (!reduced && window.matchMedia('(pointer: fine)').matches) {
-    const tiltEls = /** @type {Array<HTMLElement>} */ (Array.from(document.querySelectorAll('[data-tilt]')));
+    const tiltEls = /** @type {Array<HTMLElement>} */ (
+      Array.from(document.querySelectorAll('[data-tilt]'))
+    );
     /** @param {PointerEvent} e */
     const onMove = (e) => {
       const el = /** @type {HTMLElement} */ (e.currentTarget);

@@ -20,19 +20,19 @@
 </script>
 
 <footer class="relative border-t border-black/60">
-  <section class="leather-band relative">
-    <div class="stitch-t absolute inset-x-0 top-0" aria-hidden="true"></div>
+  <section class="lacquer-panel relative">
+    <div class="needle-line-h absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
       <div class="flex flex-col lg:flex-row items-start justify-between gap-12">
         <div class="max-w-sm space-y-4">
           <div class="flex items-center gap-4">
-            <span class="plate w-12 h-12 rounded-full flex items-center justify-center serif font-semibold text-foilbright text-lg" aria-hidden="true">
+            <span class="medallion w-12 h-12 flex items-center justify-center brush text-lg text-sumi" aria-hidden="true">
               {siteMeta.monogram}
             </span>
             <div>
-              <h2 class="embossed serif font-semibold text-2xl">{siteMeta.name}</h2>
-              <p class="marginalia text-linen mt-1">{siteMeta.role}</p>
+              <h2 class="brush gold-text text-2xl">{siteMeta.name}</h2>
+              <p class="marginalia text-inktextdim mt-1">{siteMeta.role}</p>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex flex-col items-center gap-1.5 border border-thread/40 rounded-sm px-4 py-3 text-linen hover:text-foilbright hover:border-foil/80 transition"
+              class="inline-flex flex-col items-center gap-1.5 border border-gold/40 rounded-sm px-4 py-3 text-inktextdim hover:text-goldbright hover:border-gold/70 transition"
               aria-label={link.label}
             >
               <span class="sr-only">{link.name}</span>
@@ -57,7 +57,7 @@
 
         <nav aria-label="Footer" class="flex flex-col items-start gap-3">
           {#each navLinks as navLink (navLink.href)}
-            <a href={navLink.href} class="serif text-linen hover:text-foilbright transition">
+            <a href={navLink.href} class="text-inktextdim hover:text-goldbright transition">
               {navLink.label}
             </a>
           {/each}
@@ -66,11 +66,11 @@
     </div>
   </section>
 
-  <div class="stitch-t" aria-hidden="true"></div>
+  <div class="needle-line-h opacity-60" aria-hidden="true"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-3">
-    <p class="marginalia text-linendim">Bound and signed by {siteMeta.name}</p>
-    <p class="serif text-linen">&copy; {currentYear} {siteMeta.name}. All rights reserved.</p>
-    <p class="marginalia text-linendim">Set in EB Garamond &middot; Bound with SvelteKit &amp; Tailwind</p>
+    <p class="marginalia text-inktextdim">Bound and signed by {siteMeta.name}</p>
+    <p class="marginalia text-inktextdim">&copy; {currentYear} {siteMeta.name}. All rights reserved.</p>
+    <p class="marginalia text-inktextdim">Set in Yuji Syuku &amp; Zen Kaku Gothic New &middot; Inked with SvelteKit &amp; Tailwind</p>
   </div>
 </footer>
