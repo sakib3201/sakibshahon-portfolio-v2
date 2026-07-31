@@ -382,16 +382,46 @@ body {
   }
 }
 
-.hero-settle {
-  will-change: transform, opacity;
-  animation: hero-settle 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+/* The name inks itself in: cinematic calligraphy entrance — words materialize
+   from soft blur to sharp gold, one after the other, beneath a slow gold glow
+   bloom. Once inked, the name stays perfectly steady. */
+.hero-calligraphy-glow {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(201, 162, 94, 0.16) 0%,
+    rgba(201, 162, 94, 0.05) 55%,
+    transparent 75%
+  );
+  opacity: 0;
+  animation: hero-calligraphy-glow 2.8s ease-out 0.4s forwards;
+  will-change: opacity, transform;
 }
 
-.hero-name-rise {
+.hero-calligraphy .hero-word {
   opacity: 0;
-  transform: translateY(20px);
-  will-change: transform, opacity;
-  animation: hero-name-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+  filter: blur(8px);
+}
+
+.hero-calligraphy .hero-word.hero-word-in {
+  opacity: 1;
+  filter: blur(0);
+  transition:
+    opacity 1.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.6s ease;
+}
+
+@keyframes hero-calligraphy-glow {
+  0% {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
 }
 
 .hero-motto-rise {
@@ -405,7 +435,7 @@ body {
   opacity: 0;
   transform: scale(2.6) rotate(-18deg);
   will-change: transform;
-  animation: hero-hanko-stamp 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+  animation: hero-hanko-stamp 0.4s cubic-bezier(0.22, 1, 0.36, 1) 2.7s both;
 }
 
 .hero-hanko.hero-entered {
@@ -420,27 +450,7 @@ body {
   background: radial-gradient(circle, rgba(192, 40, 24, 0.45) 0%, rgba(192, 40, 24, 0.2) 35%, transparent 68%);
   opacity: 0;
   pointer-events: none;
-  animation: hero-ink-bloom 0.8s ease-out 0.55s forwards;
-}
-
-@keyframes hero-settle {
-  from {
-    transform: rotateX(4deg);
-  }
-  to {
-    transform: rotateX(0deg);
-  }
-}
-
-@keyframes hero-name-rise {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  animation: hero-ink-bloom 0.8s ease-out 2.85s forwards;
 }
 
 @keyframes hero-motto-rise {
@@ -501,11 +511,6 @@ body {
   );
   background-repeat: no-repeat;
   will-change: background-position;
-}
-
-.hero-name-block {
-  transform-style: preserve-3d;
-  will-change: transform;
 }
 
 .hero-hanko.hero-restamp {
@@ -632,4 +637,81 @@ body {
 
 .group .hero-plaque:active {
   transform: scale(0.95);
+}
+
+/* After the calligraphy lands, short golden needle guides appear and fade,
+   pointing toward the seal — a compass hand toward the stamp. Looping with a
+   long idle so they arrive occasionally. */
+.hero-guides {
+  pointer-events: none;
+}
+
+.hero-guide {
+  position: absolute;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(201, 162, 94, 0.85) 0 2px,
+    transparent 2px 6px
+  );
+  transform-origin: right center;
+  animation: hero-guide-draw 9s ease-in-out infinite;
+}
+
+@keyframes hero-guide-draw {
+  0%,
+  12% {
+    opacity: 0;
+    transform: rotate(var(--g-rot, 0deg)) scaleX(0);
+  }
+  20% {
+    opacity: 0.9;
+  }
+  32% {
+    transform: rotate(var(--g-rot, 0deg)) scaleX(1);
+  }
+  62% {
+    opacity: 0.9;
+    transform: rotate(var(--g-rot, 0deg)) scaleX(1);
+  }
+  74%,
+  100% {
+    opacity: 0;
+    transform: rotate(var(--g-rot, 0deg)) scaleX(0);
+  }
+}
+
+/* Gold sakura petals drifting through the hero's air — occasional, faint,
+   looped with long random pauses. Created by JS (createSakura), skipped under
+   prefers-reduced-motion. */
+.hero-sakura {
+  position: absolute;
+  top: 0;
+  left: var(--s-left, 10%);
+  width: var(--s-size, 11px);
+  height: var(--s-size, 11px);
+  background: linear-gradient(135deg, #e8c47e 0%, #c9a25e 60%, #8d6d3a 100%);
+  border-radius: 100% 0 100% 0 / 100% 0 100% 0;
+  box-shadow: 0 0 6px rgba(201, 162, 94, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform;
+  animation: hero-sakura-fall var(--s-dur, 14s) linear var(--s-delay, 0s) infinite;
+}
+
+@keyframes hero-sakura-fall {
+  0% {
+    transform: translate3d(0, -4vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  6% {
+    opacity: var(--s-opacity, 0.3);
+  }
+  88% {
+    opacity: var(--s-opacity, 0.3);
+  }
+  100% {
+    transform: translate3d(var(--s-sway, 40px), 106vh, 0) rotate(var(--s-rot, 300deg));
+    opacity: 0;
+  }
 }

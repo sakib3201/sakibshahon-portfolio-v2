@@ -2,7 +2,7 @@
  * Hero pointer interactions — the back piece lit by the visitor's hand:
  *  - Cursor-following gold lamplight ([data-hero-lamplight]) that the pointer
  *    aims like a lamp over lacquer; springs back to the top wash on leave.
- *  - Spring lean of the name block ([data-hero-name]) toward the pointer.
+ * The name stays steady — only the lamplight answers the pointer.
  * Vanilla, single rAF loop, respects prefers-reduced-motion.
  */
 export function initHeroMotion() {
@@ -13,8 +13,6 @@ export function initHeroMotion() {
   if (!scene) return () => {};
 
   const lamplight = /** @type {HTMLElement | null} */ (scene.querySelector('[data-hero-lamplight]'));
-  const nameEl = /** @type {HTMLElement | null} */ (scene.querySelector('[data-hero-name]'));
-  const maxLean = 4;
   const spring = 0.12;
 
   let rafId = 0;
@@ -35,11 +33,6 @@ export function initHeroMotion() {
     }
     if (lamplight) {
       lamplight.style.backgroundPosition = `${curX.toFixed(2)}% ${curY.toFixed(2)}%`;
-    }
-    if (nameEl) {
-      const px = ((curX - 50) / 50) * maxLean;
-      const py = -((curY - 50) / 50) * maxLean;
-      nameEl.style.transform = `rotateY(${px.toFixed(2)}deg) rotateX(${py.toFixed(2)}deg)`;
     }
     if (!settled) {
       rafId = window.requestAnimationFrame(frame);
@@ -81,7 +74,6 @@ export function initHeroMotion() {
     scene.removeEventListener('pointerdown', onPointerDown);
     scene.removeEventListener('pointerleave', onPointerLeave);
     if (lamplight) lamplight.style.backgroundPosition = '';
-    if (nameEl) nameEl.style.transform = '';
   };
 
   const startListeners = () => {

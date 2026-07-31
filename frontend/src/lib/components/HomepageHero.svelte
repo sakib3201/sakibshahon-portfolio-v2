@@ -1,9 +1,11 @@
 <script>
   import { onDestroy, onMount } from "svelte";
+  import { fade } from "svelte/transition";
   import { siteMeta, productsShipped } from "$lib/data.js";
   import { initHeroMotion } from "$lib/heroMotion.js";
 
   const name = siteMeta.name;
+  const nameWords = name.split(" ");
 
   const ctas = [
     { href: "#products", text: "See the shipped work" },
@@ -11,41 +13,73 @@
     { href: "#contact", text: "Request an audience" }
   ];
 
-  let entrancePlayed = false;
-  let hankoEl = /** @type {HTMLSpanElement | undefined} */ (undefined);
-  let destroyHeroMotion = () => {};
-  let quoteOpen = false;
-
   const stampWord = "鍛錬";
-  const stampQuote = {
-    jp: "七転び八起き",
-    en: "Fall seven times, rise eight"
-  };
-  const stampAriaLabel = `Motivational seal: ${stampWord} — ${stampQuote.jp}: ${stampQuote.en}`;
+  const stampQuotes = [
+    { jp: "七転び八起き", romaji: "Nana korobi ya oki", en: "Fall seven times, rise eight" },
+    { jp: "継続は力なり", romaji: "Keizoku wa chikara nari", en: "Persistence is power" },
+    { jp: "石の上にも三年", romaji: "Ishi no ue ni mo sannen", en: "Sit on a stone for three years" },
+    { jp: "雨降って地固まる", romaji: "Ame futte chi katamaru", en: "After the rain, the ground hardens" },
+    { jp: "一事が万事", romaji: "Ichiji ga banji", en: "One thing reveals the whole" },
+    { jp: "千里の道も一歩から", romaji: "Senri no michi mo ippo kara", en: "A thousand-mile journey begins with one step" }
+  ];
+
+  let entrancePlayed = false;
+  let calligraphyOn = false;
+  let entranceDone = false;
+  let reducedMotion = false;
+  let quoteOpen = false;
+  let stampQuoteIndex = 0;
+  let hankoEl = /** @type {HTMLSpanElement | undefined} */ (undefined);
+  let nameH1El = /** @type {HTMLHeadingElement | undefined} */ (undefined);
+  let destroyHeroMotion = () => {};
+  /** @type {Array<{ left: string; size: string; dur: string; delay: string; sway: string; rot: string; opacity: string }>} */
+  let sakuraPetals = [];
+  /** @type {number[]} */
+  const entranceTimers = [];
 
   function toggleQuote() {
+    stampQuoteIndex = (stampQuoteIndex + 1) % stampQuotes.length;
     quoteOpen = !quoteOpen;
   }
 
   onMount(() => {
     destroyHeroMotion = initHeroMotion();
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reducedMotion) sakuraPetals = createSakura();
+    if (reducedMotion) return;
     let played = false;
     try {
       played = sessionStorage.getItem("hero-entrance-played") === "1";
     } catch {
       played = false;
     }
-    if (played) return;
+    if (played) {
+      entranceDone = true;
+      return;
+    }
     try {
       sessionStorage.setItem("hero-entrance-played", "1");
     } catch {
       played = false;
     }
     entrancePlayed = true;
+    calligraphyOn = true;
+
+    const words = Array.from(nameH1El?.querySelectorAll(".hero-word") ?? []);
+    words.forEach((word, i) => {
+      entranceTimers.push(window.setTimeout(() => word.classList.add("hero-word-in"), 350 + i * 280));
+    });
+    entranceTimers.push(
+      window.setTimeout(() => {
+        entranceDone = true;
+      }, 350 + words.length * 280 + 2000)
+    );
   });
 
-  onDestroy(() => destroyHeroMotion());
+  onDestroy(() => {
+    destroyHeroMotion();
+    entranceTimers.forEach((t) => window.clearTimeout(t));
+  });
 
   function restampHanko() {
     if (!hankoEl) return;
@@ -55,14 +89,21 @@
     hankoEl.classList.add("hero-restamp");
   }
 
-  /** @param {AnimationEvent & { currentTarget: HTMLElement }} e */
-  function onSettleEnd(e) {
-    if (e.animationName === "hero-settle") e.currentTarget.classList.remove("hero-settle");
-  }
-
-  /** @param {AnimationEvent & { currentTarget: HTMLElement }} e */
-  function onNameRiseEnd(e) {
-    if (e.animationName === "hero-name-rise") e.currentTarget.classList.remove("hero-name-rise");
+  function createSakura() {
+    const petals = [];
+    const count = 7;
+    for (let i = 0; i < count; i++) {
+      petals.push({
+        left: `${(2 + Math.random() * 94).toFixed(1)}%`,
+        size: `${(8 + Math.random() * 8).toFixed(1)}px`,
+        dur: `${(11 + Math.random() * 9).toFixed(1)}s`,
+        delay: `${(Math.random() * 12).toFixed(1)}s`,
+        sway: `${(Math.random() * 60 + 20).toFixed(0)}px`,
+        rot: `${(Math.random() * 360 + 180).toFixed(0)}deg`,
+        opacity: (0.16 + Math.random() * 0.16).toFixed(2)
+      });
+    }
+    return petals;
   }
 
   /** @param {AnimationEvent & { currentTarget: HTMLElement }} e */
@@ -78,6 +119,15 @@
 </script>
 
 <section class="relative sumi-ground text-inktext overflow-hidden" data-hero-scene>
+  {#if !reducedMotion && sakuraPetals.length > 0}
+    {#each sakuraPetals as petal, i (i)}
+      <span
+        class="hero-sakura"
+        style="--s-left: {petal.left}; --s-size: {petal.size}; --s-dur: {petal.dur}; --s-delay: {petal.delay}; --s-sway: {petal.sway}; --s-rot: {petal.rot}; --s-opacity: {petal.opacity};"
+        aria-hidden="true"
+      ></span>
+    {/each}
+  {/if}
   <div
     class="absolute inset-0 pointer-events-none"
     style="background: radial-gradient(52% 42% at 50% 0%, rgba(201,162,94,0.14) 0%, rgba(201,162,94,0.04) 55%, transparent 100%);"
@@ -96,45 +146,58 @@
 
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 md:pt-20 pb-0">
     <div class="text-center">
-      <div
-        class="perspective-scene {entrancePlayed ? 'hero-settle' : ''}"
-        onanimationend={onSettleEnd}
-      >
-        <div class="medallion-float relative" onpointerdown={restampHanko}>
-          <div class="hero-name-block" data-hero-name>
-            <h1
-              class="brush gold-text text-5xl md:text-7xl lg:text-8xl leading-tight tracking-[0.02em] {entrancePlayed ? 'hero-name-rise' : ''}"
-              onanimationend={onNameRiseEnd}
-            >
-              {name}
-            </h1>
-            <button
-              type="button"
-              class="hero-stamp-group group absolute -top-2 right-0 p-0 m-0 border-0 bg-transparent cursor-pointer"
-              class:is-quote-open={quoteOpen}
-              aria-label={stampAriaLabel}
-              aria-expanded={quoteOpen}
-              onclick={toggleQuote}
-            >
-              <span
-                bind:this={hankoEl}
-                class="hanko hero-hanko inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 {entrancePlayed ? 'hero-entering' : ''}"
-                aria-hidden="true"
-                onanimationend={onHankoEnd}
-              >
-                <span class="brush flex flex-col items-center leading-none text-[0.8rem] md:text-[0.95rem]">
-                  <span>{stampWord[0]}</span>
-                  <span>{stampWord[1]}</span>
-                </span>
-              </span>
-              <span class="hero-quote skin-sheet rounded-sm px-4 py-3" aria-hidden="true">
-                <span class="block brush gold-text text-base md:text-lg">{stampQuote.jp}</span>
+      <div class="relative" onpointerdown={restampHanko}>
+        {#if calligraphyOn}
+          <div class="hero-calligraphy-glow absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+        {/if}
+
+        <h1
+          bind:this={nameH1El}
+          class="relative brush gold-text text-5xl md:text-7xl lg:text-8xl leading-tight tracking-[0.02em] {calligraphyOn ? 'hero-calligraphy' : ''}"
+        >
+          {#each nameWords as word, i (i)}
+            <span class="hero-word inline-block">{word}</span>{i < nameWords.length - 1 ? ' ' : ''}
+          {/each}
+        </h1>
+
+        <button
+          type="button"
+          class="hero-stamp-group group absolute -top-2 right-0 p-0 m-0 border-0 bg-transparent cursor-pointer"
+          class:is-quote-open={quoteOpen}
+          aria-label={`Motivational seal: ${stampWord} — ${stampQuotes[stampQuoteIndex].jp}: ${stampQuotes[stampQuoteIndex].en}`}
+          aria-expanded={quoteOpen}
+          onclick={toggleQuote}
+        >
+          <span
+            bind:this={hankoEl}
+            class="hanko hero-hanko inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 {entrancePlayed ? 'hero-entering' : ''}"
+            aria-hidden="true"
+            onanimationend={onHankoEnd}
+          >
+            <span class="brush flex flex-col items-center leading-none text-[0.8rem] md:text-[0.95rem]">
+              <span>{stampWord[0]}</span>
+              <span>{stampWord[1]}</span>
+            </span>
+          </span>
+          <span class="hero-quote skin-sheet rounded-sm px-4 py-3" aria-hidden="true">
+            {#key stampQuoteIndex}
+              <span in:fade={{ duration: 220 }}>
+                <span class="block marginalia text-goldbright">{stampQuotes[stampQuoteIndex].romaji}</span>
+                <span class="mt-1.5 block brush gold-text text-lg">{stampQuotes[stampQuoteIndex].jp}</span>
                 <span class="mt-1.5 block needle-line-h opacity-50" aria-hidden="true"></span>
-                <span class="mt-2 block marginalia text-inkonpaper normal-case">{stampQuote.en}</span>
+                <span class="mt-2 block marginalia text-inkonpaper normal-case">{stampQuotes[stampQuoteIndex].en}</span>
               </span>
-            </button>
-          </div>
-        </div>
+            {/key}
+          </span>
+        </button>
+
+        {#if entranceDone && !reducedMotion}
+          <span class="hero-guides absolute -top-2 right-0 w-0 h-0 pointer-events-none" aria-hidden="true">
+            <span class="hero-guide" style="--g-rot: 26deg; left: -8.5rem; top: 0.85rem; width: 4.5rem; animation-delay: 0.2s;"></span>
+            <span class="hero-guide" style="--g-rot: -10deg; left: -6.25rem; top: 1.55rem; width: 3.4rem; animation-delay: 0.8s;"></span>
+            <span class="hero-guide" style="--g-rot: 56deg; left: -4.6rem; top: 2.35rem; width: 2.5rem; animation-delay: 1.4s;"></span>
+          </span>
+        {/if}
       </div>
 
       <p class="marginalia text-goldbright mt-4">{siteMeta.role}</p>
