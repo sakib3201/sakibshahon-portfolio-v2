@@ -15,19 +15,21 @@
   <div class="needle-line-h absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
+    <div class="text-center mb-16" data-reveal>
       <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">The disciplines</h2>
       <p class="max-w-2xl mx-auto mt-5 text-lg text-inktextdim leading-relaxed">
         Four working disciplines, from API to polished UI — WordPress plugins to SaaS.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8 mb-16">
-      {#each skills as skill (skill.title)}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8 mb-16" data-reveal>
+      {#each skills as skill, i (skill.title)}
         <article class="lacquer-raised gold-edge group relative flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-deep neon-rim">
           <div class="flex items-center justify-center pt-7 pb-4">
             <span
-              class="medallion flex items-center justify-center w-16 h-16"
+              class="medallion reveal-pulse flex items-center justify-center w-16 h-16"
+              data-reveal
+              data-reveal-delay={i * 40}
               aria-hidden="true"
             >
               <svg class="w-8 h-8 text-sumi" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -8,7 +8,7 @@
   const imageFailed = $state({});
 </script>
 
-<section id="youtube" class="scroll-mt-24 relative bg-lacquer text-inktext py-16 lg:py-20 overflow-hidden">
+<section id="youtube" class="scroll-mt-24 relative bg-lacquer text-inktext py-16 lg:py-20 overflow-hidden" data-reveal>
   <div class="needle-line-h absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

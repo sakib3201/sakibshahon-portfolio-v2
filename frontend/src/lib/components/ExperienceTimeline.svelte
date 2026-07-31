@@ -6,7 +6,7 @@
 
 <section class="relative bg-sumi text-inktext py-20 lg:py-28">
   <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
+    <div class="text-center mb-16" data-reveal>
       <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">The ledger</h2>
       <p class="marginalia text-inktextdim mt-5">Four years of shipped work, inked in order</p>
     </div>
@@ -16,7 +16,7 @@
 
       <div class="space-y-12 md:space-y-16">
         {#each experience as entry, i (entry.company)}
-          <div class="relative md:grid md:grid-cols-2 md:gap-16">
+          <div class="relative md:grid md:grid-cols-2 md:gap-16" data-reveal data-reveal-delay={i * 60}>
             <div class="absolute left-5 md:left-1/2 top-2 -translate-x-1/2" aria-hidden="true">
               <span class="medallion block w-3 h-3"></span>
             </div>
