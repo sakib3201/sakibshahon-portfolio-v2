@@ -1,45 +1,55 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-31T00:00:00Z",
-  "title": "Design System: The Reading Shelf — Sakib Ahamed Shahon Portfolio",
+  "generatedAt": "2026-08-01T00:00:00Z",
+  "title": "Design System: The Yakuza Ink — Sakib Ahamed Shahon Portfolio",
   "extensions": {
     "colorMeta": {
-      "ink": { "role": "primary", "displayName": "Walnut Ink", "canonical": "#16110b", "tonalRamp": ["oklch(0.15 0.02 60)", "oklch(0.26 0.02 60)", "oklch(0.38 0.02 60)", "oklch(0.49 0.02 60)", "oklch(0.61 0.02 60)", "oklch(0.72 0.02 60)", "oklch(0.84 0.02 60)", "oklch(0.95 0.02 60)"] },
-      "ground": { "role": "primary", "displayName": "Deep Ground", "canonical": "#1e1610", "tonalRamp": ["oklch(0.15 0.03 65)", "oklch(0.26 0.03 65)", "oklch(0.38 0.03 65)", "oklch(0.49 0.03 65)", "oklch(0.61 0.03 65)", "oklch(0.72 0.03 65)", "oklch(0.84 0.03 65)", "oklch(0.95 0.03 65)"] },
-      "wood": { "role": "neutral", "displayName": "Wood", "canonical": "#2e2116", "tonalRamp": ["oklch(0.15 0.04 65)", "oklch(0.26 0.04 65)", "oklch(0.38 0.04 65)", "oklch(0.49 0.04 65)", "oklch(0.61 0.04 65)", "oklch(0.72 0.04 65)", "oklch(0.84 0.04 65)", "oklch(0.95 0.04 65)"] },
-      "woodlight": { "role": "neutral", "displayName": "Wood Light", "canonical": "#4a3524", "tonalRamp": ["oklch(0.15 0.06 60)", "oklch(0.26 0.06 60)", "oklch(0.38 0.06 60)", "oklch(0.49 0.06 60)", "oklch(0.61 0.06 60)", "oklch(0.72 0.06 60)", "oklch(0.84 0.06 60)", "oklch(0.95 0.06 60)"] },
-      "leatherdeep": { "role": "neutral", "displayName": "Saddle Leather Deep", "canonical": "#4f2e18", "tonalRamp": ["oklch(0.15 0.09 55)", "oklch(0.26 0.09 55)", "oklch(0.38 0.09 55)", "oklch(0.49 0.09 55)", "oklch(0.61 0.09 55)", "oklch(0.72 0.09 55)", "oklch(0.84 0.09 55)", "oklch(0.95 0.09 55)"] },
-      "leatherdark": { "role": "neutral", "displayName": "Leather Dark", "canonical": "#261708", "tonalRamp": ["oklch(0.15 0.07 55)", "oklch(0.26 0.07 55)", "oklch(0.38 0.07 55)", "oklch(0.49 0.07 55)", "oklch(0.61 0.07 55)", "oklch(0.72 0.07 55)", "oklch(0.84 0.07 55)", "oklch(0.95 0.07 55)"] },
-      "thread": { "role": "neutral", "displayName": "Cream Thread", "canonical": "#d8bd90", "tonalRamp": ["oklch(0.15 0.09 80)", "oklch(0.26 0.09 80)", "oklch(0.38 0.09 80)", "oklch(0.49 0.09 80)", "oklch(0.61 0.09 80)", "oklch(0.72 0.09 80)", "oklch(0.84 0.09 80)", "oklch(0.95 0.09 80)"] },
-      "foil": { "role": "primary", "displayName": "Gilded Foil", "canonical": "#c9a25e", "tonalRamp": ["oklch(0.15 0.12 80)", "oklch(0.26 0.12 80)", "oklch(0.38 0.12 80)", "oklch(0.49 0.12 80)", "oklch(0.61 0.12 80)", "oklch(0.72 0.12 80)", "oklch(0.84 0.12 80)", "oklch(0.95 0.12 80)"] },
-      "foilbright": { "role": "primary", "displayName": "Bright Foil", "canonical": "#e8c47e", "tonalRamp": ["oklch(0.15 0.11 85)", "oklch(0.26 0.11 85)", "oklch(0.38 0.11 85)", "oklch(0.49 0.11 85)", "oklch(0.61 0.11 85)", "oklch(0.72 0.11 85)", "oklch(0.84 0.11 85)", "oklch(0.95 0.11 85)"] },
-      "paper": { "role": "neutral", "displayName": "Cream Paper", "canonical": "#f1e8d8", "tonalRamp": ["oklch(0.15 0.02 85)", "oklch(0.26 0.02 85)", "oklch(0.38 0.02 85)", "oklch(0.49 0.02 85)", "oklch(0.61 0.02 85)", "oklch(0.72 0.02 85)", "oklch(0.84 0.02 85)", "oklch(0.95 0.02 85)"] },
-      "paperdim": { "role": "neutral", "displayName": "Pale Paper", "canonical": "#e2d6c0", "tonalRamp": ["oklch(0.15 0.03 80)", "oklch(0.26 0.03 80)", "oklch(0.38 0.03 80)", "oklch(0.49 0.03 80)", "oklch(0.61 0.03 80)", "oklch(0.72 0.03 80)", "oklch(0.84 0.03 80)", "oklch(0.95 0.03 80)"] },
-      "inkonpaper": { "role": "neutral", "displayName": "Ink on Paper", "canonical": "#2c2117", "tonalRamp": ["oklch(0.15 0.03 65)", "oklch(0.26 0.03 65)", "oklch(0.38 0.03 65)", "oklch(0.49 0.03 65)", "oklch(0.61 0.03 65)", "oklch(0.72 0.03 65)", "oklch(0.84 0.03 65)", "oklch(0.95 0.03 65)"] },
-      "linen": { "role": "neutral", "displayName": "Linen", "canonical": "#c9bfad", "tonalRamp": ["oklch(0.15 0.03 80)", "oklch(0.26 0.03 80)", "oklch(0.38 0.03 80)", "oklch(0.49 0.03 80)", "oklch(0.61 0.03 80)", "oklch(0.72 0.03 80)", "oklch(0.84 0.03 80)", "oklch(0.95 0.03 80)"] },
-      "linendim": { "role": "neutral", "displayName": "Dim Linen", "canonical": "#a89c87", "tonalRamp": ["oklch(0.15 0.04 80)", "oklch(0.26 0.04 80)", "oklch(0.38 0.04 80)", "oklch(0.49 0.04 80)", "oklch(0.61 0.04 80)", "oklch(0.72 0.04 80)", "oklch(0.84 0.04 80)", "oklch(0.95 0.04 80)"] },
-      "seal": { "role": "primary", "displayName": "Oxblood Seal", "canonical": "#9c3b2a", "tonalRamp": ["oklch(0.15 0.13 30)", "oklch(0.26 0.13 30)", "oklch(0.38 0.13 30)", "oklch(0.49 0.13 30)", "oklch(0.61 0.13 30)", "oklch(0.72 0.13 30)", "oklch(0.84 0.13 30)", "oklch(0.95 0.13 30)"] }
+      "sumi": { "role": "primary", "displayName": "Sumi", "canonical": "#0f0d0a", "tonalRamp": ["oklch(10% 0.004 70)", "oklch(13% 0.006 74)", "oklch(16% 0.007 78)", "oklch(20% 0.008 80)", "oklch(24% 0.009 82)", "oklch(28% 0.01 83)", "oklch(32% 0.011 84)", "oklch(36% 0.012 85)"] },
+      "lacquer": { "role": "primary", "displayName": "Lacquer", "canonical": "#171310", "tonalRamp": ["oklch(0% 0 0)", "oklch(13.6% 0.006 71)", "oklch(15.2% 0.008 68)", "oklch(17.7% 0.01 67)", "oklch(19% 0.009 59)", "oklch(21.3% 0.012 67)", "oklch(22.8% 0.017 67)", "oklch(22.8% 0.02 74)", "oklch(26.6% 0.018 71)", "oklch(30.1% 0.025 72)"] },
+      "lacquerdeep": { "role": "primary", "displayName": "Lacquer Deep", "canonical": "#0a0806", "tonalRamp": ["oklch(0% 0 0)", "oklch(10% 0.004 70)", "oklch(13.6% 0.006 71)", "oklch(16% 0.007 72)", "oklch(19% 0.008 70)", "oklch(22% 0.009 70)", "oklch(25% 0.01 70)", "oklch(28% 0.012 70)"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#e9e2d2", "tonalRamp": ["oklch(74.7% 0.038 88)", "oklch(80% 0.032 87)", "oklch(85.6% 0.029 87)", "oklch(88% 0.026 87)", "oklch(91.4% 0.023 87)", "oklch(94% 0.021 89)", "oklch(98.4% 0.027 95)", "oklch(98.5% 0.02 92)"] },
+      "paperdim": { "role": "neutral", "displayName": "Pale Paper", "canonical": "#d8cfbb", "tonalRamp": ["oklch(78% 0.032 86)", "oklch(81% 0.031 86)", "oklch(85.6% 0.029 87)", "oklch(88% 0.027 87)", "oklch(90% 0.025 88)", "oklch(92% 0.024 89)", "oklch(94% 0.022 90)", "oklch(96% 0.02 91)"] },
+      "inktext": { "role": "neutral", "displayName": "Ink Text", "canonical": "#f0ead9", "tonalRamp": ["oklch(86% 0.024 90)", "oklch(89% 0.024 90)", "oklch(93.7% 0.023 91)", "oklch(95% 0.021 91)", "oklch(96% 0.019 92)", "oklch(97% 0.016 92)", "oklch(98% 0.012 92)", "oklch(99% 0.008 92)"] },
+      "inktextdim": { "role": "neutral", "displayName": "Dim Ink Text", "canonical": "#a99f8d", "tonalRamp": ["oklch(60% 0.026 80)", "oklch(65% 0.027 81)", "oklch(70.6% 0.028 82)", "oklch(75% 0.027 83)", "oklch(79% 0.026 84)", "oklch(83% 0.024 85)", "oklch(87% 0.021 86)", "oklch(91% 0.017 87)"] },
+      "gold": { "role": "primary", "displayName": "Gold", "canonical": "#c9a25e", "tonalRamp": ["oklch(29.5% 0.053 74)", "oklch(30.3% 0.044 80)", "oklch(38.9% 0.058 75)", "oklch(45.8% 0.069 77)", "oklch(55.5% 0.08 78)", "oklch(73.3% 0.098 80)", "oklch(83.6% 0.097 83)", "oklch(91.8% 0.069 91)", "oklch(94.5% 0.062 87)", "oklch(95.8% 0.048 88)"] },
+      "goldbright": { "role": "primary", "displayName": "Bright Gold", "canonical": "#e8c47e", "tonalRamp": ["oklch(72% 0.096 80)", "oklch(77% 0.096 81)", "oklch(83.6% 0.097 83)", "oklch(87% 0.085 84)", "oklch(90% 0.072 86)", "oklch(93% 0.058 88)", "oklch(95% 0.042 89)", "oklch(97% 0.026 90)"] },
+      "golddeep": { "role": "primary", "displayName": "Deep Gold", "canonical": "#8d6d3a", "tonalRamp": ["oklch(40% 0.063 76)", "oklch(45% 0.068 77)", "oklch(50% 0.074 77)", "oklch(55.5% 0.08 78)", "oklch(60% 0.085 78)", "oklch(65% 0.09 79)", "oklch(70% 0.094 79)", "oklch(75% 0.096 80)"] },
+      "cinnabar": { "role": "primary", "displayName": "Cinnabar", "canonical": "#c02818", "tonalRamp": ["oklch(35% 0.13 28)", "oklch(42% 0.16 29)", "oklch(52.6% 0.19 30)", "oklch(60% 0.19 25)", "oklch(66% 0.17 20)", "oklch(72% 0.15 15)", "oklch(78% 0.12 10)", "oklch(84% 0.09 8)"] },
+      "neon": { "role": "primary", "displayName": "Neon", "canonical": "#ff3d6e", "tonalRamp": ["oklch(28.4% 0.047 343)", "oklch(38% 0.07 350)", "oklch(48% 0.11 0)", "oklch(56% 0.16 8)", "oklch(66.5% 0.228 12)", "oklch(72% 0.2 10)", "oklch(78% 0.17 8)", "oklch(84% 0.13 5)"] },
+      "inkonpaper": { "role": "neutral", "displayName": "Ink on Paper", "canonical": "#241c12", "tonalRamp": ["oklch(16% 0.018 72)", "oklch(19% 0.02 72)", "oklch(23.3% 0.022 73)", "oklch(26% 0.023 73)", "oklch(29% 0.024 74)", "oklch(32% 0.024 75)", "oklch(35% 0.024 76)", "oklch(38% 0.024 77)"] },
+      "blacktint": { "role": "shadow", "displayName": "Shadow Black", "canonical": "#000000", "tonalRamp": ["oklch(0% 0 0)", "oklch(4% 0 0)", "oklch(8% 0 0)", "oklch(12% 0.004 70)", "oklch(16% 0.006 72)", "oklch(20% 0.008 73)", "oklch(24% 0.01 73)", "oklch(28% 0.012 73)"] }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The gilded name in the hero; appears once per page." },
-      "headline": { "displayName": "Headline", "purpose": "Embossed chapter titles, centered above a marginalia subtitle." },
-      "title": { "displayName": "Title", "purpose": "Card headings — ink on paper, foilbright on leather." },
-      "body": { "displayName": "Body", "purpose": "Paragraphs: linen on dark, inkonpaper at 75-90% alpha on paper. Ledges cap at max-w-2xl." },
-      "label": { "displayName": "Label / Marginalia", "purpose": "Red Hat Mono annotation: captions, dates, tags, spine numbering, footer notes. Uppercase, wide-tracked." }
+      "display": { "displayName": "Display / Brush", "purpose": "Yuji Syuku identity: the gilded hero name, the CAN DO motto, vertical panel titles, the seal glyph. Appears once per viewport." },
+      "headline": { "displayName": "Headline", "purpose": "Zen Kaku Gothic New 700 chapter titles, centered above a marginalia subtitle." },
+      "title": { "displayName": "Title", "purpose": "Zen Kaku Gothic New 700 card headings — inktext on lacquer, inkonpaper on paper." },
+      "body": { "displayName": "Body", "purpose": "Zen Kaku Gothic New 400 paragraphs — inktext on dark, inktextdim ledes, capped at max-w-2xl. Small step 0.95rem for compact rows." },
+      "label": { "displayName": "Label / Marginalia", "purpose": "Red Hat Mono annotation: captions, dates, tags, panel numbering, footer notes. Uppercase, wide-tracked." },
+      "micro": { "displayName": "Micro", "purpose": "The 0.55rem mono step — N° numbering on panel spines and archive cards." }
     },
     "shadows": [
-      { "name": "plate", "value": "inset 0 1px 0 rgba(255,235,190,0.22), inset 0 -1px 2px rgba(0,0,0,0.55), 0 2px 3px rgba(0,0,0,0.45)", "purpose": "Engraved brass: plates, stat cards, badges, medallions." },
-      { "name": "volume", "value": "6px 8px 18px rgba(0,0,0,0.5)", "purpose": "Book thickness: leather-sheet cards, shelf volumes, framed portrait." },
-      { "name": "leaf", "value": "0 2px 4px rgba(0,0,0,0.35), 0 10px 24px rgba(0,0,0,0.45)", "purpose": "Lifted paper: paper sheets and cards." },
-      { "name": "leaf-torn", "value": "filter: drop-shadow(0 10px 24px rgba(0,0,0,0.45))", "purpose": "Torn sheet silhouette shadow." },
-      { "name": "hover-lift", "value": "0 25px 50px -12px rgba(0,0,0,0.25)", "purpose": "Tailwind shadow-2xl on hover for lifted cards." }
+      { "name": "lacquer", "value": "inset 0 1px 0 rgba(233,226,210,0.06), inset 0 -1px 2px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.45), 0 12px 28px rgba(0,0,0,0.38)", "purpose": "Panel shadow: lacquer panels, faint top highlight, deep bottom drop." },
+      { "name": "deep", "value": "0 18px 40px rgba(0,0,0,0.6)", "purpose": "Raised lacquer and paper: lacquer-raised cards, skin sheets, lifted panels, the medallion float." },
+      { "name": "gold", "value": "inset 0 1px 0 rgba(255,235,190,0.3), inset 0 -1px 2px rgba(60,40,10,0.55), 0 2px 4px rgba(0,0,0,0.5)", "purpose": "Engraved gold leaf: gold-plate buttons, medallions, stat plates. The warm inset is engraving light, not a glow." },
+      { "name": "hover-lift", "value": "0 25px 50px -12px rgba(0,0,0,0.25)", "purpose": "Tailwind shadow-xl/2xl on hover for lifted cards and buttons." },
+      { "name": "neon-rim-glow", "value": "inset 0 0 24px rgba(255,61,110,0.08), 0 0 24px rgba(255,61,110,0.14)", "purpose": "The rim light: neon-rim hover and focus-visible glow — edges only, never fills." }
     ],
     "motion": [
-      { "name": "ease-color", "value": "transition: color 0.2s, background-color 0.2s, border-color 0.2s", "purpose": "Nav links, icon buttons, chips." },
-      { "name": "ease-button", "value": "transition: all 0.3s ease", "purpose": "Ribbon and ghost buttons with hover lift." },
-      { "name": "ease-card", "value": "transition: all 0.5s ease", "purpose": "Leather and paper cards on hover lift." },
-      { "name": "ease-image", "value": "transition: transform 0.7s ease", "purpose": "Slow image zoom on card hover." },
-      { "name": "nav-fade", "value": "fade 0.3s ease", "purpose": "Navbar entry; mobile menu fades 0.2s." }
+      { "name": "ease-feedback", "value": "transition: color 0.15s, background-color 0.15s, border-color 0.15s", "purpose": "Links, chips, icon buttons — the 100-150ms feedback band." },
+      { "name": "ease-state", "value": "transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "CTA hover lifts, nav needle underline, gold-plate sweep — the 150-300ms state band." },
+      { "name": "rim-light", "value": "transition: border-color 0.4s ease, box-shadow 0.4s ease", "purpose": "neon-rim border and glow — the rim light switching on." },
+      { "name": "depth-card", "value": "transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "depth-card tilt return — the 300-500ms layout band." },
+      { "name": "reveal", "value": "transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "All [data-reveal] arrivals — the 500-800ms hero focal band." },
+      { "name": "hero-settle", "value": "hero-settle 0.6s cubic-bezier(0.22, 1, 0.36, 1) both", "purpose": "The back piece turning to face the visitor." },
+      { "name": "hero-name-rise", "value": "hero-name-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards", "purpose": "The medallion name rising into place." },
+      { "name": "hero-hanko-stamp", "value": "hero-hanko-stamp 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both", "purpose": "The cinnabar seal stamping onto the medallion; rests at rotate(12deg)." },
+      { "name": "hero-motto-rise", "value": "hero-motto-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards", "purpose": "The CAN DO motto band settling in last." },
+      { "name": "hero-ink-bloom", "value": "hero-ink-bloom 0.8s ease-out 0.55s forwards", "purpose": "The stamp's ink bloom expanding and fading." },
+      { "name": "reveal-pulse", "value": "reveal-pulse 0.3s cubic-bezier(0.22, 1, 0.36, 1) both", "purpose": "Pulse reveal for medallions and seals." },
+      { "name": "gold-sweep", "value": "transition: transform 0.6s ease", "purpose": "The light sweep across gold-plate buttons on hover/focus." },
+      { "name": "shimmer-sweep", "value": "shimmer-sweep 5s ease-in-out infinite", "purpose": "The CAN DO gold shimmer — loop-pause gated, off-screen paused." },
+      { "name": "medallion-float", "value": "medallion-float 9s ease-in-out infinite", "purpose": "The hero medallion's slow 3D float — loop-pause gated." },
+      { "name": "needle-drift", "value": "needle-drift 2.4s linear infinite", "purpose": "SVG needle-line drift — loop-pause gated." }
     ],
     "breakpoints": [
       { "name": "sm", "value": "640px" },
@@ -49,115 +59,127 @@
   },
   "components": [
     {
-      "name": "Ribbon Button",
+      "name": "Gold Plate Button",
       "kind": "button",
-      "refersTo": "button-ribbon",
-      "description": "The primary CTA: a strip of saddle leather with gilded serif text. Hover lifts it toward the reader.",
-      "html": "<a class=\"ds-btn-ribbon\" href=\"#\">View the shelf <svg class=\"ds-ico\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14\"/></svg></a>",
-      "css": ".ds-btn-ribbon { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(180deg, #8a5a35 0%, #6b4123 100%); border: 1px solid #241607; border-radius: 2px; color: #e8c47e; font-family: 'EB Garamond', Georgia, serif; font-size: 1.125rem; text-decoration: none; box-shadow: inset 0 1px 0 rgba(255,200,140,0.25), 0 4px 10px rgba(0,0,0,0.4); transition: all 0.3s ease; } .ds-btn-ribbon:hover { color: #ffffff; transform: translateY(-2px); } .ds-btn-ribbon:focus-visible { outline: 2px solid #e8c47e; outline-offset: 2px; } .ds-ico { width: 0.875rem; height: 0.875rem; opacity: 0.9; }"
+      "refersTo": "gold-plate",
+      "description": "The primary CTA: a strip of gold leaf with sumi ink text. A light sweep passes across it on hover and the plate lifts.",
+      "html": "<a class=\"ds-gold-plate\" href=\"#\">See the ink <svg class=\"ds-ico\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14\"/></svg></a>",
+      "css": ".ds-gold-plate { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(150deg, #8d6d3a 0%, #c9a25e 40%, #6d5228 75%, #e8c47e 100%); border: 1px solid #3a2c13; border-radius: 2px; color: #0f0d0a; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 1.05rem; text-decoration: none; box-shadow: inset 0 1px 0 rgba(255,235,190,0.3), inset 0 -1px 2px rgba(60,40,10,0.55), 0 2px 4px rgba(0,0,0,0.5); transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); position: relative; overflow: hidden; } .ds-gold-plate::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(255,250,230,0.45) 50%, transparent 70%); transform: translateX(-140%) skewX(-16deg); transition: transform 0.6s ease; } .ds-gold-plate:hover { transform: translateY(-2px); } .ds-gold-plate:hover::after { transform: translateX(140%) skewX(-16deg); } .ds-gold-plate:focus-visible { outline: 2px solid #c02818; outline-offset: 2px; } .ds-ico { width: 0.875rem; height: 0.875rem; }"
     },
     {
-      "name": "Ghost Button",
+      "name": "Gold Edge Button",
       "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "Secondary action: a hairline thread outline on the dark ground, warming to brass on hover.",
-      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Browse the full archive <svg class=\"ds-ico\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 5l7 7-7 7\"/></svg></a>",
-      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 2rem; background: transparent; border: 1px solid rgba(216,189,144,0.5); border-radius: 2px; color: #c9bfad; font-family: 'EB Garamond', Georgia, serif; font-size: 1.125rem; text-decoration: none; transition: all 0.3s ease; } .ds-btn-ghost:hover { color: #e8c47e; border-color: rgba(201,162,94,0.8); transform: translateY(-2px); } .ds-btn-ghost:focus-visible { outline: 2px solid #e8c47e; outline-offset: 2px; } .ds-ico { width: 1rem; height: 1rem; }"
+      "refersTo": "gold-edge",
+      "description": "Secondary action: a hairline gold border on the lacquer ground, warming to white with the neon rim light on hover.",
+      "html": "<a class=\"ds-gold-edge\" href=\"#\">Request an audience <svg class=\"ds-ico\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 5l7 7-7 7\"/></svg></a>",
+      "css": ".ds-gold-edge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: transparent; border: 1px solid #c9a25e; border-radius: 2px; color: #e8c47e; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 1.05rem; text-decoration: none; box-shadow: inset 0 1px 0 rgba(233,226,210,0.06), inset 0 -1px 2px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.45), 0 12px 28px rgba(0,0,0,0.38); transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); } .ds-gold-edge:hover { color: #ffffff; transform: translateY(-2px); border-color: rgba(255,61,110,0.55); box-shadow: inset 0 0 24px rgba(255,61,110,0.08), 0 0 24px rgba(255,61,110,0.14); } .ds-gold-edge:focus-visible { outline: 2px solid #e8c47e; outline-offset: 2px; } .ds-ico { width: 1rem; height: 1rem; }"
     },
     {
-      "name": "Seal Button",
-      "kind": "button",
-      "refersTo": "button-seal",
-      "description": "One saturated action per page: a flat oxblood wax seal with engraved plate shadow. Subscribe CTA.",
-      "html": "<a class=\"ds-btn-seal\" href=\"#\"><svg class=\"ds-ico\" fill=\"currentColor\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z\"/></svg> Subscribe on YouTube</a>",
-      "css": ".ds-btn-seal { display: inline-flex; align-items: center; gap: 0.625rem; padding: 0.75rem 1.5rem; background: #9c3b2a; border: none; border-radius: 2px; color: #f1e8d8; font-family: 'EB Garamond', Georgia, serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; text-decoration: none; box-shadow: inset 0 1px 0 rgba(255,235,190,0.22), inset 0 -1px 2px rgba(0,0,0,0.55), 0 2px 3px rgba(0,0,0,0.45); transition: all 0.3s ease; } .ds-btn-seal:hover { background: #4f2e18; transform: translateY(-2px); } .ds-btn-seal:focus-visible { outline: 2px solid #e8c47e; outline-offset: 2px; } .ds-ico { width: 1.25rem; height: 1.25rem; }"
+      "name": "Hanko Seal",
+      "kind": "badge",
+      "refersTo": "hanko",
+      "description": "The cinnabar seal: a jitter-edged square stamp with paper ink. Seals only — never text, never borders (The Hanko Rule).",
+      "html": "<span class=\"ds-hanko\" aria-hidden=\"true\"><span>雅</span></span>",
+      "css": ".ds-hanko { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; background-color: #c02818; color: #e9e2d2; font-family: 'Yuji Syuku', serif; font-size: 1.125rem; clip-path: polygon(0.6% 2%, 4% 0.4%, 9% 1.4%, 14% 0.6%, 20% 1.6%, 26% 0.5%, 33% 1.3%, 40% 0.6%, 48% 1.5%, 56% 0.4%, 64% 1.4%, 72% 0.6%, 80% 1.5%, 88% 0.5%, 95% 1.3%, 99.4% 0.8%, 99.6% 8%, 99.4% 16%, 99.6% 24%, 99.4% 32%, 99.6% 40%, 99.4% 48%, 99.6% 56%, 99.4% 64%, 99.6% 72%, 99.4% 80%, 99.6% 88%, 99.5% 96%, 96% 99.5%, 88% 98.6%, 80% 99.5%, 72% 98.6%, 64% 99.5%, 56% 98.6%, 48% 99.5%, 40% 98.6%, 33% 99.5%, 26% 98.6%, 20% 99.5%, 14% 98.6%, 9% 99.4%, 4% 98.5%, 0.4% 99%, 0.6% 92%, 0.4% 84%, 0.6% 76%, 0.4% 68%, 0.6% 60%, 0.4% 52%, 0.6% 44%, 0.4% 36%, 0.6% 28%, 0.4% 20%, 0.6% 12%); box-shadow: 0 6px 14px rgba(192, 40, 24, 0.35); }"
     },
     {
       "name": "Nav Link",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "Serif nav item on the leather band; a 2px brass rule warms in beneath on hover.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Projects</a><a class=\"ds-nav-link\" href=\"#\">About</a></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; gap: 0.25rem; } .ds-nav-link { padding: 0.5rem 1rem; color: #f1e8d8; font-family: 'EB Garamond', Georgia, serif; font-size: 1rem; letter-spacing: 0.02em; text-decoration: none; border-bottom: 2px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; } .ds-nav-link:hover { color: #e8c47e; border-bottom-color: rgba(201,162,94,0.6); } .ds-nav-link:focus-visible { outline: 2px solid #e8c47e; outline-offset: 2px; }"
+      "description": "Gothic nav item on the lacquer band; a dashed gold needle rule scales in beneath on hover.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Products</a><a class=\"ds-nav-link\" href=\"#\">About</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 0.25rem; } .ds-nav-link { position: relative; padding: 0.5rem 1rem; color: #f0ead9; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 1rem; text-decoration: none; transition: color 0.15s; } .ds-nav-link::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background-image: repeating-linear-gradient(90deg, #c9a25e 0 2px, transparent 2px 7px); transform: scaleX(0); transform-origin: left center; transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-link:hover, .ds-nav-link:focus-visible { color: #e8c47e; } .ds-nav-link:hover::after, .ds-nav-link:focus-visible::after { transform: scaleX(1); } .ds-nav-link:focus-visible { outline: 2px solid #e8c47e; outline-offset: 2px; }"
     },
     {
-      "name": "Brass Plate Card",
+      "name": "Lacquer Raised Panel",
       "kind": "card",
-      "refersTo": "plate-card",
-      "description": "Engraved brass plate holding a gilded number and a marginalia caption — the impact stat.",
+      "refersTo": "lacquer-raised",
+      "description": "A raised lacquer panel — product panels, impact plates, awards. Interactive panels add the neon rim light.",
+      "html": "<article class=\"ds-panel\"><span class=\"ds-panel-num\">N°01</span><h3 class=\"ds-panel-title\">Aisentic</h3><p class=\"ds-panel-text\">Unified AI backend infrastructure cutting integration cost ~35%.</p></article>",
+      "css": ".ds-panel { padding: 1.5rem 1.75rem; background: linear-gradient(165deg, #221b14 0%, #16110c 55%, #0e0b08 100%); border: 1px solid #362c20; border-radius: 6px; color: #f0ead9; box-shadow: 0 18px 40px rgba(0,0,0,0.6); transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); } .ds-panel:hover { transform: translateY(-4px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.55); } .ds-panel-num { display: block; margin-bottom: 0.75rem; color: #a99f8d; font-family: 'Red Hat Mono', monospace; font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; } .ds-panel-title { margin: 0 0 0.5rem; color: #e8c47e; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 1.25rem; font-weight: 700; } .ds-panel-text { margin: 0; color: #a99f8d; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 1.05rem; line-height: 1.75; }"
+    },
+    {
+      "name": "Gold Plate Stat",
+      "kind": "card",
+      "refersTo": "gold-plate",
+      "description": "An engraved gold-leaf plate holding a gilded number and a marginalia caption — the impact stat.",
       "html": "<div class=\"ds-plate\"><span class=\"ds-plate-value\">20k+</span><span class=\"ds-plate-rule\"></span><span class=\"ds-plate-label\">Plugin installs</span></div>",
-      "css": ".ds-plate { padding: 1.75rem 1.5rem; text-align: center; background: linear-gradient(150deg, #8d6d3a 0%, #6d5228 45%, #57401f 100%); border: 1px solid #3a2c13; border-radius: 2px; box-shadow: inset 0 1px 0 rgba(255,235,190,0.22), inset 0 -1px 2px rgba(0,0,0,0.55), 0 2px 3px rgba(0,0,0,0.45); } .ds-plate-value { display: block; color: #e8c47e; font-family: 'EB Garamond', Georgia, serif; font-size: 2.25rem; font-weight: 600; line-height: 1.1; text-shadow: 0 1px 0 rgba(255,240,205,0.3), 0 -1px 1px rgba(0,0,0,0.75); } .ds-plate-rule { display: block; width: 4rem; height: 1px; margin: 0.75rem auto; background: rgba(201,162,94,0.3); } .ds-plate-label { color: rgba(241,232,216,0.85); font-family: 'Red Hat Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }"
+      "css": ".ds-plate { padding: 1.75rem 1.5rem; text-align: center; background: linear-gradient(150deg, #8d6d3a 0%, #c9a25e 40%, #6d5228 75%, #e8c47e 100%); border: 1px solid #3a2c13; border-radius: 2px; box-shadow: inset 0 1px 0 rgba(255,235,190,0.3), inset 0 -1px 2px rgba(60,40,10,0.55), 0 2px 4px rgba(0,0,0,0.5); } .ds-plate-value { display: block; color: #e8c47e; font-family: 'Yuji Syuku', serif; font-size: 2.25rem; line-height: 1.1; text-shadow: 0 1px 0 rgba(255,240,205,0.25), 0 -1px 1px rgba(0,0,0,0.8); } .ds-plate-rule { display: block; width: 4rem; height: 1px; margin: 0.75rem auto; background: rgba(201,162,94,0.3); } .ds-plate-label { color: rgba(233,226,210,0.85); font-family: 'Red Hat Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }"
     },
     {
-      "name": "Paper Sheet Card",
+      "name": "Skin Sheet Card",
       "kind": "card",
-      "refersTo": "paper-card",
-      "description": "Ruled cream sheet with ink text, a slight tilt, and a lifted-leaf shadow — the project card.",
-      "html": "<article class=\"ds-paper\"><h3 class=\"ds-paper-title\">Find My Race Pace</h3><p class=\"ds-paper-body\">A React and Node ML app that cut load time 21% and lifted retention 18%.</p><ul class=\"ds-paper-list\"><li><svg class=\"ds-diamond\" viewBox=\"0 0 12 12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><path d=\"M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z\"/></svg><span>−21% load time</span></li></ul></article>",
-      "css": ".ds-paper { padding: 1.5rem 2rem; background-color: #f1e8d8; background-image: linear-gradient(180deg, rgba(44,33,23,0.035) 1px, transparent 1px); background-size: 100% 28px; border: 1px solid #c4b394; border-radius: 2px; color: #2c2117; box-shadow: 0 2px 4px rgba(0,0,0,0.35), 0 10px 24px rgba(0,0,0,0.45); transform: rotate(0.4deg); transition: all 0.5s ease; } .ds-paper:hover { transform: rotate(0.4deg) translateY(-4px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.45); } .ds-paper-title { margin: 0 0 0.5rem; font-family: 'EB Garamond', Georgia, serif; font-size: 1.5rem; font-weight: 600; line-height: 1.25; } .ds-paper-body { margin: 0 0 1rem; font-family: 'EB Garamond', Georgia, serif; font-size: 1.05rem; line-height: 1.625; color: rgba(44,33,23,0.85); } .ds-paper-list { margin: 0; padding: 0; list-style: none; } .ds-paper-list li { display: flex; align-items: flex-start; gap: 0.625rem; font-family: 'EB Garamond', Georgia, serif; font-size: 0.95rem; color: rgba(44,33,23,0.9); } .ds-diamond { width: 0.6rem; height: 0.6rem; margin-top: 0.375rem; color: #4f2e18; flex-shrink: 0; }"
+      "refersTo": "skin-sheet",
+      "description": "A ruled skin-tone sheet with ink text — project cards, ledger rows, the audience form. The paper voice of the back piece.",
+      "html": "<article class=\"ds-sheet\"><h3 class=\"ds-sheet-title\">Find My Race Pace</h3><p class=\"ds-sheet-body\">A React and Node ML app that cut load time 21% and lifted retention 18%.</p><ul class=\"ds-sheet-list\"><li><svg class=\"ds-diamond\" viewBox=\"0 0 12 12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" aria-hidden=\"true\"><path d=\"M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z\"/></svg><span>−21% load time</span></li></ul></article>",
+      "css": ".ds-sheet { padding: 1.5rem 2rem; background-color: #e9e2d2; background-image: radial-gradient(110% 70% at 50% 0%, rgba(255,250,235,0.35), transparent 55%), linear-gradient(180deg, rgba(36,28,18,0.04) 1px, transparent 1px); background-size: auto, 100% 30px; border: 1px solid #b7ac92; border-radius: 2px; color: #241c12; box-shadow: 0 18px 40px rgba(0,0,0,0.6); transform: rotate(0.4deg); transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); } .ds-sheet:hover { transform: rotate(0.4deg) translateY(-4px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.45); } .ds-sheet-title { margin: 0 0 0.5rem; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 1.25rem; font-weight: 700; line-height: 1.3; } .ds-sheet-body { margin: 0 0 1rem; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 1.05rem; line-height: 1.75; color: rgba(36,28,18,0.85); } .ds-sheet-list { margin: 0; padding: 0; list-style: none; } .ds-sheet-list li { display: flex; align-items: flex-start; gap: 0.625rem; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 0.95rem; color: rgba(36,28,18,0.9); } .ds-diamond { width: 0.6rem; height: 0.6rem; margin-top: 0.375rem; color: #241c12; flex-shrink: 0; }"
     },
     {
-      "name": "Leather Volume Card",
-      "kind": "card",
-      "refersTo": "leather-card",
-      "description": "A shipped product as a leather volume: spine strip, vertical title, and N° mark on the left, content on the right.",
-      "html": "<article class=\"ds-volume\"><div class=\"ds-spine\" aria-hidden=\"true\"><span class=\"ds-spine-stitch\"></span><span class=\"ds-spine-title\">Aisentic</span><span class=\"ds-spine-num\">N°02</span></div><div class=\"ds-volume-body\"><h3 class=\"ds-volume-title\">Aisentic</h3><p class=\"ds-volume-text\">Unified AI backend infrastructure cutting integration cost ~35%.</p></div></article>",
-      "css": ".ds-volume { display: flex; overflow: hidden; background: linear-gradient(160deg, #6d4327 0%, #54311a 60%, #3b2313 100%); border: 1px solid #241607; border-radius: 6px; box-shadow: 6px 8px 18px rgba(0,0,0,0.5); transition: all 0.5s ease; } .ds-volume:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.55); } .ds-spine { width: 2.5rem; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 1rem 0; background: rgba(0,0,0,0.25); } .ds-spine-stitch { width: 1px; height: 2rem; background-image: linear-gradient(180deg, #d8bd90 5px, transparent 5px, transparent 10px); background-size: 1px 10px; opacity: 0.5; } .ds-spine-title { writing-mode: vertical-rl; transform: rotate(180deg); color: rgba(232,196,126,0.9); font-family: 'EB Garamond', Georgia, serif; font-size: 0.75rem; font-weight: 500; } .ds-spine-num { color: rgba(216,189,144,0.6); font-family: 'Red Hat Mono', monospace; font-size: 0.55rem; letter-spacing: 0.14em; } .ds-volume-body { padding: 1.5rem 1.75rem; } .ds-volume-title { margin: 0 0 0.5rem; color: #f1e8d8; font-family: 'EB Garamond', Georgia, serif; font-size: 1.5rem; font-weight: 600; text-shadow: 0 1px 0 rgba(255,250,235,0.18), 0 -1px 1px rgba(0,0,0,0.75); } .ds-volume-text { margin: 0; color: #c9bfad; font-family: 'EB Garamond', Georgia, serif; font-size: 1.05rem; line-height: 1.625; }"
+      "name": "Medallion",
+      "kind": "badge",
+      "refersTo": "medallion",
+      "description": "The gold medallion — skill and award wells, the nav monogram, the hero's central name plate. The only full circles besides seals.",
+      "html": "<span class=\"ds-medallion\" aria-hidden=\"true\">雅</span>",
+      "css": ".ds-medallion { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 9999px; background: radial-gradient(circle at 35% 30%, #e8c47e 0%, #c9a25e 45%, #6d5228 80%, #57401f 100%); border: 1px solid #3a2c13; color: #0f0d0a; font-family: 'Yuji Syuku', serif; box-shadow: inset 0 2px 4px rgba(255,240,205,0.35), inset 0 -3px 6px rgba(60,40,10,0.6), 0 8px 22px rgba(0,0,0,0.55); }"
     },
     {
       "name": "Underline Input",
       "kind": "input",
       "refersTo": "input-underline",
-      "description": "The letter form field: a ruled line on paper, not a box. Bottom rule deepens on focus.",
+      "description": "The audience form field: a ruled line on the skin sheet, not a box. Bottom rule deepens on focus.",
       "html": "<label class=\"ds-input-label\" for=\"ds-email\">Your email</label><input class=\"ds-input\" id=\"ds-email\" type=\"email\" placeholder=\"your.email@example.com\"/>",
-      "css": ".ds-input-label { display: block; margin-bottom: 0.5rem; color: #2c2117; font-family: 'Red Hat Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; } .ds-input { width: 100%; box-sizing: border-box; padding: 0.5rem 0; background: transparent; border: none; border-bottom: 1px solid rgba(44,33,23,0.3); border-radius: 0; color: #2c2117; font-family: 'EB Garamond', Georgia, serif; font-size: 1.125rem; transition: border-color 0.2s ease; } .ds-input::placeholder { color: rgba(44,33,23,0.4); } .ds-input:hover { border-bottom-color: rgba(44,33,23,0.5); } .ds-input:focus { outline: none; border-bottom-color: rgba(44,33,23,0.7); } .ds-input:focus-visible { outline: 2px solid #e8c47e; outline-offset: 2px; }"
+      "css": ".ds-input-label { display: block; margin-bottom: 0.5rem; color: #241c12; font-family: 'Red Hat Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; } .ds-input { width: 100%; box-sizing: border-box; padding: 0.5rem 0; background: transparent; border: none; border-bottom: 1px solid rgba(36,28,18,0.3); border-radius: 0; color: #241c12; font-family: 'Zen Kaku Gothic New', sans-serif; font-size: 1.125rem; transition: border-color 0.15s; } .ds-input::placeholder { color: rgba(36,28,18,0.4); } .ds-input:hover { border-bottom-color: rgba(36,28,18,0.5); } .ds-input:focus { outline: none; border-bottom-color: rgba(36,28,18,0.7); } .ds-input:focus-visible { outline: 2px solid #e8c47e; outline-offset: 2px; }"
     },
     {
       "name": "Marginalia Tag",
       "kind": "chip",
       "refersTo": "chip-tag",
-      "description": "A hairline-bordered mono tag — ledger tags on dark and ink-outlined tags on paper.",
+      "description": "A hairline gold-bordered mono tag — ledger tags on dark and ink-outlined tags on paper.",
       "html": "<span class=\"ds-tag\">Harness engineering</span>",
-      "css": ".ds-tag { display: inline-block; padding: 0.25rem 0.625rem; border: 1px solid rgba(216,189,144,0.4); border-radius: 2px; color: #c9bfad; font-family: 'Red Hat Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; } .ds-tag--paper { border-color: rgba(44,33,23,0.25); color: rgba(44,33,23,0.8); }"
+      "css": ".ds-tag { display: inline-block; padding: 0.25rem 0.625rem; border: 1px solid rgba(201,162,94,0.4); border-radius: 2px; color: #a99f8d; font-family: 'Red Hat Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; } .ds-tag--paper { border-color: rgba(36,28,18,0.25); color: rgba(36,28,18,0.8); }"
     }
   ],
   "narrative": {
-    "northStar": "The Reading Shelf",
-    "overview": "This is the library of work already delivered — not a developer-portfolio demo reel. The portfolio is a walnut-black study at lamplight: shipped products are leather volumes standing on a wood shelf, impact is stamped into brass plates, the career is a ledger of ruled paper, and contact is a letter written on a torn sheet at the desk. Every surface is a physical material — saddle leather, engraved brass, ruled paper, dark wood — rendered with layered gradients and cast shadows from a single warm light source.\n\nThe system is deliberately dense and warm. Ground is near-black warm brown, text is cream paper, and the only bright voices are gilded foil for names and numbers and a deep oxblood seal for achievements. There is no glass, no blur, no neon: depth is conveyed by material gradients and book-thickness shadows, and the only glow permitted anywhere is the lamplight wash — a wide radial foil tint that fades from the top or bottom of a section. Visual emphasis comes from material weight (brass, leather, paper), not from brightness or glow.\n\nVoice is typographic first: EB Garamond serif carries identity and argument, Red Hat Mono is confined to marginalia — the small uppercase annotations that frame each section (\"On the shelf — shipped and running\", \"N°01\" spine numbers, ledger captions). Headings sit embossed on the dark ground; the few paper sheets in the layout are rotated a fraction of a degree so nothing on the desk is perfectly aligned with the world.",
+    "northStar": "The Yakuza Ink",
+    "overview": "The portfolio is a yakuza boss's back piece (irezumi), read at night. Work already delivered is ink already worn: six product panels run down the spine, impact is set in gold leaf, the career reads as the family ledger, and contact is an audience with the boss. The visitor reads the back piece panel by panel — each product a scene inked with its true figures in gold, the ledger carrying the numbers — and believes the engineer who ships AI into real products before reading a single claim.\n\nThe system refuses the dark-hero-gradient dev-portfolio default and its code-motif hero. Surfaces are physical: sumi-black lacquer over skin-tone paper, gold-leaf engraving, cinnabar hanko seals, needle linework, and a single neon rim light after dark. Depth is built from layered material gradients and black-based cast shadows; the only glows in the world are the gold-leaf sheen, the cinnabar stamp's bloom, and the neon rim at the edges of interactive panels after dark.\n\nVoice is typographic first: Yuji Syuku brush calligraphy carries identity — the name, the CAN DO motto, vertical panel titles, the seal glyph — Zen Kaku Gothic New carries argument and body text, and Red Hat Mono is confined to marginalia, the small uppercase annotations that frame each section. Dark, physical ink; restrained neon.",
     "keyCharacteristics": [
-      "Physical-material surfaces (leather, brass, ruled paper, wood) with layered gradient shading and cast shadows; no glass, no blur, no neon glow.",
-      "Warm dark by default: ink ground with cream paper type; lamplight is a radial foil wash, the only glow in the world.",
-      "Gilded EB Garamond for titles, Red Hat Mono marginalia for annotation — serif argues, mono annotates.",
-      "Near-square corners: 2px sheets and plates, 6px spine edges, full circles only for medallion marks.",
-      "Stitching (dashed thread lines) appears at material seams: nav top and bottom, card spines, ledger spine.",
-      "Cards lift on hover with a translate and a deeper shadow — books pulled toward the reader.",
-      "A stitch-t seam divides banded sections; sections alternate ink and ground, so the page reads as bound chapters."
+      "A back piece, not a dashboard: six ink panels down the spine, gold-leaf impact engravings, a family ledger of ruled paper, contact as an audience with the boss. No gradient-hero, no code motif.",
+      "Sumi-black lacquer by default with skin-tone paper sheets and cream inktext type; gold leaf for names and true figures; cinnabar only for seals.",
+      "Brush calligraphy (Yuji Syuku) for identity, Zen Kaku Gothic New for text, Red Hat Mono for marginalia — brush argues, sans explains, mono annotates.",
+      "Material surfaces: lacquer panels, gold plates, ruled skin sheets, all finished with layered gradients and the matching black-based shadow.",
+      "Gold is engraved (inset highlights, shadow-gold), never glassy; the only glow permitted is the gold-leaf sheen, the hanko bloom, and the neon rim at 40-60% of its intensity.",
+      "Depth is both material and dimensional: 3D perspective scenes, mouse tilt, and scroll-linked parallax — the back piece turns as you read it.",
+      "Cards lift on hover with a translate and a deeper shadow — panels lean toward the reader."
     ],
     "rules": [
-      { "name": "The No-Glass Rule", "body": "The study has no glass: no backdrop blur, no frosted translucency, no neon glow, no colored shadow blooms. The only luminous effect in the world is the lamplight — a wide radial foil wash (radial-gradient(52% 42% at 50% 0%, rgba(201,162,94,0.16) 0%, rgba(201,162,94,0.05) 55%, transparent 100%)) at the top of heroes and a dimmer counter-wash at section bases. Depth is material, not light.", "section": "colors" },
-      { "name": "The Lamplight Rule", "body": "Foil belongs on dark; ink belongs on paper. foilbright gilding appears only on dark surfaces, and ink-on-paper only on paper sheets — when the surface changes, the accent family changes with it. (Evidence: diamonds render text-foil on dark cards and text-leatherdeep on paper cards; YouTube card titles hover to leatherdeep.)", "section": "colors" },
-      { "name": "The Seal Rule", "body": "seal (#9c3b2a) is the only saturated hue. It is reserved for achievement stamps and the single subscribe action; everything else stays in the foil-and-leather family.", "section": "colors" },
-      { "name": "The Marginalia Rule", "body": "Red Hat Mono is confined to annotation: captions, labels, numbering, tags, footer notes — small, uppercase, wide-tracked. It never headlines. Every heading in the system is EB Garamond semibold; serif owns voice, mono owns marginalia. (Consequence: a marginalia label may never be styled as a heading or vice versa.)", "section": "typography" },
-      { "name": "The Lamplight Source Rule", "body": "All cast shadows share one light source, high and slightly left: drops offset down-right and deepen with material thickness (2px plate < 18px volume < 24px leaf). Never invert a shadow direction or use a colored/glow shadow — those imply a second light that the study does not have.", "section": "elevation" }
+      { "name": "The Hanko Rule", "body": "cinnabar (#c02818) is seal ink and nothing else: the hanko stamp in the hero, achievement seals on the ledger, and the stamp's ink bloom. It never fills text, never borders a panel, never tints a button. Every other accent stays in the gold family.", "section": "colors" },
+      { "name": "The Neon Rim Rule", "body": "neon (#ff3d6e) is a rim light after dark, not a fill. It appears only at edges — the neon-rim border-and-glow on interactive panels (idle #3a2030, hover rgba(255,61,110,0.55) border with 0.08-0.14 glows), focus rims, and the faint 0.06 wash rising from the hero's base. It is never a text color, never a panel background, and never brighter than 55% alpha.", "section": "colors" },
+      { "name": "The Gold Rule", "body": "One gold for one purpose: gold (#c9a25e) is the material — borders, needle lines, washes, diamond marks; goldbright (#e8c47e) is the voice — gilded text and numerals on dark; golddeep (#8d6d3a) is the engraving depth — gradient stops only. Never swap a voice for a material: text is never gold, and an engraved border is never goldbright.", "section": "colors" },
+      { "name": "The Ink-Surface Rule", "body": "Gold belongs on dark; ink belongs on paper. Gilded text appears only on lacquer or sumi; paper sheets carry inkonpaper text with gold only in engraved plates set into the sheet. When the surface changes, the accent family changes with it.", "section": "colors" },
+      { "name": "The Marginalia Rule", "body": "Red Hat Mono is confined to annotation: captions, labels, numbering, tags, footer notes — small, uppercase, wide-tracked. It never headlines. Headings and body are Zen Kaku Gothic New; identity is Yuji Syuku. (Consequence: a marginalia label may never be styled as a heading or vice versa.)", "section": "typography" },
+      { "name": "The Brush Rule", "body": "Yuji Syuku writes only identity: the hero name, the CAN DO motto, vertical panel titles, the seal glyph. It never sets body copy, and it never appears more than once per viewport — brush marks, it does not explain.", "section": "typography" },
+      { "name": "The Sumi Shadow Rule", "body": "All cast shadows are black-based and share one light source, high and slightly left: drops offset down and deepen with material thickness (2px plate < 18px panel < 40px raised). Never invert a shadow direction, and never cast a colored shadow — colored light exists only at rims (neon) and stamps (hanko bloom).", "section": "elevation" }
     ],
     "dos": [
-      "Do keep all accents in the warm family: brass foil, saddle leather, cream thread, oxblood seal. When in doubt, ask \"what would this be made of in a study?\" and render that material.",
-      "Do build surfaces from layered gradients — brass plates, leather bands, wood shelves — and finish them with the matching shadow (plate / volume / leaf).",
-      "Do write every section title as EB Garamond semibold with the embossed paper shadow, centered above a Red Hat Mono marginalia subtitle — the chapter pattern of the whole site.",
-      "Do alternate ink and ground bands and top each ground chapter with a stitch-t seam.",
-      "Do lift interactive cards and buttons on hover (-translate-y, deeper shadow) and warm their accent toward foilbright/white — books get pulled toward the reader.",
-      "Do use paper-sheet (ruled cream, 2px corners, slight rotation) for the letter form, project cards, and ledger rows; on paper, switch accent to inkonpaper/leatherdeep per the Lamplight Rule.",
-      "Do keep icons as inline SVGs at 16–24px — the diamond, external-link, arrow, YouTube, GitHub, LinkedIn marks are all drawn, never font glyphs.",
-      "Do respect the motion register: 200ms for color, 300ms for buttons, 500–700ms for card hover and image zoom — and honor prefers-reduced-motion, which the build zeroes globally."
+      "Do keep all accents in the ink family: gold leaf for names and numbers, cinnabar for seals, neon for rims. When in doubt, ask \"would this be inked onto skin?\" and render that material.",
+      "Do build surfaces from layered gradients — lacquer panels, gold plates, skin sheets — and finish them with the matching shadow (lacquer / deep / gold).",
+      "Do write identity in Yuji Syuku, body and headings in Zen Kaku Gothic New, and every annotation in Red Hat Mono marginalia — brush argues, sans explains, mono files.",
+      "Do alternate sumi and lacquer bands and top each lacquer chapter with a needle-line-h seam.",
+      "Do lift interactive cards and buttons on hover (-translate-y, deeper shadow) and warm their accent toward goldbright/white — panels lean toward the reader.",
+      "Do use skin-sheet (ruled paper, noise texture, 2px corners) for project cards, ledger rows, and the audience form; on paper, switch the accent family to inkonpaper per the Ink-Surface Rule.",
+      "Do keep icons as inline SVGs at 16-24px — the diamond, external-link, arrow, social marks are all drawn, never font glyphs.",
+      "Do respect the motion register: 100-150ms feedback, 150-300ms states, 300-500ms layout, 500-800ms hero focal, cubic-bezier(0.22,1,0.36,1) arrivals, 240ms stagger cap — and honor prefers-reduced-motion, which the build zeroes globally.",
+      "Do gate ambient loops off-screen (loop-pause) and cap parallax at 24px, cleared when nodes leave the viewport."
     ],
     "donts": [
-      "Don't use glassmorphism — no backdrop blur, no frosted panels, no translucent cards, no neon or colored glow shadows (the No-Glass Rule). The lamplight radial wash is the only glow.",
-      "Don't set headings or body in Red Hat Mono, and don't set marginalia in serif — the Marginalia Rule holds the annotation voice apart from the argument voice.",
-      "Don't use pill radii or large rounded corners on buttons, cards, or plates; the bindery is 2px sheets, 6px spine edges, and medallion circles only.",
-      "Don't use pure black or pure white: text is paper/linen on dark and inkonpaper on paper; borders are thread, foil, or ink at low alpha.",
-      "Don't scale a section without its seam: chapters open on ink, alternate to ground, and close with the next stitch-t.",
-      "Don't widen the palette with cool hues (blues, grays, pure whites) or a second saturated accent — the Seal Rule caps saturation at seal.",
-      "Don't put unicode glyphs where an SVG belongs; every mark, including the list diamond and external-link arrow, is an inline SVG (see not-canonized note)."
+      "Don't use the dark-hero-gradient dev-portfolio default, code motifs, glassmorphism, or backdrop blur — the back piece is physical ink, and the neon rim is the only light after dark.",
+      "Don't set headings or body in Red Hat Mono, and don't set marginalia in gothic or brush — the Marginalia Rule holds the annotation voice apart.",
+      "Don't use cinnabar for anything but seals, and neon for anything but rims — never as text fill, never as a panel fill (the Hanko Rule, the Neon Rim Rule).",
+      "Don't swap the golds: text is goldbright, material is gold, engraving depth is golddeep — the Gold Rule holds each to its purpose.",
+      "Don't use pill radii on buttons, cards, or plates; the binder is 2px panels, 6-8px soft edges, and medallion/seal circles only.",
+      "Don't use pure black or pure white as surfaces or text: shadow black exists only inside shadow tokens; text is inktext/inkonpaper, and highlights are warm creams.",
+      "Don't put unicode glyphs where an SVG belongs; every mark, including the list diamond and external-link arrow, is an inline SVG.",
+      "Don't add bounce, spring, or overshoot easing to any arrival, and don't chain reveal staggers past the 240ms cap."
     ]
   }
 }
