@@ -2,15 +2,16 @@ export function initMotion() {
   if (typeof window === 'undefined') return () => {};
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const cleanup: Array<() => void> = [];
+  /** @type {Array<() => void>} */
+  const cleanup = [];
 
   if (!reduced && 'IntersectionObserver' in window) {
-    const revealEls = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+    const revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            const el = entry.target as HTMLElement;
+            const el = /** @type {HTMLElement} */ (entry.target);
             const delay = el.dataset.revealDelay ?? '0';
             el.style.transitionDelay = `${delay}ms`;
             el.classList.add('is-visible');
@@ -27,17 +28,19 @@ export function initMotion() {
   }
 
   if (!reduced && window.matchMedia('(pointer: fine)').matches) {
-    const tiltEls = Array.from(document.querySelectorAll<HTMLElement>('[data-tilt]'));
-    const onMove = (e: PointerEvent) => {
-      const el = e.currentTarget as HTMLElement;
+    const tiltEls = /** @type {Array<HTMLElement>} */ (Array.from(document.querySelectorAll('[data-tilt]')));
+    /** @param {PointerEvent} e */
+    const onMove = (e) => {
+      const el = /** @type {HTMLElement} */ (e.currentTarget);
       const rect = el.getBoundingClientRect();
       const px = (e.clientX - rect.left) / rect.width - 0.5;
       const py = (e.clientY - rect.top) / rect.height - 0.5;
       const max = Number(el.dataset.tiltMax ?? 10);
       el.style.transform = `perspective(1000px) rotateX(${-py * max}deg) rotateY(${px * max}deg) translateZ(0)`;
     };
-    const onLeave = (e: PointerEvent) => {
-      const el = e.currentTarget as HTMLElement;
+    /** @param {PointerEvent} e */
+    const onLeave = (e) => {
+      const el = /** @type {HTMLElement} */ (e.currentTarget);
       el.style.transform = '';
     };
     tiltEls.forEach((el) => {
