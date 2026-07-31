@@ -4,33 +4,33 @@
   const imageFailed = /** @type {Record<string, boolean>} */ ($state({}));
 </script>
 
-<section class="relative bg-ink text-paper py-20 lg:py-28">
+<section class="relative bg-sumi text-inktext py-20 lg:py-28">
   <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="embossed serif font-semibold text-4xl md:text-6xl tracking-[-0.02em]">The ledger</h2>
-      <p class="marginalia text-linendim mt-5">Four years of shipped work, bound in order</p>
+      <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">The ledger</h2>
+      <p class="marginalia text-inktextdim mt-5">Four years of shipped work, inked in order</p>
     </div>
 
     <div class="relative">
-      <div class="stitch-v absolute left-5 md:left-1/2 top-0 bottom-0 -translate-x-1/2 opacity-60" aria-hidden="true"></div>
+      <div class="needle-line absolute left-5 md:left-1/2 top-0 bottom-0 -translate-x-1/2 opacity-60" aria-hidden="true"></div>
 
       <div class="space-y-12 md:space-y-16">
         {#each experience as entry, i (entry.company)}
           <div class="relative md:grid md:grid-cols-2 md:gap-16">
             <div class="absolute left-5 md:left-1/2 top-2 -translate-x-1/2" aria-hidden="true">
-              <span class="block w-3 h-3 rounded-full plate border border-black/50"></span>
+              <span class="medallion block w-3 h-3"></span>
             </div>
 
             <div class={`ml-12 md:ml-0 ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-2"}`}>
               <article
-                class={`relative rounded-sm overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl ${
-                  entry.highlight ? "leather-sheet" : "paper-sheet ledger-rule"
+                class={`relative overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-deep neon-rim ${
+                  entry.highlight ? "lacquer-raised gold-edge" : "skin-sheet"
                 }`}
               >
-                <div class={`p-6 md:p-8 pl-14 md:pl-16 ${entry.highlight ? "" : "text-inkonpaper"}`}>
+                <div class={`p-6 md:p-8 ${entry.highlight ? "" : "text-inkonpaper"}`}>
                   <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
                     <div class="flex items-center gap-4">
-                      <div class="w-12 h-12 flex-shrink-0 rounded-sm overflow-hidden bg-paper border border-black/30">
+                      <div class="w-12 h-12 flex-shrink-0 overflow-hidden bg-sumi border border-gold/30">
                         {#if entry.logo && !imageFailed[entry.company]}
                           <img
                             src={entry.logo}
@@ -41,7 +41,7 @@
                           />
                         {:else}
                           <span
-                            class="plate flex items-center justify-center w-full h-full serif text-lg font-semibold text-foilbright"
+                            class="medallion flex items-center justify-center w-full h-full brush text-lg text-sumi"
                             aria-hidden="true"
                           >
                             {entry.company[0]}
@@ -49,39 +49,34 @@
                         {/if}
                       </div>
                       <div>
-                        <h3 class={`serif text-xl font-semibold leading-tight ${entry.highlight ? "text-foilbright" : "text-inkonpaper"}`}>
+                        <h3 class={`brush text-xl leading-tight ${entry.highlight ? "gold-text" : "text-inkonpaper"}`}>
                           {entry.company}
                         </h3>
-                        <p class={`serif italic ${entry.highlight ? "text-linen" : "text-inkonpaper/75"}`}>
+                        <p class={`brush italic ${entry.highlight ? "text-inktextdim" : "text-inkonpaper/75"}`}>
                           {entry.role}
                         </p>
                       </div>
                     </div>
-                    <span class="plate rounded-sm px-3 py-1.5 marginalia text-paper/90 flex-shrink-0">
+                    <span class="gold-plate px-3 py-1.5 marginalia text-sumi flex-shrink-0">
                       {entry.period}
                     </span>
                   </div>
 
                   {#if entry.badge}
-                    <span
-                      class={`inline-block px-3 py-1 marginalia rounded-sm mb-4 ${
-                        entry.highlight ? "bg-seal text-paper" : "bg-seal text-paper"
-                      }`}
-                    >
-                      <svg class="inline-block w-2 h-2 mr-1.5 -mt-0.5" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><circle cx="4" cy="4" r="3" /></svg>
+                    <span class="hanko inline-block px-3 py-1 marginalia mb-4">
                       {entry.badge}
                     </span>
                   {/if}
 
-                  <p class={`leading-relaxed mb-5 text-[1.02rem] ${entry.highlight ? "text-linen" : "text-inkonpaper/85"}`}>
+                  <p class={`leading-relaxed mb-5 text-[1.02rem] ${entry.highlight ? "text-inktextdim" : "text-inkonpaper/85"}`}>
                     {entry.description}
                   </p>
 
                   {#if entry.metrics.length}
                     <ul class="space-y-2 mb-5">
                       {#each entry.metrics as metric (metric)}
-                        <li class={`flex items-start gap-2.5 text-[0.95rem] ${entry.highlight ? "text-linen" : "text-inkonpaper/90"}`}>
-                          <svg class={`diamond mt-1.5 ${entry.highlight ? "text-foil" : "text-leatherdeep"}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
+                        <li class={`flex items-start gap-2.5 text-[0.95rem] ${entry.highlight ? "text-inktextdim" : "text-inkonpaper/90"}`}>
+                          <svg class={`w-[0.6rem] h-[0.6rem] mt-1.5 flex-shrink-0 ${entry.highlight ? "text-gold" : "text-golddeep"}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
                           <span>{metric}</span>
                         </li>
                       {/each}
@@ -92,9 +87,9 @@
                     <div class="flex flex-wrap gap-2">
                       {#each entry.tags as tag (tag)}
                         <span
-                          class={`marginalia px-2.5 py-1 rounded-sm border normal-case ${
+                          class={`marginalia px-2.5 py-1 border normal-case ${
                             entry.highlight
-                              ? "border-thread/40 text-linen"
+                              ? "border-gold/40 text-inktextdim"
                               : "border-inkonpaper/25 text-inkonpaper/80"
                           }`}
                         >

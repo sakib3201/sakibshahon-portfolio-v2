@@ -11,41 +11,41 @@
   });
 </script>
 
-<section id="skills" class="scroll-mt-24 relative bg-ground text-paper py-20 lg:py-28 overflow-hidden">
-  <div class="stitch-t absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
+<section id="skills" class="scroll-mt-24 relative bg-lacquer text-inktext py-20 lg:py-28 overflow-hidden">
+  <div class="needle-line-h absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="embossed serif font-semibold text-4xl md:text-6xl tracking-[-0.02em]">The reference shelf</h2>
-      <p class="max-w-2xl mx-auto mt-5 text-lg text-linen leading-relaxed">
+      <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">The disciplines</h2>
+      <p class="max-w-2xl mx-auto mt-5 text-lg text-inktextdim leading-relaxed">
         Four working disciplines, from API to polished UI — WordPress plugins to SaaS.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-8 mb-16">
       {#each skills as skill (skill.title)}
-        <article class="leather-sheet group relative flex flex-col rounded-r-md overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+        <article class="lacquer-raised gold-edge group relative flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-deep neon-rim">
           <div class="flex items-center justify-center pt-7 pb-4">
             <span
-              class="plate flex items-center justify-center w-16 h-16 rounded-full"
+              class="medallion flex items-center justify-center w-16 h-16"
               aria-hidden="true"
             >
-              <svg class="w-8 h-8 text-foilbright" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-8 h-8 text-sumi" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d={icons[skill.icon] ?? icons.code}></path>
               </svg>
             </span>
           </div>
 
           <div class="px-7 pb-3 text-center">
-            <h3 class="embossed serif text-2xl mb-2">{skill.title}</h3>
-            <p class="serif text-linen leading-relaxed mb-5 text-[1.02rem]">{skill.blurb}</p>
+            <h3 class="brush gold-text text-2xl mb-2">{skill.title}</h3>
+            <p class="text-inktextdim leading-relaxed mb-5 text-[1.02rem]">{skill.blurb}</p>
           </div>
 
           <div class="mx-7 mb-7">
-            <ul class="space-y-2.5 pt-4 border-t border-thread/25">
+            <ul class="space-y-2.5 pt-4 border-t border-gold/25">
               {#each skill.items as item (item)}
-                <li class="flex items-start gap-2.5 text-sm text-linen leading-snug">
-                  <svg class="diamond text-foil mt-1.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
+                <li class="flex items-start gap-2.5 text-sm text-inktextdim leading-snug">
+                  <svg class="w-[0.6rem] h-[0.6rem] mt-1.5 flex-shrink-0" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
                   <span>{item}</span>
                 </li>
               {/each}
@@ -58,7 +58,7 @@
     <div class="text-center">
       <a
         href="/about#skills"
-        class="ribbon inline-flex items-center gap-2 px-8 py-3.5 serif text-lg text-foilbright hover:text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+        class="gold-plate inline-flex items-center gap-2 px-8 py-3.5 brush text-lg text-sumi hover:text-black transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
       >
         View skills in detail
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

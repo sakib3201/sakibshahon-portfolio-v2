@@ -10,34 +10,34 @@
   });
 </script>
 
-<section id="awards" class="scroll-mt-24 relative bg-ground text-paper py-20 lg:py-28 overflow-hidden">
-  <div class="stitch-t absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
+<section id="awards" class="scroll-mt-24 relative bg-lacquer text-inktext py-20 lg:py-28 overflow-hidden">
+  <div class="needle-line-h absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="embossed serif font-semibold text-4xl md:text-6xl tracking-[-0.02em]">The display case</h2>
-      <p class="marginalia text-linendim mt-5">Competitive programming and global hackathons</p>
+      <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">The spoils</h2>
+      <p class="marginalia text-inktextdim mt-5">Competitive programming and global hackathons</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-7 lg:gap-8">
       {#each awards as award (award.title)}
-        <div class="plate rounded-sm p-7 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl flex flex-col">
+        <div class="lacquer-raised gold-edge p-7 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-deep neon-rim flex flex-col">
           <div class="flex items-center justify-between mb-5">
-            <span class="flex items-center justify-center w-14 h-14 rounded-full border border-black/40 bg-black/20" aria-hidden="true">
-              <svg class="w-7 h-7 text-foilbright" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span class="medallion flex items-center justify-center w-14 h-14" aria-hidden="true">
+              <svg class="w-7 h-7 text-sumi" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d={iconPaths[award.icon] ?? iconPaths.trophy}></path>
               </svg>
             </span>
-            <span class="marginalia text-paper/80 bg-black/25 rounded-sm px-2.5 py-1">{award.year}</span>
+            <span class="marginalia text-inktextdim bg-black/25 px-2.5 py-1">{award.year}</span>
           </div>
 
-          <h3 class="serif text-xl font-semibold text-paper leading-snug mb-3">
+          <h3 class="brush text-xl text-inktext leading-snug mb-3">
             {#if award.href}
               <a
                 href={award.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="hover:text-foilbright transition-colors duration-200"
+                class="hover:text-goldbright transition-colors duration-200"
               >
                 {award.title}
               </a>
@@ -46,7 +46,7 @@
             {/if}
           </h3>
 
-          <p class="serif text-paper/85 leading-relaxed">{award.description}</p>
+          <p class="text-inktextdim leading-relaxed">{award.description}</p>
         </div>
       {/each}
     </div>

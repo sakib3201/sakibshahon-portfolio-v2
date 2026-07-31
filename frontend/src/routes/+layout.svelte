@@ -1,7 +1,11 @@
 <script>
+	import { onMount } from 'svelte';
 	import '../app.css';
+	import { initMotion } from '../lib/motion.js';
 
 	let { children } = $props();
+
+	onMount(() => initMotion());
 </script>
 
 <svelte:head>
@@ -9,11 +13,11 @@
 </svelte:head>
 
 <!--
-THESIS: The portfolio is a library of work already delivered. Shipped products are leather volumes on the shelf, impact is stamped in brass plates, the career is a ledger, and contact is a letter on the desk. It refuses the dark-hero-gradient dev-portfolio default and its code-motif hero.
-OWN-WORLD: A walnut-black study at lamplight. Saddle leather with cream stitching, engraved brass plates, torn paper sheets, and wood shelves. Gilded serif (EB Garamond) for titles, Red Hat Mono for marginalia. Warm dark, physical material, no glass, no glow.
-STORY: A visitor opens the shelf and finds installed products as books, opens the ledger and finds the numbers, and believes the engineer who ships AI into real products before reading a single claim.
-FIRST VIEWPORT: The shelf itself: six tooled volumes under the gilded name, the CAN DO tagline on a bookplate, ribbon CTAs. The work leads; identity frames it.
-FORM: The Reading Shelf — the user-pinned challenger (leather reading shelf) from the direction roll; seed key ce6a033e.
+THESIS: The portfolio is a yakuza boss's back piece: work already delivered is ink already worn. Six product panels run down the spine, impact is set in gold leaf, the career reads as the family ledger, and contact is an audience with the boss. It refuses the dark-hero-gradient dev-portfolio default and its code-motif hero.
+OWN-WORLD: Sumi-black lacquer and skin-tone paper, gold-leaf engraving and cinnabar hanko seals, needle linework, a neon rim light after dark. Brush calligraphy (Yuji Syuku) for the name, Zen Kaku Gothic New for text, Red Hat Mono for marginalia. Dark, physical ink, restrained neon.
+STORY: A visitor reads the back piece panel by panel: each product a scene inked with its true figures in gold, the ledger carrying the numbers, and believes the engineer who ships AI into real products before reading a single claim.
+FIRST VIEWPORT: The back piece turning in 3D: the name as the central medallion, six ink panels along the spine, the CAN DO motto band, impact metrics as gold-leaf engravings. The work leads; identity frames it.
+FORM: The Yakuza Ink — hand-crafted cyberpunk mafia anime world, user-pinned (override of roll ce6a033e round 1).
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
 -->
 
