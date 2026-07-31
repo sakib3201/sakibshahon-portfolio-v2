@@ -57,5 +57,31 @@ export function initMotion() {
     });
   }
 
+  if (!reduced && 'IntersectionObserver' in window) {
+    const loopEls = /** @type {Array<HTMLElement>} */ (
+      Array.from(
+        document.querySelectorAll(
+          '.shimmer, .medallion-float, .draw-needle, .loop-pause, [data-loop-pause]'
+        )
+      )
+    );
+    if (loopEls.length > 0) {
+      loopEls.forEach((el) => {
+        el.style.animationPlayState = 'paused';
+      });
+      const loopObserver = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            const el = /** @type {HTMLElement} */ (entry.target);
+            el.style.animationPlayState = entry.isIntersecting ? '' : 'paused';
+          }
+        },
+        { threshold: 0 }
+      );
+      loopEls.forEach((el) => loopObserver.observe(el));
+      cleanup.push(() => loopObserver.disconnect());
+    }
+  }
+
   return () => cleanup.forEach((fn) => fn());
 }

@@ -230,6 +230,86 @@ body {
     transform-style: preserve-3d;
     animation: medallion-float 9s ease-in-out infinite;
   }
+
+  .gold-edge.neon-rim:focus-visible,
+  .gold-edge.neon-rim:has(:focus-visible),
+  .skin-sheet.neon-rim:has(:focus-visible) {
+    transform: translateY(-6px);
+    border-color: rgba(255, 61, 110, 0.55);
+    box-shadow:
+      inset 0 0 24px rgba(255, 61, 110, 0.08),
+      0 0 24px rgba(255, 61, 110, 0.14);
+  }
+
+  a.gold-plate,
+  button.gold-plate {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  a.gold-plate::after,
+  button.gold-plate::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(115deg, transparent 30%, rgba(255, 250, 230, 0.45) 50%, transparent 70%);
+    transform: translateX(-140%) skewX(-16deg);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+  }
+
+  a.gold-plate:hover::after,
+  button.gold-plate:hover::after,
+  a.gold-plate:focus-visible::after,
+  button.gold-plate:focus-visible::after {
+    transform: translateX(140%) skewX(-16deg);
+  }
+
+  a.gold-plate:focus-visible,
+  button.gold-plate:focus-visible {
+    transform: translateY(-0.125rem);
+    outline-color: var(--color-cinnabar);
+  }
+
+  a.gold-plate:active,
+  button.gold-plate:active {
+    transform: translateY(2px) !important;
+  }
+
+  nav[aria-label='Main navigation'] a:not([aria-label]) {
+    position: relative;
+  }
+
+  nav[aria-label='Main navigation'] a:not([aria-label])::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-image: repeating-linear-gradient(90deg, var(--color-gold) 0 2px, transparent 2px 7px);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  nav[aria-label='Main navigation'] a:not([aria-label]):hover::after,
+  nav[aria-label='Main navigation'] a:not([aria-label]):focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  nav[aria-label='Main navigation'] a:not([aria-label]):hover,
+  nav[aria-label='Main navigation'] a:not([aria-label]):focus-visible {
+    border-bottom-color: transparent !important;
+  }
+
+  a:focus-visible:not(.gold-plate),
+  button:focus-visible:not(.gold-plate) {
+    color: var(--color-goldbright);
+  }
 }
 
 @keyframes shimmer-sweep {
