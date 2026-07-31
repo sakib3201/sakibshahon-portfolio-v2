@@ -2,6 +2,23 @@
   import AboutTimeline from "../../lib/components/AboutTimeline.svelte";
   import Navbar from "../../lib/components/Navbar.svelte";
   import Footer from "../../lib/components/Footer.svelte";
+  import { siteMeta, skills } from "../../lib/data.js";
+
+  const icons = /** @type {Record<string, string>} */ ({
+    code: 'M16 18l6-6-6-6M8 6l-6 6 6 6',
+    ai: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
+    chart:
+      'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+    brain:
+      'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z'
+  });
+
+  const proofs = /** @type {Record<string, string>} */ ({
+    "Web Development": "WP Timetics load −0.45s (~50%) · WPCafe analytics −0.24s (~14%)",
+    "AI Engineering": "Unified AI backend — ~35% lower integration cost · ~2× delivery speed",
+    "Data Analytics & Visualization": "Multi-threaded pipelines — −34% server cost",
+    "Machine Learning": "ML race analytics — +18% user retention (Find My Race Pace)"
+  });
 </script>
 
 <svelte:head>
@@ -66,51 +83,76 @@
 
     <AboutTimeline />
 
-    <!-- Additional content section -->
+    <!-- Skills section -->
     <section id="skills" class="scroll-mt-24 py-20 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16 reveal" data-reveal>
           <h2 class="brush gold-text tracking-[0.02em] text-4xl md:text-6xl mb-6">
-            Beyond the Code
+            The disciplines
           </h2>
-          <p class="text-lg text-inktextdim leading-relaxed">
-            When I'm not coding, you'll find me exploring new technologies, contributing to open source projects,
-            or sharing knowledge with the developer community. I believe in continuous learning and staying
-            up-to-date with the latest industry trends.
+          <p class="marginalia text-inktextdim mb-6">Four working disciplines, each proven on work that ships</p>
+          <p class="max-w-2xl mx-auto text-lg text-inktextdim leading-relaxed">
+            Four years, three companies, and every metric in the ledger above came from these hands-on disciplines —
+            web engineering from API to polished UI, AI features engineered to cost less, pipelines that pay for
+            themselves, and ML that survives contact with production.
           </p>
         </div>
 
-        <!-- Skills or values section -->
-        <div class="grid md:grid-cols-3 gap-8 mt-16">
-          <div class="lacquer-raised gold-edge p-6 text-center reveal" data-reveal>
-            <div class="medallion w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-8 h-8 text-sumi" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <h3 class="brush text-xl text-inktext mb-2">Performance</h3>
-            <p class="text-inktextdim">Optimized solutions that deliver exceptional user experiences</p>
-          </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 lg:gap-8">
+          {#each skills as skill, i (skill.title)}
+            <article
+              class="lacquer-raised gold-edge group relative flex flex-col p-7 md:p-8 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-deep neon-rim"
+              data-reveal
+              data-reveal-delay={i * 60}
+            >
+              <div class="flex items-start justify-between gap-4 mb-5">
+                <span class="medallion reveal-pulse flex items-center justify-center w-14 h-14" aria-hidden="true">
+                  <svg class="w-7 h-7 text-sumi" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d={icons[skill.icon] ?? icons.code}></path>
+                  </svg>
+                </span>
+                <span class="marginalia text-goldbright bg-black/25 px-2.5 py-1" aria-hidden="true">
+                  N°{String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
 
-          <div class="lacquer-raised gold-edge p-6 text-center reveal" data-reveal data-reveal-delay="150">
-            <div class="medallion w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-8 h-8 text-sumi" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h3 class="brush text-xl text-inktext mb-2">Quality</h3>
-            <p class="text-inktextdim">Clean, maintainable code following best practices and standards</p>
-          </div>
+              <h3 class="brush gold-text text-2xl mb-2">{skill.title}</h3>
+              <p class="text-inktextdim leading-relaxed mb-5">{skill.blurb}</p>
 
-          <div class="lacquer-raised gold-edge p-6 text-center reveal" data-reveal data-reveal-delay="300">
-            <div class="medallion w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-8 h-8 text-sumi" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-              </svg>
-            </div>
-            <h3 class="brush text-xl text-inktext mb-2">Collaboration</h3>
-            <p class="text-inktextdim">Working effectively with teams to achieve shared goals</p>
-          </div>
+              <ul class="space-y-2.5 pt-4 border-t border-gold/25 mb-6">
+                {#each skill.items as item (item)}
+                  <li class="flex items-start gap-2.5 text-[0.95rem] text-inktextdim leading-snug">
+                    <svg class="w-[0.6rem] h-[0.6rem] mt-1.5 flex-shrink-0 text-gold" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
+                    <span>{item}</span>
+                  </li>
+                {/each}
+              </ul>
+
+              {#if proofs[skill.title]}
+                <p class="marginalia mt-auto pt-3 border-t border-gold/25 text-gold/80 normal-case">
+                  <span class="text-goldbright">Shipped:</span> {proofs[skill.title]}
+                </p>
+              {/if}
+            </article>
+          {/each}
+        </div>
+
+        <div class="text-center mt-16" data-reveal data-reveal-delay="200">
+          <p class="marginalia text-inktextdim mb-6">
+            And when the terminal is closed: mentoring the Mymensingh programming community, 15+ LightOJ tutorials,
+            and a dev.to blog.
+          </p>
+          <a
+            href={siteMeta.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="gold-plate inline-flex items-center gap-2 px-8 py-3.5 brush text-lg text-sumi hover:text-black transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+          >
+            Download the résumé
+            <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>
