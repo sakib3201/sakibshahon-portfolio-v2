@@ -12,11 +12,14 @@
   };
 </script>
 
-<article class="paper-sheet rounded-sm overflow-hidden transition-all duration-500 hover:shadow-2xl group">
+<article
+  class="lacquer-raised gold-edge neon-rim group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-deep reveal"
+  data-reveal
+>
   <div class="grid md:grid-cols-2">
     <div class="relative md:min-h-full">
       <div class="p-5 md:p-6 h-full">
-        <div class="relative h-64 md:h-full min-h-64 overflow-hidden bg-woodlight border border-black/30">
+        <div class="relative h-64 md:h-full min-h-64 overflow-hidden rounded-sm bg-sumi border border-gold/30">
           {#if project.imageSrc && !imageFailed}
             <img
               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -26,34 +29,33 @@
               onerror={handleImageError}
             />
           {:else}
-            <div class="flex items-center justify-center h-full p-8 bg-wood">
+            <div class="flex items-center justify-center h-full p-8 bg-sumi">
               <div class="text-center">
-                <span class="plate inline-flex items-center justify-center w-20 h-20 rounded-sm serif text-3xl font-semibold text-foilbright" aria-hidden="true">
+                <span class="medallion inline-flex items-center justify-center w-20 h-20 brush text-3xl text-sumi" aria-hidden="true">
                   {project.title.slice(0, 1)}
                 </span>
-                <p class="serif text-lg font-medium text-paper mt-4">{project.title}</p>
+                <p class="brush text-lg text-inktextdim mt-4">{project.title}</p>
               </div>
             </div>
           {/if}
-          <div class="absolute inset-3 border border-paper/30 pointer-events-none" aria-hidden="true"></div>
         </div>
       </div>
     </div>
 
     <div class="p-6 md:p-8">
-      <h3 class="serif text-2xl md:text-3xl font-semibold text-inkonpaper leading-tight mb-3">
+      <h3 class="brush gold-text text-2xl md:text-3xl leading-tight mb-3">
         {project.title}
       </h3>
 
-      <p class="serif text-inkonpaper/85 leading-relaxed mb-5 text-[1.05rem]">
+      <p class="text-inktextdim leading-relaxed mb-5 text-[1.05rem]">
         {project.description}
       </p>
 
       {#if project.highlights && project.highlights.length > 0}
         <ul class="space-y-2 mb-5">
           {#each project.highlights as highlight (highlight)}
-            <li class="flex items-start gap-2.5 text-[0.95rem] text-inkonpaper/90">
-              <svg class="diamond text-leatherdeep mt-1.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
+            <li class="flex items-start gap-2.5 text-[0.95rem] text-inktextdim">
+              <svg class="w-[0.6rem] h-[0.6rem] mt-1.5 flex-shrink-0 text-gold" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
               <span>{highlight}</span>
             </li>
           {/each}
@@ -67,7 +69,7 @@
               href={project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-2.5 border border-inkonpaper/25 rounded-sm text-inkonpaper hover:bg-inkonpaper hover:text-paper transition-colors duration-200"
+              class="p-2.5 border border-gold/40 rounded-sm text-inktextdim hover:text-goldbright hover:border-gold/70 transition-colors duration-200"
               aria-label="View {project.title} on GitHub"
             >
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -81,7 +83,7 @@
               href={project.liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-2.5 border border-inkonpaper/25 rounded-sm text-inkonpaper hover:bg-inkonpaper hover:text-paper transition-colors duration-200"
+              class="p-2.5 border border-gold/40 rounded-sm text-inktextdim hover:text-goldbright hover:border-gold/70 transition-colors duration-200"
               aria-label="Visit {project.title} live"
             >
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
@@ -95,7 +97,7 @@
               href={project.youtubeLink}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-2.5 border border-inkonpaper/25 rounded-sm text-inkonpaper hover:bg-inkonpaper hover:text-paper transition-colors duration-200"
+              class="p-2.5 border border-gold/40 rounded-sm text-inktextdim hover:text-goldbright hover:border-gold/70 transition-colors duration-200"
               aria-label="Watch {project.title} on YouTube"
             >
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -110,7 +112,7 @@
             href={project.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            class="ribbon px-5 py-2.5 serif text-foilbright hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+            class="gold-plate px-5 py-2.5 brush text-sumi hover:text-black transition-all duration-300 hover:-translate-y-0.5"
           >
             Visit site
           </a>
@@ -119,7 +121,7 @@
             href={project.youtubeLink}
             target="_blank"
             rel="noopener noreferrer"
-            class="ribbon px-5 py-2.5 serif text-foilbright hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+            class="gold-plate px-5 py-2.5 brush text-sumi hover:text-black transition-all duration-300 hover:-translate-y-0.5"
           >
             Watch on YouTube
           </a>
