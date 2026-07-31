@@ -1,4 +1,4 @@
-<div class="bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white py-20 relative overflow-hidden">
+<div id="contact" class="bg-gradient-to-br from-gray-900 via-slate-800 to-black text-white py-20 relative overflow-hidden scroll-mt-24">
   <!-- Background decorative elements -->
   <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
   <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -24,7 +24,8 @@
               <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
                 <img
                   src="/assets/professional.webp"
-                  alt="Profile"
+                  alt="Sakib Ahamed Shahon"
+                  loading="lazy"
                   class="w-40 h-40 object-cover rounded-full shadow-inner"
                 />
               </div>
@@ -52,6 +53,14 @@
               type="hidden"
               name="from_name"
               value="sakibshahon.netlify.app"
+            />
+            <input
+              type="checkbox"
+              name="botcheck"
+              class="hidden"
+              style="display:none;"
+              tabindex="-1"
+              autocomplete="off"
             />
 
             <div class="space-y-2">
@@ -115,7 +124,7 @@
                 <span class="text-slate-300">Email</span>
               </a>
               <a
-                href="https://linkedin.com/in/sakib-ahamed-shahon"
+                href="https://www.linkedin.com/in/sakib-shahon/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex items-center space-x-2 px-4 py-2 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-600 hover:border-slate-500 rounded-lg transition-all duration-300 hover:scale-105"
