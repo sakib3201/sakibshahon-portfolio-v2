@@ -334,6 +334,11 @@ body {
   button:focus-visible:not(.gold-plate) {
     color: var(--color-goldbright);
   }
+
+  button[aria-controls='mobile-navigation-menu']:focus-visible {
+    outline: 2px solid var(--color-goldbright);
+    outline-offset: 2px;
+  }
 }
 
 @keyframes shimmer-sweep {
