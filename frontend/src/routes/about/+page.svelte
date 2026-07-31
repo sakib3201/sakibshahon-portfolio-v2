@@ -4,7 +4,29 @@
   import Footer from "../../lib/components/Footer.svelte";
 </script>
 
-<main class="bg-gradient-to-br from-gray-900 via-slate-800 to-black min-h-screen">
+<svelte:head>
+  <title>About — Sakib Ahamed Shahon</title>
+  <meta
+    name="description"
+    content="About Sakib Ahamed Shahon — software engineer, competitive programmer, and problem solver."
+  />
+  <link rel="canonical" href="https://sakibshahon.netlify.app/about" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About — Sakib Ahamed Shahon" />
+  <meta
+    property="og:description"
+    content="About Sakib Ahamed Shahon — software engineer, competitive programmer, and problem solver."
+  />
+  <meta property="og:url" content="https://sakibshahon.netlify.app/about" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="About — Sakib Ahamed Shahon" />
+  <meta
+    name="twitter:description"
+    content="About Sakib Ahamed Shahon — software engineer, competitive programmer, and problem solver."
+  />
+</svelte:head>
+
+<main id="main-content" tabindex="-1" class="bg-gradient-to-br from-gray-900 via-slate-800 to-black min-h-screen">
   <!-- Background decorative elements -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none">
     <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/3 rounded-full blur-3xl"></div>
@@ -45,7 +67,7 @@
     <AboutTimeline />
 
     <!-- Additional content section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="skills" class="scroll-mt-24 py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">
           <h2 class="text-3xl font-bold text-white mb-6">Beyond the Code</h2>
