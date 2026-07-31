@@ -473,3 +473,10 @@ body {
     transform: scale(1.3);
   }
 }
+
+/* 013 parallax: transforms + will-change are inline, JS-managed (initParallax in
+   motion.js) — applied only while a node is on-screen, cleared when paused or
+   prefers-reduced-motion is active, so nothing here sets static transforms. */
+.parallax-node {
+  backface-visibility: hidden;
+}

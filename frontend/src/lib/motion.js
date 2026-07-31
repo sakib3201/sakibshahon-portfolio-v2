@@ -135,3 +135,110 @@ export function initMotion() {
     clearTimers();
   };
 }
+
+const PARALLAX_DEFAULT_MAX = 24;
+
+export function initParallax() {
+  if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return () => {};
+
+  const reducedQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const nodes = /** @type {Array<HTMLElement>} */ (
+    Array.from(document.querySelectorAll('[data-parallax]'))
+  );
+  if (nodes.length === 0) return () => {};
+
+  /** @type {Array<() => void>} */
+  const cleanups = [];
+  /** @type {Map<HTMLElement, number>} */
+  const maxOffsets = new Map();
+  /** @type {Set<HTMLElement>} */
+  const active = new Set();
+  let rafId = 0;
+  let framePending = false;
+
+  nodes.forEach((el) => {
+    const parsed = Number(el.dataset.parallaxMax ?? PARALLAX_DEFAULT_MAX);
+    const clamped = Number.isFinite(parsed)
+      ? Math.min(Math.max(parsed, 0), PARALLAX_DEFAULT_MAX)
+      : PARALLAX_DEFAULT_MAX;
+    maxOffsets.set(el, clamped);
+  });
+
+  /** @param {HTMLElement} el */
+  const clearNode = (el) => {
+    el.style.transform = '';
+    el.style.willChange = '';
+  };
+
+  const update = () => {
+    framePending = false;
+    if (active.size === 0) return;
+    const vh = window.innerHeight;
+    const range = vh * 0.75;
+    for (const el of active) {
+      const rect = el.getBoundingClientRect();
+      if (rect.height === 0) continue;
+      const centerDelta = rect.top + rect.height / 2 - vh / 2;
+      const t = Math.max(-1, Math.min(1, centerDelta / range));
+      const offset = Math.round(-t * (maxOffsets.get(el) ?? PARALLAX_DEFAULT_MAX));
+      el.style.transform = `translate3d(0, ${offset}px, 0)`;
+    }
+  };
+
+  const scheduleUpdate = () => {
+    if (framePending) return;
+    framePending = true;
+    rafId = window.requestAnimationFrame(update);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = /** @type {HTMLElement} */ (entry.target);
+        if (entry.isIntersecting) {
+          active.add(el);
+          el.style.willChange = 'transform';
+        } else {
+          active.delete(el);
+          clearNode(el);
+        }
+      }
+      scheduleUpdate();
+    },
+    { threshold: 0 }
+  );
+
+  const onViewportChange = () => scheduleUpdate();
+  const start = () => {
+    nodes.forEach((el) => observer.observe(el));
+    window.addEventListener('scroll', onViewportChange, { passive: true });
+    window.addEventListener('resize', onViewportChange, { passive: true });
+    scheduleUpdate();
+  };
+  const stop = () => {
+    if (rafId > 0) window.cancelAnimationFrame(rafId);
+    rafId = 0;
+    framePending = false;
+    active.clear();
+    observer.disconnect();
+    window.removeEventListener('scroll', onViewportChange);
+    window.removeEventListener('resize', onViewportChange);
+    nodes.forEach(clearNode);
+  };
+  const syncWithMotionPreference = () => {
+    if (reducedQuery.matches) stop();
+    else start();
+  };
+
+  reducedQuery.addEventListener('change', syncWithMotionPreference);
+  cleanups.push(() => {
+    reducedQuery.removeEventListener('change', syncWithMotionPreference);
+    stop();
+  });
+
+  syncWithMotionPreference();
+
+  return () => {
+    cleanups.splice(0).forEach((fn) => fn());
+  };
+}

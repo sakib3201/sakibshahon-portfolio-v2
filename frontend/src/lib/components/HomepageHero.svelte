@@ -137,7 +137,7 @@
           aria-label="Products inked on the back piece"
         >
           {#each productsShipped as product, i (product.name)}
-            <li class="group relative perspective-scene">
+            <li class="group relative perspective-scene parallax-node" data-parallax data-parallax-max="14">
               <a
                 href="#products"
                 class="depth-card block"

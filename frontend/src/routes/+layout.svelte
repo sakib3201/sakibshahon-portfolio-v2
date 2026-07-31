@@ -1,8 +1,8 @@
 <script>
 	import { afterNavigate } from '$app/navigation';
-	import { onDestroy } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import '../app.css';
-	import { initMotion } from '../lib/motion.js';
+	import { initMotion, initParallax } from '../lib/motion.js';
 
 	let { children } = $props();
 
@@ -14,6 +14,19 @@
 	});
 
 	onDestroy(() => destroyMotion());
+
+	let destroyParallax = () => {};
+
+	onMount(() => {
+		destroyParallax = initParallax();
+	});
+
+	afterNavigate(() => {
+		destroyParallax();
+		destroyParallax = initParallax();
+	});
+
+	onDestroy(() => destroyParallax());
 </script>
 
 <svelte:head>

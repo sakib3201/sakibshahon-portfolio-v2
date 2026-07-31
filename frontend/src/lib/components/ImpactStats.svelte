@@ -9,7 +9,7 @@
     aria-hidden="true"
   ></div>
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="parallax-node relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-parallax>
     <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
       {#each impactStats as stat, i (stat.value)}
         <li class="lacquer-raised gold-edge neon-rim px-6 py-7 text-center transition-all duration-500 hover:-translate-y-1.5">
