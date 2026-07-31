@@ -4,26 +4,42 @@
   import TimelineItem from './TimelineItem.svelte';
 </script>
 
-<div class="container mx-auto px-4">
-      <div
-        id="Experience"
-        class="flex justify-center items-center mt-10 mb-5 text-5xl font-montseratt font-bold"
-      >
+<section class="relative bg-ink text-paper py-20 lg:py-28">
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="embossed serif font-semibold text-4xl md:text-6xl tracking-[-0.02em]">
         My Journey
-      </div>
-      <div class="text-center mt-10 mb-10">
-        <blockquote class="italic text-lg font-medium text-slate-500">
-          Programming has been an amazing journey for me. It&apos;s not
-          just about writing code, but a passion that burns bright in my soul.
-          Each line of code I write is a step towards turning ideas into
-          reality. It&apos;s a constant learning process that never ceases to
-          amaze me.
-        </blockquote>
-      </div>
-
-      <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-        {#each aboutTimeline as item (item.title)}
-          <TimelineItem {item} />
-        {/each}
-      </ul>
+      </h2>
+      <p class="marginalia text-linendim mt-5">The chapters that bound this shelf together</p>
     </div>
+
+    <div class="text-center mb-16">
+      <blockquote class="serif italic text-lg md:text-xl text-linen/85 max-w-2xl mx-auto leading-relaxed">
+        Programming has been an amazing journey for me. It&apos;s not just about writing code, but a
+        passion that burns bright in my soul. Each line of code I write is a step towards turning
+        ideas into reality. It&apos;s a constant learning process that never ceases to amaze me.
+      </blockquote>
+    </div>
+
+    <div class="relative">
+      <div
+        class="stitch-v absolute left-5 md:left-1/2 top-0 bottom-0 -translate-x-1/2 opacity-60"
+        aria-hidden="true"
+      ></div>
+
+      <div class="space-y-12 md:space-y-16">
+        {#each aboutTimeline as item (item.title)}
+          <div class="relative md:grid md:grid-cols-2 md:gap-16">
+            <div class="absolute left-5 md:left-1/2 top-2 -translate-x-1/2" aria-hidden="true">
+              <span class="block w-3 h-3 rounded-full plate border border-black/50"></span>
+            </div>
+
+            <div class={`ml-12 md:ml-0 ${item.align === 'start' ? 'md:col-start-1' : 'md:col-start-2'}`}>
+              <TimelineItem {item} />
+            </div>
+          </div>
+        {/each}
+      </div>
+    </div>
+  </div>
+</section>
