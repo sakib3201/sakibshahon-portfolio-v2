@@ -7,6 +7,7 @@
   import ProductsShipped from "../lib/components/ProductsShipped.svelte";
   import ProjectSlider from "../lib/components/ProjectSlider.svelte";
   import ServiceSection from "../lib/components/ServiceSection.svelte";
+  import HomepageFaq from "../lib/components/HomepageFaq.svelte";
   import ExperienceTimeline from "../lib/components/ExperienceTimeline.svelte";
   import AwardsSection from "../lib/components/AwardsSection.svelte";
   import YouTubeSection from "../lib/components/YouTubeSection.svelte";
@@ -80,6 +81,7 @@
   <ProductsShipped />
   <ProjectSlider />
   <ServiceSection />
+  <HomepageFaq />
   <ExperienceTimeline />
   <AwardsSection />
   <YouTubeSection />
