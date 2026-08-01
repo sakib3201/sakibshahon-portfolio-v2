@@ -272,7 +272,7 @@ export const aboutTimeline = [
     align: 'end',
     time: '2014',
     title: 'Hello World!!',
-    description: 'I wrote my first &quot;Hello World&quot; in python. It was the first time I wrote a program and saw the output. It was a magical moment for me. I was fascinated by the fact that I could write a few lines of code and make the computer do what I wanted it to do. That was the moment I fell in love with programming. This is where my journey of a lifetime began.'
+    description: "I wrote my first \"Hello World\" in python. It was the first time I wrote a program and saw the output. It was a magical moment for me. I was fascinated by the fact that I could write a few lines of code and make the computer do what I wanted it to do. That was the moment I fell in love with programming. This is where my journey of a lifetime began."
   },
   {
     align: 'start',
@@ -283,7 +283,7 @@ export const aboutTimeline = [
   {
     align: 'end',
     time: '2016',
-    title: 'Is that programming I &apos;C&apos; ?',
+    title: "Is that programming I 'C' ?",
     description: 'Although I had been writing code for a while, I had never written a program in C. But from the moment I wrote my first program in C, I decided I wanted to learn more about it. It was difficult for sure, But I wanted to not just learn it, but master it. I wanted to know the ins and out. From this point on programming was no longer just a hobby, it was a passion.'
   },
   {
@@ -302,7 +302,7 @@ export const aboutTimeline = [
     align: 'start',
     time: '2023',
     title: 'Passion & Profession',
-    description: 'At the beginning of the year, I started working as a part-time freelance software engineer focused on machine learning , data analytics and web development projects. I was no longer just writing code for fun, but as a profession. I was writing code that solved real world business and research problems for my clients. I learned to handle clients, manage deadlines, and work in a team. My technical skills grew in leaps and bounds. As I gained hands on experience in working with legacy code, version control, and deployment. <br /> Later in the year in late november, I joined the amazing team at &apos;Incevio&apos; as a full-time Web developer intern.'
+    description: "At the beginning of the year, I started working as a part-time freelance software engineer focused on machine learning , data analytics and web development projects. I was no longer just writing code for fun, but as a profession. I was writing code that solved real world business and research problems for my clients. I learned to handle clients, manage deadlines, and work in a team. My technical skills grew in leaps and bounds. As I gained hands on experience in working with legacy code, version control, and deployment. \nLater in the year in late november, I joined the amazing team at 'Incevio' as a full-time Web developer intern."
   },
   {
     align: 'end',

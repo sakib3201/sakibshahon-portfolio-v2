@@ -11,9 +11,7 @@
     {item.title}
   </h3>
 
-  <div class="text-inkonpaper/85 leading-relaxed text-[1.02rem]">
-    <!-- static content from $lib/data.js, not user input -->
-    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-    {@html item.description}
+  <div class="text-inkonpaper/85 leading-relaxed text-[1.02rem] whitespace-pre-line">
+    {item.description}
   </div>
 </article>

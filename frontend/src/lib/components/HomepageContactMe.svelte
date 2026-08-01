@@ -126,7 +126,7 @@
                 aria-invalid={emailError !== '' ? 'true' : 'false'}
                 aria-describedby={emailError !== '' ? 'email-error' : undefined}
                 oninput={handleEmailInput}
-                class="w-full bg-transparent text-inkonpaper text-lg py-2 rounded-none border border-t-0 border-l-0 border-r-0 border-b placeholder:text-inkonpaper/50 focus:border-b-inkonpaper/80 {emailError !== '' ? 'border-b-goldbright' : 'border-b-inkonpaper/30'}"
+                class="w-full bg-transparent text-inkonpaper text-lg py-2 rounded-none border border-t-0 border-l-0 border-r-0 border-b placeholder:text-inkonpaper/50 focus:border-b-goldbright focus:outline-none focus:ring-1 focus:ring-goldbright/50 {emailError !== '' ? 'border-b-goldbright' : 'border-b-inkonpaper/30'}"
               />
               {#if emailError !== ''}
                 <p id="email-error" class="marginalia text-goldbright mt-1">{emailError}</p>
@@ -144,7 +144,7 @@
                 aria-invalid={messageError !== '' ? 'true' : 'false'}
                 aria-describedby={messageError !== '' ? 'message-error' : undefined}
                 oninput={handleMessageInput}
-                class="w-full bg-transparent text-inkonpaper text-lg py-2 px-0 resize-none rounded-none border border-t-0 border-l-0 border-r-0 border-b placeholder:text-inkonpaper/50 focus:border-b-inkonpaper/80 {messageError !== '' ? 'border-b-goldbright' : 'border-b-inkonpaper/30'}"
+                class="w-full bg-transparent text-inkonpaper text-lg py-2 px-0 resize-none rounded-none border border-t-0 border-l-0 border-r-0 border-b placeholder:text-inkonpaper/50 focus:border-b-goldbright focus:outline-none focus:ring-1 focus:ring-goldbright/50 {messageError !== '' ? 'border-b-goldbright' : 'border-b-inkonpaper/30'}"
               ></textarea>
               {#if messageError !== ''}
                 <p id="message-error" class="marginalia text-goldbright mt-1">{messageError}</p>

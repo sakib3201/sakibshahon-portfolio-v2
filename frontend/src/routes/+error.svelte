@@ -52,7 +52,7 @@
           {/if}
         </p>
 
-        <p class="marginalia text-inktextdim mt-6" aria-label="Error details">
+        <p class="marginalia text-inktextdim mt-6">
           Error N°{is404 ? "404" : $page.status}
           {#if !is404 && $page.error?.message}
             · {$page.error.message}
