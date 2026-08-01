@@ -294,3 +294,39 @@
 {"timestamp":"2026-08-01T12:47:40.9111484+06:00","action":"release","task_id":38,"detail":"Owner handoff: custom domain + Search Console + approvals"}
 {"timestamp":"2026-08-01T12:47:47.9351034+06:00","action":"move","task_id":20,"detail":"backlog -\u003e done"}
 {"timestamp":"2026-08-01T12:47:48.072328+06:00","action":"move","task_id":1,"detail":"backlog -\u003e archived"}
+{"timestamp":"2026-08-01T15:10:49.0089936+06:00","action":"create","task_id":39,"detail":"Scroll-progress needle under the navbar"}
+{"timestamp":"2026-08-01T15:10:55.6694288+06:00","action":"create","task_id":40,"detail":"Impact stats: gold-leaf count-up numerals"}
+{"timestamp":"2026-08-01T15:11:04.0656694+06:00","action":"create","task_id":41,"detail":"Ledger page unroll for the current role card"}
+{"timestamp":"2026-08-01T15:11:13.764511+06:00","action":"create","task_id":42,"detail":"YouTube thumbnails: cinnabar play-seal + empty-state stamp"}
+{"timestamp":"2026-08-01T15:11:21.1089814+06:00","action":"create","task_id":43,"detail":"Project images: ink-wash hover with cursor gold bloom"}
+{"timestamp":"2026-08-01T15:11:28.1317191+06:00","action":"create","task_id":44,"detail":"Contact form: wax-seal stamp on send + portrait ink-wash"}
+{"timestamp":"2026-08-01T15:11:35.7459551+06:00","action":"claim","task_id":40,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:11:35.7643888+06:00","action":"move","task_id":40,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T15:11:35.9291851+06:00","action":"claim","task_id":43,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:11:35.9680806+06:00","action":"move","task_id":43,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T15:11:36.2214388+06:00","action":"claim","task_id":39,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:11:36.2598976+06:00","action":"move","task_id":39,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T15:11:36.4425107+06:00","action":"claim","task_id":41,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:11:36.4676021+06:00","action":"move","task_id":41,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T15:11:36.6391508+06:00","action":"claim","task_id":44,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:11:36.6767245+06:00","action":"move","task_id":44,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T15:11:37.0029289+06:00","action":"claim","task_id":42,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:11:37.0289629+06:00","action":"move","task_id":42,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T15:35:56.9938813+06:00","action":"edit","task_id":39,"detail":"Scroll-progress needle under the navbar"}
+{"timestamp":"2026-08-01T15:35:57.0068468+06:00","action":"release","task_id":39,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:35:57.1283974+06:00","action":"move","task_id":39,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T15:35:57.2634884+06:00","action":"edit","task_id":40,"detail":"Impact stats: gold-leaf count-up numerals"}
+{"timestamp":"2026-08-01T15:35:57.2823664+06:00","action":"release","task_id":40,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:35:57.4280532+06:00","action":"move","task_id":40,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T15:35:57.5447739+06:00","action":"edit","task_id":41,"detail":"Ledger page unroll for the current role card"}
+{"timestamp":"2026-08-01T15:35:57.571449+06:00","action":"release","task_id":41,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:35:57.7111562+06:00","action":"move","task_id":41,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T15:35:57.8330974+06:00","action":"edit","task_id":42,"detail":"YouTube thumbnails: cinnabar play-seal + empty-state stamp"}
+{"timestamp":"2026-08-01T15:35:57.8554383+06:00","action":"release","task_id":42,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:35:57.9777084+06:00","action":"move","task_id":42,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T15:35:58.0856044+06:00","action":"edit","task_id":43,"detail":"Project images: ink-wash hover with cursor gold bloom"}
+{"timestamp":"2026-08-01T15:35:58.1190058+06:00","action":"release","task_id":43,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:35:58.3211063+06:00","action":"move","task_id":43,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T15:35:58.502542+06:00","action":"edit","task_id":44,"detail":"Contact form: wax-seal stamp on send + portrait ink-wash"}
+{"timestamp":"2026-08-01T15:35:58.5217389+06:00","action":"release","task_id":44,"detail":"mink-fjord"}
+{"timestamp":"2026-08-01T15:35:58.6989411+06:00","action":"move","task_id":44,"detail":"in-progress -\u003e done"}
