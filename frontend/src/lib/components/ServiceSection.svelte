@@ -18,7 +18,8 @@
     <div class="text-center mb-16" data-reveal>
       <h2 class="brush gold-text text-4xl md:text-6xl tracking-[0.02em]">The disciplines</h2>
       <p class="max-w-2xl mx-auto mt-5 text-lg text-inktextdim leading-relaxed">
-        Four working disciplines — web, AI, data, and ML — each battle-tested on shipped products.
+        I build: AI features for WordPress and SaaS, performance and reliability work, full-stack products
+        from API to UI.
       </p>
     </div>
 
