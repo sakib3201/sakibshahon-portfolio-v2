@@ -55,7 +55,7 @@
               >
                 {product.name}
               </span>
-              <span class="marginalia text-goldbright text-[0.55rem]">N°</span>
+              <span class="marginalia text-goldbright text-[0.7rem]" aria-hidden="true">N°</span>
             </div>
 
             <div class="flex-1 p-6 md:p-7 min-w-0">

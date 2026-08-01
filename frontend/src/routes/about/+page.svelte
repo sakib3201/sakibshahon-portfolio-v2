@@ -116,7 +116,7 @@
               </ul>
 
               {#if proofs[skill.title]}
-                <p class="marginalia mt-auto pt-3 border-t border-gold/25 text-gold/80 normal-case">
+                <p class="marginalia mt-auto pt-3 border-t border-gold/25 text-gold normal-case">
                   <span class="text-goldbright">Shipped:</span> {proofs[skill.title]}
                 </p>
               {/if}
