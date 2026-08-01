@@ -1,3 +1,9 @@
-kanban/
+# Board + worktree state (local)
 .worktrees/
 worktrees/.worktrees/
+
+# kanban-md claim lock (runtime state; board itself is committed)
+kanban/.lock
+
+# Impeccable runtime state (decision artifacts live in docs/impeccable/)
+.impeccable/

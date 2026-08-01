@@ -1,0 +1,14 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"commands": {
+		"verify": {
+			"description": "Run the frontend verification loop: pnpm check, pnpm lint, pnpm build",
+			"args": {
+				"type": "positional",
+				"required": false,
+				"description": "Optional: subset to run (check, lint, build)"
+			},
+			"prompt": "Run the frontend verification loop from the frontend/ directory and report each result: 1) pnpm check, 2) pnpm lint, 3) pnpm build. All three must pass. If the user specified a subset, run only that part."
+		}
+	}
+}
