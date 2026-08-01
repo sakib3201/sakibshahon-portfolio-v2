@@ -138,7 +138,8 @@
       {#each stats as stat, i (stat.value)}
         <li class="lacquer-raised gold-edge neon-rim px-6 py-7 text-center transition-all duration-500 hover:-translate-y-1.5">
           <div data-reveal data-reveal-delay={i * 60}>
-            <span class="block" aria-label={stat.value}>
+            <span class="block">
+              <span class="sr-only">{stat.value}</span>
               <span
                 bind:this={displayEls[i]}
                 class="block brush font-semibold text-4xl md:text-5xl shimmer"
