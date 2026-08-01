@@ -3,6 +3,7 @@
 	import { onDestroy, onMount } from 'svelte';
 	import '../app.css';
 	import { initMotion, initParallax } from '../lib/motion.js';
+	import ScrollProgressNeedle from '../lib/components/ScrollProgressNeedle.svelte';
 
 	let { children } = $props();
 
@@ -48,3 +49,5 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 >Skip to main content</a>
 
 {@render children?.()}
+
+<ScrollProgressNeedle />
