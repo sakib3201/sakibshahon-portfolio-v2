@@ -1,5 +1,5 @@
 <script>
-  import { siteMeta } from "$lib/data.js";
+  import { siteMeta, socialLinks, skills } from "$lib/data.js";
   import Seo from "$lib/components/Seo.svelte";
   import Navbar from "../lib/components/Navbar.svelte";
   import HomepageHero from "../lib/components/HomepageHero.svelte";
@@ -13,23 +13,54 @@
   import HomepageContactMe from "../lib/components/HomepageContactMe.svelte";
   import Footer from "../lib/components/Footer.svelte";
 
-  const personLd = {
+  const personId = `${siteMeta.siteOrigin}/#person`;
+  const socialUrls = socialLinks.filter(({ href }) => href.startsWith("http")).map(({ href }) => href);
+  const knowsAbout = skills
+    .flatMap(({ items }) => items)
+    .flatMap((item) => item.split(","))
+    .map((keyword) => keyword.trim())
+    .filter(Boolean);
+  const siteLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: siteMeta.name,
-    url: siteMeta.url,
-    email: `mailto:${siteMeta.email}`,
-    jobTitle: "Software Engineer",
-    worksFor: { "@type": "Organization", name: "Arraytics" },
-    sameAs: [
-      "https://github.com/sakib3201",
-      "https://www.linkedin.com/in/sakib-shahon/",
-      "https://www.youtube.com/@sakibshahon",
-      "https://dev.to/sakib3201"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": personId,
+        name: siteMeta.name,
+        url: `${siteMeta.siteOrigin}/`,
+        image: siteMeta.ogImage,
+        description: siteMeta.description,
+        email: siteMeta.email,
+        jobTitle: siteMeta.role,
+        worksFor: { "@type": "Organization", name: "Arraytics" },
+        alumniOf: { "@type": "CollegeOrUniversity", name: siteMeta.alumniOf },
+        knowsAbout,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Gazipur",
+          addressCountry: "BD"
+        },
+        sameAs: socialUrls,
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "customer service",
+          email: siteMeta.email,
+          url: `${siteMeta.siteOrigin}/#contact`
+        }
+      },
+      {
+        "@type": "ProfilePage",
+        mainEntity: { "@id": personId }
+      },
+      {
+        "@type": "WebSite",
+        name: siteMeta.name,
+        url: siteMeta.siteOrigin
+      }
     ]
   };
-  const personLdJson = JSON.stringify(personLd).replace(/</g, '\\u003c');
-  const personLdScript = '<script type="application/ld+json">' + personLdJson + '</scr' + 'ipt>';
+  const siteLdJson = JSON.stringify(siteLd).replace(/</g, "\\u003c");
+  const siteLdScript = '<script type="application/ld+json">' + siteLdJson + "</scr" + "ipt>";
 </script>
 
 <svelte:head>
@@ -39,7 +70,7 @@
     canonicalPath="/"
   />
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  {@html personLdScript}
+  {@html siteLdScript}
 </svelte:head>
 
 <main id="main-content" tabindex="-1" class="bg-sumi">
