@@ -1,0 +1,296 @@
+{"timestamp":"2026-07-31T21:48:15.825194+06:00","action":"create","task_id":1,"detail":"Seed kanban board with portfolio tasks"}
+{"timestamp":"2026-07-31T22:12:49.9392734+06:00","action":"create","task_id":2,"detail":"Re-skin YouTubeSection as modest periodical card"}
+{"timestamp":"2026-07-31T22:12:50.0271958+06:00","action":"create","task_id":3,"detail":"Re-skin HomepageContactMe as the desk letter"}
+{"timestamp":"2026-07-31T22:12:50.1265934+06:00","action":"create","task_id":4,"detail":"Re-skin Footer as colophon"}
+{"timestamp":"2026-07-31T22:12:50.2172991+06:00","action":"create","task_id":5,"detail":"Re-skin About page and timeline"}
+{"timestamp":"2026-07-31T22:12:50.3087507+06:00","action":"create","task_id":6,"detail":"Re-skin Projects pages as folio gallery"}
+{"timestamp":"2026-07-31T22:12:50.4144896+06:00","action":"create","task_id":7,"detail":"Verify build: check, lint, build"}
+{"timestamp":"2026-07-31T22:12:50.511649+06:00","action":"create","task_id":8,"detail":"Finish: detector, finish review, DESIGN.md"}
+{"timestamp":"2026-07-31T22:13:28.6924506+06:00","action":"edit","task_id":2,"detail":"Re-skin YouTubeSection as modest periodical card"}
+{"timestamp":"2026-07-31T22:13:28.7163399+06:00","action":"claim","task_id":2,"detail":"mist-rust"}
+{"timestamp":"2026-07-31T22:13:31.2337024+06:00","action":"edit","task_id":3,"detail":"Re-skin HomepageContactMe as the desk letter"}
+{"timestamp":"2026-07-31T22:13:31.2538378+06:00","action":"claim","task_id":3,"detail":"solar-quick"}
+{"timestamp":"2026-07-31T22:13:37.2888178+06:00","action":"edit","task_id":4,"detail":"Re-skin Footer as colophon"}
+{"timestamp":"2026-07-31T22:13:37.3075306+06:00","action":"claim","task_id":4,"detail":"shore-fork"}
+{"timestamp":"2026-07-31T22:13:43.5282101+06:00","action":"edit","task_id":5,"detail":"Re-skin About page and timeline"}
+{"timestamp":"2026-07-31T22:13:43.5458631+06:00","action":"claim","task_id":5,"detail":"north-dove"}
+{"timestamp":"2026-07-31T22:13:49.8633251+06:00","action":"edit","task_id":6,"detail":"Re-skin Projects pages as folio gallery"}
+{"timestamp":"2026-07-31T22:13:49.8827865+06:00","action":"claim","task_id":6,"detail":"elder-thorn"}
+{"timestamp":"2026-07-31T22:22:32.9333082+06:00","action":"edit","task_id":3,"detail":"Re-skin HomepageContactMe as the desk letter"}
+{"timestamp":"2026-07-31T22:22:32.9480071+06:00","action":"release","task_id":3,"detail":"solar-quick"}
+{"timestamp":"2026-07-31T22:22:33.037102+06:00","action":"edit","task_id":4,"detail":"Re-skin Footer as colophon"}
+{"timestamp":"2026-07-31T22:22:33.0530758+06:00","action":"release","task_id":4,"detail":"shore-fork"}
+{"timestamp":"2026-07-31T22:22:33.1438769+06:00","action":"edit","task_id":5,"detail":"Re-skin About page and timeline"}
+{"timestamp":"2026-07-31T22:22:33.1623069+06:00","action":"release","task_id":5,"detail":"north-dove"}
+{"timestamp":"2026-07-31T22:22:33.2620471+06:00","action":"edit","task_id":6,"detail":"Re-skin Projects pages as folio gallery"}
+{"timestamp":"2026-07-31T22:22:33.2735677+06:00","action":"release","task_id":6,"detail":"elder-thorn"}
+{"timestamp":"2026-07-31T22:23:40.4127205+06:00","action":"edit","task_id":2,"detail":"Re-skin YouTubeSection as modest periodical card"}
+{"timestamp":"2026-07-31T22:23:40.4218409+06:00","action":"release","task_id":2,"detail":"mist-rust"}
+{"timestamp":"2026-07-31T22:23:53.2926425+06:00","action":"move","task_id":2,"detail":"todo -\u003e done"}
+{"timestamp":"2026-07-31T22:24:51.900968+06:00","action":"edit","task_id":3,"detail":"Re-skin HomepageContactMe as the desk letter"}
+{"timestamp":"2026-07-31T22:24:51.9218981+06:00","action":"claim","task_id":3,"detail":"slate-iron"}
+{"timestamp":"2026-07-31T22:24:59.2970124+06:00","action":"edit","task_id":4,"detail":"Re-skin Footer as colophon"}
+{"timestamp":"2026-07-31T22:24:59.3209761+06:00","action":"claim","task_id":4,"detail":"quartz-glen"}
+{"timestamp":"2026-07-31T22:25:08.480686+06:00","action":"edit","task_id":5,"detail":"Re-skin About page and timeline"}
+{"timestamp":"2026-07-31T22:25:08.5093062+06:00","action":"claim","task_id":5,"detail":"lake-plume"}
+{"timestamp":"2026-07-31T22:25:19.8864163+06:00","action":"edit","task_id":6,"detail":"Re-skin Projects pages as folio gallery"}
+{"timestamp":"2026-07-31T22:25:19.9118749+06:00","action":"claim","task_id":6,"detail":"arch-opal"}
+{"timestamp":"2026-07-31T22:28:06.8139451+06:00","action":"move","task_id":4,"detail":"todo -\u003e review"}
+{"timestamp":"2026-07-31T22:28:06.8457356+06:00","action":"handoff","task_id":4,"detail":"Re-skin Footer as colophon"}
+{"timestamp":"2026-07-31T22:28:06.873048+06:00","action":"release","task_id":4,"detail":"Re-skin Footer as colophon"}
+{"timestamp":"2026-07-31T22:29:01.052215+06:00","action":"move","task_id":3,"detail":"todo -\u003e review"}
+{"timestamp":"2026-07-31T22:29:01.0809124+06:00","action":"handoff","task_id":3,"detail":"Re-skin HomepageContactMe as the desk letter"}
+{"timestamp":"2026-07-31T22:29:01.1039418+06:00","action":"release","task_id":3,"detail":"Re-skin HomepageContactMe as the desk letter"}
+{"timestamp":"2026-07-31T22:29:30.2892869+06:00","action":"move","task_id":5,"detail":"todo -\u003e review"}
+{"timestamp":"2026-07-31T22:29:30.3168105+06:00","action":"handoff","task_id":5,"detail":"Re-skin About page and timeline"}
+{"timestamp":"2026-07-31T22:29:30.3350118+06:00","action":"release","task_id":5,"detail":"Re-skin About page and timeline"}
+{"timestamp":"2026-07-31T22:29:40.531115+06:00","action":"move","task_id":6,"detail":"todo -\u003e review"}
+{"timestamp":"2026-07-31T22:29:40.5551092+06:00","action":"handoff","task_id":6,"detail":"Re-skin Projects pages as folio gallery"}
+{"timestamp":"2026-07-31T22:29:40.5770773+06:00","action":"release","task_id":6,"detail":"Re-skin Projects pages as folio gallery"}
+{"timestamp":"2026-07-31T22:30:04.3654722+06:00","action":"move","task_id":3,"detail":"review -\u003e done"}
+{"timestamp":"2026-07-31T22:30:04.4427799+06:00","action":"move","task_id":4,"detail":"review -\u003e done"}
+{"timestamp":"2026-07-31T22:30:04.5295419+06:00","action":"move","task_id":5,"detail":"review -\u003e done"}
+{"timestamp":"2026-07-31T22:30:04.6022964+06:00","action":"move","task_id":6,"detail":"review -\u003e done"}
+{"timestamp":"2026-07-31T22:30:39.2415371+06:00","action":"move","task_id":7,"detail":"backlog -\u003e done"}
+{"timestamp":"2026-07-31T22:30:39.321395+06:00","action":"edit","task_id":8,"detail":"Finish: detector, finish review, DESIGN.md"}
+{"timestamp":"2026-07-31T22:30:39.3339593+06:00","action":"claim","task_id":8,"detail":"hail-delta"}
+{"timestamp":"2026-07-31T22:41:05.3433036+06:00","action":"move","task_id":8,"detail":"backlog -\u003e done"}
+{"timestamp":"2026-08-01T00:25:09.7751283+06:00","action":"create","task_id":9,"detail":"Sprint: Yakuza Ink homepage — cinematic motion + polish"}
+{"timestamp":"2026-08-01T00:25:20.4905929+06:00","action":"create","task_id":10,"detail":"Hero: 3D spin-in entrance + hanko stamp + mouse tilt"}
+{"timestamp":"2026-08-01T00:25:20.5711698+06:00","action":"create","task_id":11,"detail":"Entrance choreography: staggered section reveals site-wide"}
+{"timestamp":"2026-08-01T00:25:20.6499043+06:00","action":"create","task_id":12,"detail":"Hover \u0026 micro-interactions: gold lift, neon rim, needle sweeps"}
+{"timestamp":"2026-08-01T00:25:30.8462941+06:00","action":"create","task_id":13,"detail":"Parallax \u0026 depth: scroll-linked hero + panel depth"}
+{"timestamp":"2026-08-01T00:25:30.9310041+06:00","action":"create","task_id":14,"detail":"Texture \u0026 rhythm pass: ink/gold details, spacing, type, alignment"}
+{"timestamp":"2026-08-01T00:25:31.0104548+06:00","action":"create","task_id":15,"detail":"Hardening gate: reduced-motion, focus, CLS, stale classes, full verify"}
+{"timestamp":"2026-08-01T00:25:36.5619634+06:00","action":"edit","task_id":10,"detail":"Hero: 3D spin-in entrance + hanko stamp + mouse tilt"}
+{"timestamp":"2026-08-01T00:25:36.5818975+06:00","action":"release","task_id":10,"detail":"sprint-architect"}
+{"timestamp":"2026-08-01T00:25:36.5913284+06:00","action":"edit","task_id":11,"detail":"Entrance choreography: staggered section reveals site-wide"}
+{"timestamp":"2026-08-01T00:25:36.6020359+06:00","action":"release","task_id":11,"detail":"sprint-architect"}
+{"timestamp":"2026-08-01T00:25:36.6130456+06:00","action":"edit","task_id":12,"detail":"Hover \u0026 micro-interactions: gold lift, neon rim, needle sweeps"}
+{"timestamp":"2026-08-01T00:25:36.6261543+06:00","action":"release","task_id":12,"detail":"sprint-architect"}
+{"timestamp":"2026-08-01T00:25:36.6360442+06:00","action":"edit","task_id":13,"detail":"Parallax \u0026 depth: scroll-linked hero + panel depth"}
+{"timestamp":"2026-08-01T00:25:36.6481916+06:00","action":"release","task_id":13,"detail":"sprint-architect"}
+{"timestamp":"2026-08-01T00:25:36.6596753+06:00","action":"edit","task_id":14,"detail":"Texture \u0026 rhythm pass: ink/gold details, spacing, type, alignment"}
+{"timestamp":"2026-08-01T00:25:36.6705968+06:00","action":"release","task_id":14,"detail":"sprint-architect"}
+{"timestamp":"2026-08-01T00:25:36.6839618+06:00","action":"edit","task_id":15,"detail":"Hardening gate: reduced-motion, focus, CLS, stale classes, full verify"}
+{"timestamp":"2026-08-01T00:25:36.6957471+06:00","action":"release","task_id":15,"detail":"sprint-architect"}
+{"timestamp":"2026-08-01T00:25:36.7743306+06:00","action":"move","task_id":10,"detail":"backlog -\u003e todo"}
+{"timestamp":"2026-08-01T00:25:36.7926295+06:00","action":"move","task_id":11,"detail":"backlog -\u003e todo"}
+{"timestamp":"2026-08-01T00:25:36.8074303+06:00","action":"move","task_id":12,"detail":"backlog -\u003e todo"}
+{"timestamp":"2026-08-01T00:25:36.8209762+06:00","action":"move","task_id":13,"detail":"backlog -\u003e todo"}
+{"timestamp":"2026-08-01T00:25:36.8379323+06:00","action":"move","task_id":14,"detail":"backlog -\u003e todo"}
+{"timestamp":"2026-08-01T00:25:36.8521211+06:00","action":"move","task_id":15,"detail":"backlog -\u003e todo"}
+{"timestamp":"2026-08-01T00:37:02.3974597+06:00","action":"create","task_id":16,"detail":"Rewrite DESIGN.md + design.json to The Yakuza Ink world"}
+{"timestamp":"2026-08-01T00:37:09.4021982+06:00","action":"edit","task_id":9,"detail":"Sprint: Yakuza Ink homepage — cinematic motion + polish"}
+{"timestamp":"2026-08-01T00:37:09.481526+06:00","action":"edit","task_id":9,"detail":"Sprint: Yakuza Ink homepage — cinematic motion + polish"}
+{"timestamp":"2026-08-01T00:37:15.7821908+06:00","action":"edit","task_id":10,"detail":"Hero: 3D spin-in entrance + hanko stamp + mouse tilt"}
+{"timestamp":"2026-08-01T00:37:24.0084502+06:00","action":"edit","task_id":11,"detail":"Entrance choreography: staggered section reveals site-wide"}
+{"timestamp":"2026-08-01T00:37:24.0902085+06:00","action":"edit","task_id":12,"detail":"Hover \u0026 micro-interactions: gold lift, neon rim, needle sweeps"}
+{"timestamp":"2026-08-01T00:37:31.3323372+06:00","action":"edit","task_id":13,"detail":"Parallax \u0026 depth: scroll-linked hero + panel depth"}
+{"timestamp":"2026-08-01T00:37:31.412943+06:00","action":"edit","task_id":14,"detail":"Texture \u0026 rhythm pass: ink/gold details, spacing, type, alignment"}
+{"timestamp":"2026-08-01T00:37:36.9492932+06:00","action":"edit","task_id":15,"detail":"Hardening gate: reduced-motion, focus, CLS, stale classes, full verify"}
+{"timestamp":"2026-08-01T00:37:37.0253686+06:00","action":"edit","task_id":13,"detail":"Parallax \u0026 depth: scroll-linked hero + panel depth"}
+{"timestamp":"2026-08-01T00:37:37.1129602+06:00","action":"edit","task_id":14,"detail":"Texture \u0026 rhythm pass: ink/gold details, spacing, type, alignment"}
+{"timestamp":"2026-08-01T00:37:37.1942794+06:00","action":"edit","task_id":15,"detail":"Hardening gate: reduced-motion, focus, CLS, stale classes, full verify"}
+{"timestamp":"2026-08-01T00:37:37.2741167+06:00","action":"edit","task_id":12,"detail":"Hover \u0026 micro-interactions: gold lift, neon rim, needle sweeps"}
+{"timestamp":"2026-08-01T00:37:37.3575365+06:00","action":"edit","task_id":15,"detail":"Hardening gate: reduced-motion, focus, CLS, stale classes, full verify"}
+{"timestamp":"2026-08-01T00:37:44.487396+06:00","action":"move","task_id":16,"detail":"backlog -\u003e todo"}
+{"timestamp":"2026-08-01T00:40:32.3993088+06:00","action":"edit","task_id":11,"detail":"Entrance choreography: staggered section reveals site-wide"}
+{"timestamp":"2026-08-01T00:40:32.4248907+06:00","action":"claim","task_id":11,"detail":"ivory-valve"}
+{"timestamp":"2026-08-01T00:40:32.5792692+06:00","action":"move","task_id":11,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T00:40:41.3042173+06:00","action":"edit","task_id":10,"detail":"Hero: 3D spin-in entrance + hanko stamp + mouse tilt"}
+{"timestamp":"2026-08-01T00:40:41.3300153+06:00","action":"claim","task_id":10,"detail":"spark-shell"}
+{"timestamp":"2026-08-01T00:40:41.5605187+06:00","action":"move","task_id":10,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T00:41:00.8981889+06:00","action":"edit","task_id":12,"detail":"Hover \u0026 micro-interactions: gold lift, neon rim, needle sweeps"}
+{"timestamp":"2026-08-01T00:41:00.9293929+06:00","action":"claim","task_id":12,"detail":"flare-vapor"}
+{"timestamp":"2026-08-01T00:41:01.1601076+06:00","action":"move","task_id":12,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T00:48:02.0835665+06:00","action":"move","task_id":11,"detail":"in-progress -\u003e review"}
+{"timestamp":"2026-08-01T00:48:02.1113835+06:00","action":"handoff","task_id":11,"detail":"Entrance choreography: staggered section reveals site-wide"}
+{"timestamp":"2026-08-01T00:48:02.1388729+06:00","action":"release","task_id":11,"detail":"Entrance choreography: staggered section reveals site-wide"}
+{"timestamp":"2026-08-01T00:49:16.8492894+06:00","action":"move","task_id":12,"detail":"in-progress -\u003e review"}
+{"timestamp":"2026-08-01T00:49:16.8733544+06:00","action":"handoff","task_id":12,"detail":"Hover \u0026 micro-interactions: gold lift, neon rim, needle sweeps"}
+{"timestamp":"2026-08-01T00:49:16.8901798+06:00","action":"release","task_id":12,"detail":"Hover \u0026 micro-interactions: gold lift, neon rim, needle sweeps"}
+{"timestamp":"2026-08-01T00:49:37.8600366+06:00","action":"move","task_id":10,"detail":"in-progress -\u003e review"}
+{"timestamp":"2026-08-01T00:49:37.8644703+06:00","action":"handoff","task_id":10,"detail":"Hero: 3D spin-in entrance + hanko stamp + mouse tilt"}
+{"timestamp":"2026-08-01T00:49:37.8831304+06:00","action":"release","task_id":10,"detail":"Hero: 3D spin-in entrance + hanko stamp + mouse tilt"}
+{"timestamp":"2026-08-01T00:52:24.4235054+06:00","action":"edit","task_id":13,"detail":"Parallax \u0026 depth: scroll-linked hero + panel depth"}
+{"timestamp":"2026-08-01T00:52:24.450872+06:00","action":"claim","task_id":13,"detail":"cape-salt"}
+{"timestamp":"2026-08-01T00:52:24.6192001+06:00","action":"move","task_id":13,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T00:52:48.1154513+06:00","action":"edit","task_id":14,"detail":"Texture \u0026 rhythm pass: ink/gold details, spacing, type, alignment"}
+{"timestamp":"2026-08-01T00:52:48.131962+06:00","action":"claim","task_id":14,"detail":"helm-linen"}
+{"timestamp":"2026-08-01T00:52:48.2451076+06:00","action":"move","task_id":14,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T00:58:02.3710649+06:00","action":"move","task_id":13,"detail":"in-progress -\u003e review"}
+{"timestamp":"2026-08-01T00:58:02.4345739+06:00","action":"handoff","task_id":13,"detail":"Parallax \u0026 depth: scroll-linked hero + panel depth"}
+{"timestamp":"2026-08-01T00:58:02.4638434+06:00","action":"release","task_id":13,"detail":"Parallax \u0026 depth: scroll-linked hero + panel depth"}
+{"timestamp":"2026-08-01T00:59:49.1077793+06:00","action":"move","task_id":14,"detail":"in-progress -\u003e review"}
+{"timestamp":"2026-08-01T00:59:49.127241+06:00","action":"handoff","task_id":14,"detail":"Texture \u0026 rhythm pass: ink/gold details, spacing, type, alignment"}
+{"timestamp":"2026-08-01T00:59:49.13718+06:00","action":"release","task_id":14,"detail":"Texture \u0026 rhythm pass: ink/gold details, spacing, type, alignment"}
+{"timestamp":"2026-08-01T01:01:08.4262343+06:00","action":"edit","task_id":16,"detail":"Rewrite DESIGN.md + design.json to The Yakuza Ink world"}
+{"timestamp":"2026-08-01T01:01:08.4461883+06:00","action":"claim","task_id":16,"detail":"spray-crow"}
+{"timestamp":"2026-08-01T01:01:08.5296726+06:00","action":"move","task_id":16,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T01:09:40.5023645+06:00","action":"move","task_id":16,"detail":"in-progress -\u003e review"}
+{"timestamp":"2026-08-01T01:09:40.5194862+06:00","action":"handoff","task_id":16,"detail":"Rewrite DESIGN.md + design.json to The Yakuza Ink world"}
+{"timestamp":"2026-08-01T01:09:40.5301294+06:00","action":"release","task_id":16,"detail":"Rewrite DESIGN.md + design.json to The Yakuza Ink world"}
+{"timestamp":"2026-08-01T01:15:54.7591878+06:00","action":"edit","task_id":15,"detail":"Hardening gate: reduced-motion, focus, CLS, stale classes, full verify"}
+{"timestamp":"2026-08-01T01:15:54.7805186+06:00","action":"claim","task_id":15,"detail":"dawn-opal"}
+{"timestamp":"2026-08-01T01:15:54.8853989+06:00","action":"move","task_id":15,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T01:24:58.4980636+06:00","action":"move","task_id":15,"detail":"in-progress -\u003e review"}
+{"timestamp":"2026-08-01T01:24:58.5214126+06:00","action":"handoff","task_id":15,"detail":"Hardening gate: reduced-motion, focus, CLS, stale classes, full verify"}
+{"timestamp":"2026-08-01T01:24:58.5373441+06:00","action":"release","task_id":15,"detail":"Hardening gate: reduced-motion, focus, CLS, stale classes, full verify"}
+{"timestamp":"2026-08-01T01:31:28.2649005+06:00","action":"edit","task_id":10,"detail":"Hero: 3D spin-in entrance + hanko stamp + mouse tilt"}
+{"timestamp":"2026-08-01T01:31:28.5231032+06:00","action":"move","task_id":10,"detail":"review -\u003e done"}
+{"timestamp":"2026-08-01T01:31:28.6584281+06:00","action":"edit","task_id":11,"detail":"Entrance choreography: staggered section reveals site-wide"}
+{"timestamp":"2026-08-01T01:31:28.8023181+06:00","action":"move","task_id":11,"detail":"review -\u003e done"}
+{"timestamp":"2026-08-01T01:31:28.9337103+06:00","action":"edit","task_id":12,"detail":"Hover \u0026 micro-interactions: gold lift, neon rim, needle sweeps"}
+{"timestamp":"2026-08-01T01:31:29.0746045+06:00","action":"move","task_id":12,"detail":"review -\u003e done"}
+{"timestamp":"2026-08-01T01:31:29.2187979+06:00","action":"edit","task_id":13,"detail":"Parallax \u0026 depth: scroll-linked hero + panel depth"}
+{"timestamp":"2026-08-01T01:31:29.3609565+06:00","action":"move","task_id":13,"detail":"review -\u003e done"}
+{"timestamp":"2026-08-01T01:31:29.5066982+06:00","action":"edit","task_id":14,"detail":"Texture \u0026 rhythm pass: ink/gold details, spacing, type, alignment"}
+{"timestamp":"2026-08-01T01:31:29.6560008+06:00","action":"move","task_id":14,"detail":"review -\u003e done"}
+{"timestamp":"2026-08-01T01:31:29.7960479+06:00","action":"edit","task_id":15,"detail":"Hardening gate: reduced-motion, focus, CLS, stale classes, full verify"}
+{"timestamp":"2026-08-01T01:31:29.9601768+06:00","action":"move","task_id":15,"detail":"review -\u003e done"}
+{"timestamp":"2026-08-01T01:31:30.0981104+06:00","action":"edit","task_id":16,"detail":"Rewrite DESIGN.md + design.json to The Yakuza Ink world"}
+{"timestamp":"2026-08-01T01:31:30.2460318+06:00","action":"move","task_id":16,"detail":"review -\u003e done"}
+{"timestamp":"2026-08-01T01:31:30.3900523+06:00","action":"move","task_id":9,"detail":"backlog -\u003e done"}
+{"timestamp":"2026-08-01T11:35:49.756554+06:00","action":"create","task_id":17,"detail":"EPIC 1 — SEO foundation"}
+{"timestamp":"2026-08-01T11:35:49.8909436+06:00","action":"create","task_id":18,"detail":"EPIC 2 — AEO (Answer Engine Optimization)"}
+{"timestamp":"2026-08-01T11:35:50.0211012+06:00","action":"create","task_id":19,"detail":"EPIC 3 — Accessibility (WCAG 2.2)"}
+{"timestamp":"2026-08-01T11:35:50.1511697+06:00","action":"create","task_id":20,"detail":"EPIC 4 — QA gate \u0026 owner handoff"}
+{"timestamp":"2026-08-01T11:36:36.5046804+06:00","action":"create","task_id":21,"detail":"Prerender all routes to static HTML"}
+{"timestamp":"2026-08-01T11:36:36.6204662+06:00","action":"create","task_id":22,"detail":"Centralize site config + shared Seo.svelte component"}
+{"timestamp":"2026-08-01T11:36:36.744202+06:00","action":"create","task_id":23,"detail":"Create 1200x630 OG image asset"}
+{"timestamp":"2026-08-01T11:36:36.8410009+06:00","action":"create","task_id":24,"detail":"Enrich JSON-LD to @graph (Person/ProfilePage/WebSite)"}
+{"timestamp":"2026-08-01T11:36:36.9426923+06:00","action":"create","task_id":25,"detail":"Image optimization pass (webp, downscale, dead asset)"}
+{"timestamp":"2026-08-01T11:36:37.0413854+06:00","action":"create","task_id":26,"detail":"Netlify cache + security headers"}
+{"timestamp":"2026-08-01T11:36:37.1497028+06:00","action":"create","task_id":27,"detail":"Sitemap lastmod + sync discipline"}
+{"timestamp":"2026-08-01T11:36:48.5047318+06:00","action":"create","task_id":28,"detail":"Add llms.txt for LLM/answer-engine consumption"}
+{"timestamp":"2026-08-01T11:36:48.6493478+06:00","action":"create","task_id":29,"detail":"FAQ section + FAQPage schema on homepage"}
+{"timestamp":"2026-08-01T11:36:48.7791172+06:00","action":"create","task_id":30,"detail":"Answer-ready copy pass (hero subline + services line)"}
+{"timestamp":"2026-08-01T11:37:05.3523746+06:00","action":"create","task_id":31,"detail":"Mobile menu: focus trap + focus restore + inert background"}
+{"timestamp":"2026-08-01T11:37:05.5336582+06:00","action":"create","task_id":32,"detail":"Contact form: live status region + accessible validation"}
+{"timestamp":"2026-08-01T11:37:05.7175262+06:00","action":"create","task_id":33,"detail":"Contrast fixes + decorative microcopy"}
+{"timestamp":"2026-08-01T11:37:05.8719753+06:00","action":"create","task_id":34,"detail":"Hero replay buttons: keyboard-safe semantics"}
+{"timestamp":"2026-08-01T11:37:06.0199532+06:00","action":"create","task_id":35,"detail":"Low items: error label, TimelineItem escaping, input focus states"}
+{"timestamp":"2026-08-01T11:37:18.9333198+06:00","action":"create","task_id":36,"detail":"Full verification gate (check/lint/build + prerender spot-check)"}
+{"timestamp":"2026-08-01T11:37:19.0919452+06:00","action":"create","task_id":37,"detail":"Lighthouse + axe + Rich Results QA report"}
+{"timestamp":"2026-08-01T11:37:19.2828341+06:00","action":"create","task_id":38,"detail":"Owner handoff: custom domain + Search Console + approvals"}
+{"timestamp":"2026-08-01T11:59:20.394742+06:00","action":"edit","task_id":21,"detail":"Prerender all routes to static HTML"}
+{"timestamp":"2026-08-01T11:59:20.4198414+06:00","action":"claim","task_id":21,"detail":"heath-lake"}
+{"timestamp":"2026-08-01T11:59:20.6980992+06:00","action":"move","task_id":21,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T11:59:40.9709014+06:00","action":"edit","task_id":23,"detail":"Create 1200x630 OG image asset"}
+{"timestamp":"2026-08-01T11:59:41.0011998+06:00","action":"claim","task_id":23,"detail":"cold-mesa"}
+{"timestamp":"2026-08-01T11:59:41.2847677+06:00","action":"move","task_id":23,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T11:59:46.5770561+06:00","action":"edit","task_id":25,"detail":"Image optimization pass (webp, downscale, dead asset)"}
+{"timestamp":"2026-08-01T11:59:46.6666017+06:00","action":"claim","task_id":25,"detail":"hive-blaze"}
+{"timestamp":"2026-08-01T11:59:47.1346686+06:00","action":"move","task_id":25,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T11:59:54.7136904+06:00","action":"edit","task_id":26,"detail":"Netlify cache + security headers"}
+{"timestamp":"2026-08-01T11:59:54.7568638+06:00","action":"claim","task_id":26,"detail":"midge-flora"}
+{"timestamp":"2026-08-01T11:59:55.0172391+06:00","action":"move","task_id":26,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:00:03.9286731+06:00","action":"edit","task_id":27,"detail":"Sitemap lastmod + sync discipline"}
+{"timestamp":"2026-08-01T12:00:03.9878402+06:00","action":"claim","task_id":27,"detail":"shade-south"}
+{"timestamp":"2026-08-01T12:00:05.7999168+06:00","action":"move","task_id":27,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:03:24.2247382+06:00","action":"edit","task_id":23,"detail":"Create 1200x630 OG image asset"}
+{"timestamp":"2026-08-01T12:03:24.281179+06:00","action":"release","task_id":23,"detail":"cold-mesa"}
+{"timestamp":"2026-08-01T12:03:25.8017647+06:00","action":"move","task_id":23,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:04:29.1569797+06:00","action":"edit","task_id":27,"detail":"Sitemap lastmod + sync discipline"}
+{"timestamp":"2026-08-01T12:04:29.3506597+06:00","action":"edit","task_id":27,"detail":"Sitemap lastmod + sync discipline"}
+{"timestamp":"2026-08-01T12:04:29.3789807+06:00","action":"release","task_id":27,"detail":"shade-south"}
+{"timestamp":"2026-08-01T12:04:29.5981101+06:00","action":"move","task_id":27,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:04:45.9510034+06:00","action":"edit","task_id":26,"detail":"Netlify cache + security headers"}
+{"timestamp":"2026-08-01T12:04:45.9855614+06:00","action":"release","task_id":26,"detail":"midge-flora"}
+{"timestamp":"2026-08-01T12:04:46.1712397+06:00","action":"move","task_id":26,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:06:35.4246785+06:00","action":"move","task_id":21,"detail":"in-progress -\u003e review"}
+{"timestamp":"2026-08-01T12:06:35.4468933+06:00","action":"handoff","task_id":21,"detail":"Prerender all routes to static HTML"}
+{"timestamp":"2026-08-01T12:06:35.4661792+06:00","action":"release","task_id":21,"detail":"Prerender all routes to static HTML"}
+{"timestamp":"2026-08-01T12:06:38.7593017+06:00","action":"edit","task_id":25,"detail":"Image optimization pass (webp, downscale, dead asset)"}
+{"timestamp":"2026-08-01T12:06:38.7761822+06:00","action":"release","task_id":25,"detail":"hive-blaze"}
+{"timestamp":"2026-08-01T12:06:38.9149168+06:00","action":"move","task_id":25,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:10:20.020882+06:00","action":"edit","task_id":21,"detail":"Prerender all routes to static HTML"}
+{"timestamp":"2026-08-01T12:10:20.0401136+06:00","action":"claim","task_id":21,"detail":"heath-lake"}
+{"timestamp":"2026-08-01T12:10:20.1671621+06:00","action":"edit","task_id":21,"detail":"Prerender all routes to static HTML"}
+{"timestamp":"2026-08-01T12:10:20.1842152+06:00","action":"release","task_id":21,"detail":"heath-lake"}
+{"timestamp":"2026-08-01T12:10:20.2963527+06:00","action":"move","task_id":21,"detail":"review -\u003e done"}
+{"timestamp":"2026-08-01T12:10:41.6508278+06:00","action":"edit","task_id":38,"detail":"Owner handoff: custom domain + Search Console + approvals"}
+{"timestamp":"2026-08-01T12:11:04.0473906+06:00","action":"edit","task_id":22,"detail":"Centralize site config + shared Seo.svelte component"}
+{"timestamp":"2026-08-01T12:11:04.0695574+06:00","action":"claim","task_id":22,"detail":"birch-thyme"}
+{"timestamp":"2026-08-01T12:11:04.2400368+06:00","action":"move","task_id":22,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:13:37.206005+06:00","action":"edit","task_id":22,"detail":"Centralize site config + shared Seo.svelte component"}
+{"timestamp":"2026-08-01T12:13:37.2244794+06:00","action":"release","task_id":22,"detail":"birch-thyme"}
+{"timestamp":"2026-08-01T12:13:37.3348495+06:00","action":"move","task_id":22,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:14:04.4272271+06:00","action":"edit","task_id":24,"detail":"Enrich JSON-LD to @graph (Person/ProfilePage/WebSite)"}
+{"timestamp":"2026-08-01T12:14:04.4483481+06:00","action":"claim","task_id":24,"detail":"path-lily"}
+{"timestamp":"2026-08-01T12:14:04.5690412+06:00","action":"move","task_id":24,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:16:29.4739134+06:00","action":"edit","task_id":24,"detail":"Enrich JSON-LD to @graph (Person/ProfilePage/WebSite)"}
+{"timestamp":"2026-08-01T12:16:29.4976527+06:00","action":"release","task_id":24,"detail":"path-lily"}
+{"timestamp":"2026-08-01T12:16:29.6175972+06:00","action":"move","task_id":24,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:16:40.5655167+06:00","action":"move","task_id":17,"detail":"backlog -\u003e done"}
+{"timestamp":"2026-08-01T12:17:11.2323948+06:00","action":"edit","task_id":28,"detail":"Add llms.txt for LLM/answer-engine consumption"}
+{"timestamp":"2026-08-01T12:17:11.261153+06:00","action":"claim","task_id":28,"detail":"dock-tide"}
+{"timestamp":"2026-08-01T12:17:11.446669+06:00","action":"move","task_id":28,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:17:20.598135+06:00","action":"edit","task_id":29,"detail":"FAQ section + FAQPage schema on homepage"}
+{"timestamp":"2026-08-01T12:17:20.6264072+06:00","action":"claim","task_id":29,"detail":"ember-knoll"}
+{"timestamp":"2026-08-01T12:17:20.7842675+06:00","action":"move","task_id":29,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:17:28.0563569+06:00","action":"edit","task_id":30,"detail":"Answer-ready copy pass (hero subline + services line)"}
+{"timestamp":"2026-08-01T12:17:28.090196+06:00","action":"claim","task_id":30,"detail":"horn-stem"}
+{"timestamp":"2026-08-01T12:17:28.2834945+06:00","action":"move","task_id":30,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:19:43.4086004+06:00","action":"edit","task_id":28,"detail":"Add llms.txt for LLM/answer-engine consumption"}
+{"timestamp":"2026-08-01T12:19:43.4403007+06:00","action":"release","task_id":28,"detail":"dock-tide"}
+{"timestamp":"2026-08-01T12:19:43.6397701+06:00","action":"move","task_id":28,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:20:40.9727995+06:00","action":"edit","task_id":30,"detail":"Answer-ready copy pass (hero subline + services line)"}
+{"timestamp":"2026-08-01T12:20:40.9940356+06:00","action":"release","task_id":30,"detail":"horn-stem"}
+{"timestamp":"2026-08-01T12:20:41.1351305+06:00","action":"move","task_id":30,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:22:40.0951245+06:00","action":"edit","task_id":29,"detail":"FAQ section + FAQPage schema on homepage"}
+{"timestamp":"2026-08-01T12:22:40.1175277+06:00","action":"release","task_id":29,"detail":"ember-knoll"}
+{"timestamp":"2026-08-01T12:22:40.2460713+06:00","action":"move","task_id":29,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:22:54.4228847+06:00","action":"move","task_id":18,"detail":"backlog -\u003e done"}
+{"timestamp":"2026-08-01T12:23:17.4411463+06:00","action":"edit","task_id":31,"detail":"Mobile menu: focus trap + focus restore + inert background"}
+{"timestamp":"2026-08-01T12:23:17.4636316+06:00","action":"claim","task_id":31,"detail":"rust-elder"}
+{"timestamp":"2026-08-01T12:23:17.6271475+06:00","action":"move","task_id":31,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:23:27.0668799+06:00","action":"edit","task_id":32,"detail":"Contact form: live status region + accessible validation"}
+{"timestamp":"2026-08-01T12:23:27.0878028+06:00","action":"claim","task_id":32,"detail":"zinc-gale"}
+{"timestamp":"2026-08-01T12:23:27.2506128+06:00","action":"move","task_id":32,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:23:32.7131114+06:00","action":"edit","task_id":34,"detail":"Hero replay buttons: keyboard-safe semantics"}
+{"timestamp":"2026-08-01T12:23:32.7639631+06:00","action":"claim","task_id":34,"detail":"mold-gale"}
+{"timestamp":"2026-08-01T12:23:33.0036397+06:00","action":"move","task_id":34,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:26:05.0173407+06:00","action":"edit","task_id":34,"detail":"Hero replay buttons: keyboard-safe semantics"}
+{"timestamp":"2026-08-01T12:26:05.0766865+06:00","action":"release","task_id":34,"detail":"mold-gale"}
+{"timestamp":"2026-08-01T12:26:05.3035722+06:00","action":"move","task_id":34,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:28:40.4540399+06:00","action":"edit","task_id":32,"detail":"Contact form: live status region + accessible validation"}
+{"timestamp":"2026-08-01T12:28:40.4741875+06:00","action":"release","task_id":32,"detail":"zinc-gale"}
+{"timestamp":"2026-08-01T12:28:40.6178427+06:00","action":"move","task_id":32,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:29:34.5926087+06:00","action":"edit","task_id":31,"detail":"Mobile menu: focus trap + focus restore + inert background"}
+{"timestamp":"2026-08-01T12:29:34.6074895+06:00","action":"release","task_id":31,"detail":"rust-elder"}
+{"timestamp":"2026-08-01T12:29:34.7233401+06:00","action":"move","task_id":31,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:30:04.795998+06:00","action":"edit","task_id":33,"detail":"Contrast fixes + decorative microcopy"}
+{"timestamp":"2026-08-01T12:30:04.8376213+06:00","action":"claim","task_id":33,"detail":"hazel-zone"}
+{"timestamp":"2026-08-01T12:30:05.0759523+06:00","action":"move","task_id":33,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:30:12.9900409+06:00","action":"edit","task_id":35,"detail":"Low items: error label, TimelineItem escaping, input focus states"}
+{"timestamp":"2026-08-01T12:30:13.0116013+06:00","action":"claim","task_id":35,"detail":"opal-birch"}
+{"timestamp":"2026-08-01T12:30:13.1403649+06:00","action":"move","task_id":35,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:37:01.3977853+06:00","action":"edit","task_id":35,"detail":"Low items: error label, TimelineItem escaping, input focus states"}
+{"timestamp":"2026-08-01T12:37:01.4212079+06:00","action":"release","task_id":35,"detail":"opal-birch"}
+{"timestamp":"2026-08-01T12:37:01.5500374+06:00","action":"move","task_id":35,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:40:14.6474968+06:00","action":"edit","task_id":33,"detail":"Contrast fixes + decorative microcopy"}
+{"timestamp":"2026-08-01T12:40:14.6669469+06:00","action":"release","task_id":33,"detail":"hazel-zone"}
+{"timestamp":"2026-08-01T12:40:14.7939517+06:00","action":"move","task_id":33,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:40:34.6530472+06:00","action":"move","task_id":19,"detail":"backlog -\u003e done"}
+{"timestamp":"2026-08-01T12:40:53.4562993+06:00","action":"edit","task_id":36,"detail":"Full verification gate (check/lint/build + prerender spot-check)"}
+{"timestamp":"2026-08-01T12:40:53.473391+06:00","action":"claim","task_id":36,"detail":"silk-arch"}
+{"timestamp":"2026-08-01T12:40:53.5852945+06:00","action":"move","task_id":36,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:42:35.5240058+06:00","action":"edit","task_id":36,"detail":"Full verification gate (check/lint/build + prerender spot-check)"}
+{"timestamp":"2026-08-01T12:42:39.6903919+06:00","action":"edit","task_id":36,"detail":"Full verification gate (check/lint/build + prerender spot-check)"}
+{"timestamp":"2026-08-01T12:42:39.7118258+06:00","action":"release","task_id":36,"detail":"silk-arch"}
+{"timestamp":"2026-08-01T12:42:39.8286046+06:00","action":"move","task_id":36,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:43:08.9868168+06:00","action":"edit","task_id":37,"detail":"Lighthouse + axe + Rich Results QA report"}
+{"timestamp":"2026-08-01T12:43:09.0033648+06:00","action":"claim","task_id":37,"detail":"bone-lotus"}
+{"timestamp":"2026-08-01T12:43:09.1189528+06:00","action":"move","task_id":37,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-01T12:47:00.7971429+06:00","action":"edit","task_id":37,"detail":"Lighthouse + axe + Rich Results QA report"}
+{"timestamp":"2026-08-01T12:47:09.4295441+06:00","action":"edit","task_id":37,"detail":"Lighthouse + axe + Rich Results QA report"}
+{"timestamp":"2026-08-01T12:47:09.4525648+06:00","action":"release","task_id":37,"detail":"bone-lotus"}
+{"timestamp":"2026-08-01T12:47:09.5712576+06:00","action":"move","task_id":37,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-01T12:47:40.8632641+06:00","action":"move","task_id":38,"detail":"todo -\u003e review"}
+{"timestamp":"2026-08-01T12:47:40.8809816+06:00","action":"handoff","task_id":38,"detail":"Owner handoff: custom domain + Search Console + approvals"}
+{"timestamp":"2026-08-01T12:47:40.896162+06:00","action":"block","task_id":38,"detail":"Waiting on owner: custom domain purchase + Search Console + logo assets (see checklist in note)"}
+{"timestamp":"2026-08-01T12:47:40.9111484+06:00","action":"release","task_id":38,"detail":"Owner handoff: custom domain + Search Console + approvals"}
+{"timestamp":"2026-08-01T12:47:47.9351034+06:00","action":"move","task_id":20,"detail":"backlog -\u003e done"}
+{"timestamp":"2026-08-01T12:47:48.072328+06:00","action":"move","task_id":1,"detail":"backlog -\u003e archived"}
