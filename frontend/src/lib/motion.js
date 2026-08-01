@@ -243,3 +243,149 @@ export function initParallax() {
     cleanups.splice(0).forEach((fn) => fn());
   };
 }
+
+/**
+ * Ink-wash image wells: marks each well's `--x`/`--y` custom properties
+ * (percentages) while the pointer is over it, rAF-throttled, so scoped CSS
+ * can place a faint gold radial bloom under the cursor. Active only on
+ * `pointer: fine` devices while motion is allowed; listeners attach only
+ * while the well is on-screen, and all inline styles are cleared on leave,
+ * pause, or reduced motion (the CSS colorize-only hover remains).
+ *
+ * @param {Element | Document} [root] Pass a well element directly, or a
+ *   container whose `[data-inkwash]` children should be wired.
+ * @returns {() => void} Cleanup.
+ */
+export function initInkWash(root = document) {
+  if (typeof window === 'undefined') return () => {};
+
+  const reducedQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointerQuery = window.matchMedia('(pointer: fine)');
+
+  /** @type {Array<HTMLElement>} */
+  const wells = [];
+  if (root instanceof Element) {
+    if (root.hasAttribute('data-inkwash')) {
+      wells.push(/** @type {HTMLElement} */ (root));
+    }
+    wells.push(
+      ...Array.from(root.querySelectorAll('[data-inkwash]'), (el) => /** @type {HTMLElement} */ (el))
+    );
+  } else {
+    wells.push(
+      ...Array.from(document.querySelectorAll('[data-inkwash]'), (el) =>
+        /** @type {HTMLElement} */ (el)
+      )
+    );
+  }
+  if (wells.length === 0) return () => {};
+
+  /** @type {Array<() => void>} */
+  const cleanups = [];
+  /** @type {Map<HTMLElement, { x: number; y: number }>} */
+  const targets = new Map();
+  let rafId = 0;
+  let framePending = false;
+
+  /** @param {HTMLElement} el */
+  const clearNode = (el) => {
+    el.style.removeProperty('--x');
+    el.style.removeProperty('--y');
+    el.style.willChange = '';
+  };
+
+  const update = () => {
+    framePending = false;
+    if (targets.size === 0) return;
+    for (const [el, pos] of targets) {
+      el.style.setProperty('--x', `${pos.x}%`);
+      el.style.setProperty('--y', `${pos.y}%`);
+    }
+  };
+
+  const scheduleUpdate = () => {
+    if (framePending) return;
+    framePending = true;
+    rafId = window.requestAnimationFrame(update);
+  };
+
+  /** @param {HTMLElement} el @param {number} clientX @param {number} clientY */
+  const aim = (el, clientX, clientY) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) return;
+    targets.set(el, {
+      x: ((clientX - rect.left) / rect.width) * 100,
+      y: ((clientY - rect.top) / rect.height) * 100
+    });
+    scheduleUpdate();
+  };
+
+  /** @param {PointerEvent} e */
+  const onMove = (e) => {
+    aim(/** @type {HTMLElement} */ (e.currentTarget), e.clientX, e.clientY);
+  };
+  /** @param {PointerEvent} e */
+  const onEnter = (e) => {
+    const el = /** @type {HTMLElement} */ (e.currentTarget);
+    el.style.willChange = 'background-position';
+    aim(el, e.clientX, e.clientY);
+  };
+  /** @param {PointerEvent} e */
+  const onLeave = (e) => {
+    const el = /** @type {HTMLElement} */ (e.currentTarget);
+    targets.delete(el);
+    clearNode(el);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const el = /** @type {HTMLElement} */ (entry.target);
+        if (entry.isIntersecting) {
+          el.addEventListener('pointermove', onMove, { passive: true });
+          el.addEventListener('pointerenter', onEnter, { passive: true });
+          el.addEventListener('pointerleave', onLeave, { passive: true });
+        } else {
+          el.removeEventListener('pointermove', onMove);
+          el.removeEventListener('pointerenter', onEnter);
+          el.removeEventListener('pointerleave', onLeave);
+          targets.delete(el);
+          clearNode(el);
+        }
+      }
+    },
+    { threshold: 0 }
+  );
+
+  const start = () => {
+    wells.forEach((el) => observer.observe(el));
+  };
+  const stop = () => {
+    if (rafId > 0) window.cancelAnimationFrame(rafId);
+    rafId = 0;
+    framePending = false;
+    targets.clear();
+    observer.disconnect();
+    wells.forEach(clearNode);
+  };
+  const syncWithMotionPreference = () => {
+    stop();
+    if (!reducedQuery.matches && finePointerQuery.matches && 'IntersectionObserver' in window) {
+      start();
+    }
+  };
+
+  reducedQuery.addEventListener('change', syncWithMotionPreference);
+  finePointerQuery.addEventListener('change', syncWithMotionPreference);
+  cleanups.push(() => {
+    reducedQuery.removeEventListener('change', syncWithMotionPreference);
+    finePointerQuery.removeEventListener('change', syncWithMotionPreference);
+    stop();
+  });
+
+  syncWithMotionPreference();
+
+  return () => {
+    cleanups.splice(0).forEach((fn) => fn());
+  };
+}
