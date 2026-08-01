@@ -22,6 +22,13 @@
         <p class="brush text-inkonpaper text-base md:text-lg">{youtube.blurb}</p>
       </div>
 
+      {#if youtube.freeNote}
+        <p class="marginalia inline-flex items-center gap-2 mt-5 px-3.5 py-1.5 border border-gold/50 text-goldbright">
+          <svg class="w-[0.6rem] h-[0.6rem] text-gold" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
+          {youtube.freeNote}
+        </p>
+      {/if}
+
       <div class="mt-8">
         <a
           href={youtube.channelUrl}
@@ -69,24 +76,27 @@
                 </div>
               {/if}
 
-              <span
-                class="play-seal absolute top-3 right-3 z-10 pointer-events-none w-12 h-12 md:w-14 md:h-14"
-                aria-hidden="true"
-              >
-                <span class="play-seal__ring"></span>
-                <span class="play-seal__ink">
-                  <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </span>
-              </span>
             </div>
 
             <div class="flex flex-1 flex-col p-5 md:p-6">
               <h3 class="brush text-xl text-inktext mb-2 transition-colors duration-200 group-hover:text-goldbright">
                 {item.title}
               </h3>
-              <p class="text-inktextdim text-[0.95rem] leading-relaxed">{item.description}</p>
+              <p class="text-inktextdim text-[0.95rem] leading-relaxed mb-5">{item.description}</p>
+
+              <div class="mt-auto flex justify-end">
+                <span
+                  class="play-seal pointer-events-none w-10 h-10 md:w-12 md:h-12"
+                  aria-hidden="true"
+                >
+                  <span class="play-seal__ring"></span>
+                  <span class="play-seal__ink">
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                </span>
+              </div>
             </div>
           </a>
         {/each}

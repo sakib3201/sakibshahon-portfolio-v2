@@ -257,6 +257,7 @@ export const awards = [
 export const youtube = {
   channelUrl: 'https://www.youtube.com/@sakibshahon',
   handle: '@sakibshahon',
+  freeNote: '100% free',
   blurb: 'CSE Untaught — the things university doesn’t teach you: engineering fundamentals, the industry gap, and lessons learned the hard way.',
   featured: [
     {
@@ -268,6 +269,11 @@ export const youtube = {
       id: 'niEJGF0tGxw',
       title: 'CSE Untaught Episode 1: Basics আসলে কী?',
       description: 'What “basics” really mean to working engineers — the ten core pillars, from computational thinking and debugging to production awareness and engineering judgment.'
+    },
+    {
+      id: 'TjdSx6yLGfY',
+      title: 'Inside the tech industry session 1 by Mid Day Club JKKNIU',
+      description: 'A long-form session for students and junior developers: breaking into the industry — applying through LinkedIn and email, CVs that pass screening, surviving tech interviews, industry-grade code with tests, SaaS architecture, and the realities of startup operations and remote work.'
     }
   ]
 };
