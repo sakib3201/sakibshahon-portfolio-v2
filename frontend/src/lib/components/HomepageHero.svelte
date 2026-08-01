@@ -224,9 +224,10 @@
       <button
         type="button"
         bind:this={punchlineEl}
+        tabindex="-1"
         class="hero-punchline relative motto-band inline-block mt-6 px-7 py-2.5 rotate-[-0.6deg] neon-rim cursor-pointer text-center {entrancePlayed ? 'punch-entering' : ''}"
         aria-label={siteMeta.tagline}
-        onclick={replayPunchline}
+        onpointerdown={replayPunchline}
       >
         <span class="punch-bloom" aria-hidden="true"></span>
         <span class="punch-ring" aria-hidden="true"></span>
