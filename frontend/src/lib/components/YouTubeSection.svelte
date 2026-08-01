@@ -46,7 +46,7 @@
             rel="noopener noreferrer"
             class="lacquer-raised gold-edge group relative flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-deep neon-rim"
           >
-            <div class="aspect-video overflow-hidden bg-sumi">
+            <div class="relative aspect-video overflow-hidden bg-sumi">
               {#if !imageFailed[item.id]}
                 <img
                   src={`https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`}
@@ -68,6 +68,18 @@
                   <span class="sr-only">{item.title}</span>
                 </div>
               {/if}
+
+              <span
+                class="play-seal absolute top-3 right-3 z-10 pointer-events-none w-12 h-12 md:w-14 md:h-14"
+                aria-hidden="true"
+              >
+                <span class="play-seal__ring"></span>
+                <span class="play-seal__ink">
+                  <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </span>
             </div>
 
             <div class="flex flex-1 flex-col p-5 md:p-6">
@@ -80,7 +92,93 @@
         {/each}
       </div>
     {:else}
+      <div class="empty-seal" aria-hidden="true">
+        <svg class="empty-seal__glyph" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
       <p class="brush italic text-inktextdim text-center mt-4">New videos dropping soon — subscribe to catch them.</p>
     {/if}
   </div>
 </section>
+
+<style>
+  .play-seal__ring {
+    position: absolute;
+    inset: -5px;
+    border: 1px solid rgba(201, 162, 94, 0.45);
+    border-radius: 3px;
+    opacity: 0;
+    transition:
+      opacity 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .play-seal__ink {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-cinnabar);
+    color: var(--color-inktext);
+    transform: rotate(10deg);
+    clip-path: polygon(
+      0.6% 2%, 4% 0.4%, 9% 1.4%, 14% 0.6%, 20% 1.6%, 26% 0.5%, 33% 1.3%, 40% 0.6%, 48% 1.5%,
+      56% 0.4%, 64% 1.4%, 72% 0.6%, 80% 1.5%, 88% 0.5%, 95% 1.3%, 99.4% 0.8%, 99.6% 8%,
+      99.4% 16%, 99.6% 24%, 99.4% 32%, 99.6% 40%, 99.4% 48%, 99.6% 56%, 99.4% 64%, 99.6% 72%,
+      99.4% 80%, 99.6% 88%, 99.5% 96%, 96% 99.5%, 88% 98.6%, 80% 99.5%, 72% 98.6%, 64% 99.5%,
+      56% 98.6%, 48% 99.5%, 40% 98.6%, 33% 99.5%, 26% 98.6%, 20% 99.5%, 14% 98.6%, 9% 99.4%,
+      4% 98.5%, 0.4% 99%, 0.6% 92%, 0.4% 84%, 0.6% 76%, 0.4% 68%, 0.6% 60%, 0.4% 52%, 0.6% 44%,
+      0.4% 36%, 0.6% 28%, 0.4% 20%, 0.6% 12%
+    );
+    box-shadow: 0 6px 14px rgba(192, 40, 24, 0.35);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    :global(.group):hover .play-seal__ink,
+    :global(.group):focus-visible .play-seal__ink {
+      animation: play-restamp 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    :global(.group):hover .play-seal__ring,
+    :global(.group):focus-visible .play-seal__ring {
+      opacity: 1;
+      box-shadow:
+        0 0 14px rgba(201, 162, 94, 0.3),
+        inset 0 0 8px rgba(201, 162, 94, 0.18);
+    }
+  }
+
+  @keyframes play-restamp {
+    0% {
+      transform: rotate(10deg) scale(1.55);
+    }
+    55% {
+      transform: rotate(5deg) scale(0.92);
+    }
+    100% {
+      transform: rotate(10deg) scale(1);
+    }
+  }
+
+  .empty-seal {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    margin: 1.25rem auto 0;
+    border: 1.5px dashed rgba(192, 40, 24, 0.55);
+    border-radius: 2px;
+    transform: rotate(6deg);
+    background: radial-gradient(80% 80% at 50% 50%, rgba(192, 40, 24, 0.08), transparent 70%);
+  }
+
+  .empty-seal__glyph {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 2rem;
+    height: 2rem;
+    color: rgba(192, 40, 24, 0.45);
+  }
+</style>
