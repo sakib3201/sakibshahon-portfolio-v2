@@ -1,11 +1,18 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { fade } from 'svelte/transition';
   import { page } from '$app/stores';
   import { siteMeta, socialLinks } from '$lib/data.js';
 
   let isOpen = false;
   let scrolled = false;
+
+  /** @type {HTMLElement | undefined} */
+  let navElement;
+  /** @type {HTMLElement | undefined} */
+  let dialogElement;
+  /** @type {HTMLButtonElement | undefined} */
+  let hamburgerButton;
 
   $: contactHref = $page.url.pathname === '/' ? '#contact' : '/#contact';
 
@@ -19,14 +26,65 @@
 
   const youtube = socialLinks.find((link) => link.name === 'YouTube');
 
+  /** @param {boolean} inert */
+  const setBackgroundInert = (inert) => {
+    const parent = navElement?.parentElement || document.body;
+    /** @type {HTMLElement[]} */
+    const siblings = /** @type {HTMLElement[]} */ (Array.from(parent.children));
+    for (const child of siblings) {
+      if (child !== navElement) child.inert = inert;
+    }
+  };
+
   const toggleMenu = () => {
     isOpen = !isOpen;
     document.body.style.overflow = isOpen ? 'hidden' : '';
+    setBackgroundInert(isOpen);
   };
 
   const closeMenu = () => {
+    if (!isOpen) return;
     isOpen = false;
     document.body.style.overflow = '';
+    setBackgroundInert(false);
+    hamburgerButton?.focus();
+  };
+
+  $: if (isOpen) {
+    tick().then(() => {
+      const firstFocusable = /** @type {HTMLElement | undefined} */ (
+        dialogElement?.querySelector(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      );
+      firstFocusable?.focus();
+    });
+  }
+
+  /** @param {KeyboardEvent} event */
+  const handleDialogKeydown = (event) => {
+    if (event.key === 'Escape') {
+      closeMenu();
+      return;
+    }
+    if (event.key !== 'Tab' || !dialogElement) return;
+    const focusable = /** @type {HTMLElement[]} */ (
+      Array.from(
+        dialogElement.querySelectorAll(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      )
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   };
 
   onMount(() => {
@@ -59,6 +117,7 @@
 </script>
 
 <nav
+  bind:this={navElement}
   aria-label="Main navigation"
   class={`fixed top-0 w-full z-50 transition-all duration-300 lacquer-panel border-b border-gold/20 ${
     scrolled ? 'shadow-deep' : ''
@@ -117,6 +176,7 @@
 
       <div class="flex md:hidden items-center">
         <button
+          bind:this={hamburgerButton}
           type="button"
           class="inline-flex items-center justify-center p-2 rounded-md gold-edge text-inktext hover:text-goldbright focus:outline-none"
           on:click={toggleMenu}
@@ -141,11 +201,12 @@
 
   {#if isOpen}
     <div
+      bind:this={dialogElement}
       id="mobile-navigation-menu"
       class="md:hidden fixed inset-0 lacquer-panel z-40 pt-20"
       in:fade={{ duration: 200 }}
       on:click|self={closeMenu}
-      on:keydown={(e) => e.key === 'Escape' && closeMenu()}
+      on:keydown={handleDialogKeydown}
       role="dialog"
       aria-modal="true"
       aria-label="Mobile navigation menu"
