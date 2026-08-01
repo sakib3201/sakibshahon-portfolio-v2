@@ -1,3 +1,64 @@
+<script>
+  const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  let emailError = $state('');
+  let messageError = $state('');
+  let pending = $state(false);
+  let statusKind = $state('');
+  let statusText = $state('');
+
+  function handleEmailInput() {
+    emailError = '';
+  }
+
+  function handleMessageInput() {
+    messageError = '';
+  }
+
+  /** @param {SubmitEvent} event */
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const form = /** @type {HTMLFormElement} */ (event.currentTarget);
+    const email = /** @type {HTMLInputElement} */ (form.elements.namedItem('email'));
+    const message = /** @type {HTMLTextAreaElement} */ (form.elements.namedItem('message'));
+
+    const emailValue = email.value.trim();
+    emailError = emailValue === '' ? 'Please enter your email address.' : !EMAIL_PATTERN.test(emailValue) ? 'Please enter a valid email address.' : '';
+    messageError = message.value.trim() === '' ? 'Please write a message before sending.' : '';
+
+    if (emailError !== '' || messageError !== '') {
+      statusKind = '';
+      statusText = '';
+      const firstInvalid = emailError !== '' ? email : message;
+      firstInvalid.focus();
+      return;
+    }
+
+    pending = true;
+    statusKind = '';
+    statusText = '';
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (response.ok && result.success) {
+        statusKind = 'success';
+        statusText = 'Letter sent — I will reply within a day or two.';
+      } else {
+        statusKind = 'error';
+        statusText = 'The letter could not be sent. Please try again in a moment.';
+      }
+    } catch {
+      statusKind = 'error';
+      statusText = 'The letter could not be sent. Please check your connection and try again.';
+    } finally {
+      pending = false;
+    }
+  }
+</script>
+
 <section id="contact" class="scroll-mt-24 relative bg-lacquer text-inktext py-20 lg:py-28 overflow-hidden">
   <div class="needle-line-h absolute inset-x-0 top-0 opacity-40" aria-hidden="true"></div>
 
@@ -34,7 +95,13 @@
 
       <div class="lg:col-span-7">
         <div class="skin-sheet rounded-sm p-6 md:p-10" data-reveal>
-          <form action="https://api.web3forms.com/submit" method="POST" class="space-y-7">
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            novalidate
+            class="space-y-7"
+            onsubmit={handleSubmit}
+          >
             <input type="hidden" name="access_key" value="06898dee-aec1-4979-a6a1-194c5dc8d41d" />
             <input type="hidden" name="subject" value="Message from your portfolio" />
             <input type="hidden" name="from_name" value="sakibshahon.netlify.app" />
@@ -53,10 +120,17 @@
                 type="email"
                 id="email"
                 name="email"
+                autocomplete="email"
                 placeholder="your.email@example.com"
                 required
-                class="w-full bg-transparent text-inkonpaper text-lg py-2 rounded-none border border-t-0 border-l-0 border-r-0 border-b border-inkonpaper/30 placeholder:text-inkonpaper/50 focus:border-b-inkonpaper/80"
+                aria-invalid={emailError !== '' ? 'true' : 'false'}
+                aria-describedby={emailError !== '' ? 'email-error' : undefined}
+                oninput={handleEmailInput}
+                class="w-full bg-transparent text-inkonpaper text-lg py-2 rounded-none border border-t-0 border-l-0 border-r-0 border-b placeholder:text-inkonpaper/50 focus:border-b-inkonpaper/80 {emailError !== '' ? 'border-b-goldbright' : 'border-b-inkonpaper/30'}"
               />
+              {#if emailError !== ''}
+                <p id="email-error" class="marginalia text-goldbright mt-1">{emailError}</p>
+              {/if}
             </div>
 
             <div class="space-y-2">
@@ -67,15 +141,22 @@
                 rows="6"
                 placeholder="Tell me about your project or just say hello!"
                 required
-                class="w-full bg-transparent text-inkonpaper text-lg py-2 px-0 resize-none rounded-none border border-t-0 border-l-0 border-r-0 border-b border-inkonpaper/30 placeholder:text-inkonpaper/50 focus:border-b-inkonpaper/80"
+                aria-invalid={messageError !== '' ? 'true' : 'false'}
+                aria-describedby={messageError !== '' ? 'message-error' : undefined}
+                oninput={handleMessageInput}
+                class="w-full bg-transparent text-inkonpaper text-lg py-2 px-0 resize-none rounded-none border border-t-0 border-l-0 border-r-0 border-b placeholder:text-inkonpaper/50 focus:border-b-inkonpaper/80 {messageError !== '' ? 'border-b-goldbright' : 'border-b-inkonpaper/30'}"
               ></textarea>
+              {#if messageError !== ''}
+                <p id="message-error" class="marginalia text-goldbright mt-1">{messageError}</p>
+              {/if}
             </div>
 
             <button
               type="submit"
-              class="gold-plate group inline-flex w-full items-center justify-center gap-2.5 px-6 py-3.5 brush text-lg text-sumi hover:text-black transition-all duration-300 hover:-translate-y-0.5"
+              disabled={pending}
+              class="gold-plate group inline-flex w-full items-center justify-center gap-2.5 px-6 py-3.5 brush text-lg text-sumi hover:text-black transition-all duration-300 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
             >
-              Send the letter
+              {pending ? 'Sending the letter…' : 'Send the letter'}
               <svg
                 class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                 fill="none"
@@ -86,6 +167,13 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </button>
+
+            <p
+              aria-live="polite"
+              class="marginalia text-center {statusKind === 'error' ? 'text-goldbright' : 'text-inktextdim'}"
+            >
+              {#if statusText !== ''}{statusText}{/if}
+            </p>
           </form>
         </div>
 
