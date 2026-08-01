@@ -240,7 +240,8 @@
 
       <p class="max-w-2xl mx-auto mt-5 text-lg md:text-xl text-inktextdim leading-relaxed">
         I build AI-powered WordPress and SaaS products. The same engineering behind 20k+ plugin installs
-        and ~35% lower AI costs — now available for your project.
+        and ~35% lower AI costs — now available for your project. Available for freelance and contract
+        work — worldwide, based in Gazipur, Bangladesh.
       </p>
 
       <div class="flex flex-wrap justify-center gap-4 md:gap-5 mt-8 pb-10">
