@@ -9,6 +9,15 @@
 				"description": "Optional: subset to run (check, lint, build)"
 			},
 			"prompt": "Run the frontend verification loop from the frontend/ directory and report each result: 1) pnpm check, 2) pnpm lint, 3) pnpm build. All three must pass. If the user specified a subset, run only that part."
+		},
+		"review": {
+			"description": "Run the reviewer subagent on the current diff against a task's acceptance criteria",
+			"args": {
+				"type": "positional",
+				"required": false,
+				"description": "Optional: kanban task ID whose card defines the acceptance criteria"
+			},
+			"prompt": "Run the reviewer subagent on the current diff (uncommitted changes, plus the task branch if one exists), passing the task ID if one was given. The reviewer is read-only — it must not edit anything. Then save its report to docs/reviews/<task-id>.md (use docs/reviews/unpinned.md when no task ID was given). If the disposition is fix or rework, address the gaps in a follow-up pass and re-review before reporting done."
 		}
 	}
 }

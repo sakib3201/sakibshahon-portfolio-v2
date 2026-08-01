@@ -19,6 +19,15 @@ Follow the repo's existing prefixes (see `git log`):
 
 From `frontend/`: `pnpm check` → `pnpm lint` → `pnpm build`. All three pass before the branch merges to `main`. After merge, re-run at least `pnpm build` on main.
 
+## Review Before Merge
+
+Beyond the verify loop, run the fresh-context reviewer on a task branch before merging:
+
+- Invoke the `reviewer` subagent (or the `/review` command) on the branch diff, passing the task ID so the card's acceptance criteria are checked.
+- The reviewer checks: acceptance criteria met, scope drift, rule violations (`agent_rules/`, `frontend/AGENTS.md`, `frontend/DESIGN.md` for visual changes), and verify evidence.
+- The invoking session saves the report to `docs/reviews/<task-id>.md` (see `docs/reviews/README.md`).
+- The disposition is advisory: CI remains the hard gate. `fix`/`rework` findings are addressed or explicitly waived before the branch merges.
+
 ## Board Commits
 
 `kanban/` is git-tracked. After moving a task to `done`:

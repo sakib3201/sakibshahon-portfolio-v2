@@ -76,17 +76,29 @@ This repo is set up for agents to work on it autonomously and in parallel. Every
 
 `skills-lock.json` records each skill's source and content hash — update it whenever a skill changes.
 
+### Agents (`.opencode/agents/` — subagents)
+
+| Agent | When it loads |
+|---|---|
+| `reviewer` | Fresh-context review of a diff before merge — read-only, checks the task card's acceptance criteria + repo rules, runs the verify loop, returns a `disposition: pass \| fix \| rework` line with ordered gaps |
+| `executor` | Executes one claimed board task end-to-end in its worktree — verifies, commits on the task branch, never merges or moves cards |
+
+- Run a review with `/review [task-id]`; reports are saved to `docs/reviews/<task-id>.md` (the reviewer itself never edits).
+- The reviewer's disposition is advisory — CI remains the hard gate.
+- Executors are for parallelizable board tasks; sequential single-task work stays in the main session.
+
 ### Board + worktree loop
 
 - Board home = this repo root; `kanban/` is **git-tracked** (board state commits as `chore(board): update task #<ID>`).
 - Agents claim tasks (`kanban-md agent-name` → `pick --claim`), do code work in worktrees (`.worktrees/task-{ID}-{slug}`), verify with the check/lint/build loop, merge to `main`, and move tasks to `done`.
+- Cards carry a **delegation contract** (Objective / Acceptance criteria / Output format / Done) so any executor can pick them up.
 - Decisions, credentials, or external actions get parked in `review` with a handoff note.
 
 ### Verification
 
 - Local: `pnpm check` → `pnpm lint` → `pnpm build` (from `frontend/`) — must all pass before merge.
 - CI: `.github/workflows/verify.yml` runs the same loop on push/PR.
-- OpenCode users: `/verify` command runs the loop on demand.
+- OpenCode users: `/verify` command runs the loop on demand; `/review` runs the fresh-context reviewer on the current diff.
 
 ---
 
