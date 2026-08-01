@@ -107,7 +107,7 @@
     position: absolute;
     inset: -5px;
     border: 1px solid rgba(201, 162, 94, 0.45);
-    border-radius: 3px;
+    border-radius: 2px;
     opacity: 0;
     transition:
       opacity 0.3s ease,

@@ -237,7 +237,7 @@
     justify-content: center;
     width: 3.5rem;
     height: 3.5rem;
-    font-size: 1.45rem;
+    font-size: 1.25rem;
     border-radius: 9999px;
     animation: wax-seal-stamp 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
   }

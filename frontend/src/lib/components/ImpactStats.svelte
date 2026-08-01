@@ -52,7 +52,7 @@
     let rafId = 0;
 
     displayEl.textContent = format(stat, (0).toFixed(decimals));
-    dividerEl.style.width = '0';
+    dividerEl.style.setProperty('--drawn', '0');
 
     /** @param {number} now */
     const step = (now) => {
@@ -63,7 +63,7 @@
         rafId = window.requestAnimationFrame(step);
       } else {
         displayEl.textContent = format(stat, String(target));
-        dividerEl.style.width = '4rem';
+        dividerEl.style.setProperty('--drawn', '1');
       }
     };
     rafId = window.requestAnimationFrame(step);
@@ -71,7 +71,7 @@
     return () => {
       if (rafId > 0) window.cancelAnimationFrame(rafId);
       displayEl.textContent = format(stat, String(target));
-      dividerEl.style.width = '4rem';
+      dividerEl.style.setProperty('--drawn', '1');
     };
   }
 
@@ -161,6 +161,8 @@
 
 <style>
   .stat-needle {
-    transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: scaleX(var(--drawn, 0));
+    transform-origin: center;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
 </style>
