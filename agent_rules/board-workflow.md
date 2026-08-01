@@ -20,4 +20,4 @@ Cards created for agent execution carry these fields so any executor can pick th
 - **Output format** — what "done" looks like (files touched, artifacts produced).
 - **Done** — the fixed checklist: verify loop passes, reviewer disposition `pass` (or findings waived), merged to `main`.
 
-Worker subagents: `executor` (worktree executor) and `reviewer` (fresh-context, read-only) — defined in `.opencode/agents/`. Executors never claim, merge, or move cards; the parent does.
+Worker subagents: `orchestrator` (primary — plans, delegates, gates merges), `executor` (worktree executor), `reviewer` (fresh-context, read-only) — defined in `.opencode/agents/`. Executors never claim, merge, or move cards; the parent (main session or orchestrator) does.

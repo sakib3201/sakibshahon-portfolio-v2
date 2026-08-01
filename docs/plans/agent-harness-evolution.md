@@ -3,7 +3,7 @@
 > Research-backed plan for evolving this repo's AI agent harness toward an **orchestrator + reviewer + executor** architecture.
 > Current harness: rules (`AGENTS.md` router + `agent_rules/`), skills (`.agents/skills/`, locked), kanban board + worktrees, CI + `/verify` command. **Zero agents defined** — the human is the only orchestrator, review is CI-only.
 >
-> **Last reviewed:** 2026-08-01 (v1.1 — stages 1–2 implemented; stage 3 deferred pending parallel-work demand)
+> **Last reviewed:** 2026-08-01 (v1.2 — stages 1–3 implemented; model routing still open)
 
 ---
 
@@ -142,7 +142,7 @@ hash + verify evidence. Never touch another agent's worktree or claim.
 |---|---|---|
 | 1 | Recreate `.opencode/agents/` (removed in harness cleanup) for agent files? | **Answered** — yes; markdown agents at `.opencode/agents/reviewer.md` + `.opencode/agents/executor.md` |
 | 2 | Reviewer disposition as a hard merge gate, or advisory after CI? | **Answered** — advisory in-session; CI remains the hard gate |
-| 3 | Model routing: which provider/models for reviewer vs executor? | Open — depends on opencode provider setup; can be added per-agent later |
+| 3 | Model routing: which provider/models for reviewer vs executor? | Open — no per-agent `model` overrides set yet; add per-agent once provider setup is decided |
 | 4 | Where do review artifacts live? | **Answered** — `docs/reviews/<task-id>.md`, written by the invoking session (reviewer is read-only) |
 | 5 | Board card template change — apply retroactively to open cards? | **Answered** — new cards only |
 
@@ -154,5 +154,5 @@ hash + verify evidence. Never touch another agent's worktree or claim.
 - [x] (done) Stage 1: create `docs/reviews/` artifact convention
 - [x] (done) Stage 2: write `.opencode/agents/executor.md`
 - [x] (done) Stage 2: update `agent_rules/board-workflow.md` card template (delegation contract section)
-- [ ] (not started) Stage 3: `orchestrator` primary agent + task-permission topology — only if parallel work becomes routine
+- [x] (done) Stage 3: `orchestrator` primary agent + task-permission topology (`.opencode/agents/orchestrator.md`, `permission.task: {"*": "deny", "executor": "allow", "reviewer": "ask"}`)
 - [x] (done) Update `README.md` harness section (agents, `/review`) + this doc's status

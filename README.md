@@ -80,10 +80,12 @@ This repo is set up for agents to work on it autonomously and in parallel. Every
 
 | Agent | When it loads |
 |---|---|
+| `orchestrator` | Lead planner (primary agent, Tab-switchable) — surveys the board, decomposes tasks, delegates to `executor`, gates merges behind `reviewer`; never implements code itself |
 | `reviewer` | Fresh-context review of a diff before merge — read-only, checks the task card's acceptance criteria + repo rules, runs the verify loop, returns a `disposition: pass \| fix \| rework` line with ordered gaps |
 | `executor` | Executes one claimed board task end-to-end in its worktree — verifies, commits on the task branch, never merges or moves cards |
 
 - Run a review with `/review [task-id]`; reports are saved to `docs/reviews/<task-id>.md` (the reviewer itself never edits).
+- The orchestrator can only spawn `executor` (auto) and `reviewer` (ask) via the Task tool — it plans, it doesn't implement.
 - The reviewer's disposition is advisory — CI remains the hard gate.
 - Executors are for parallelizable board tasks; sequential single-task work stays in the main session.
 
