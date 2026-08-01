@@ -103,7 +103,7 @@ export const projects = [
     githubLink: ''
   },
   {
-    imageSrc: '/assets/ictbjhomepage.png',
+    imageSrc: '/assets/ictbjhomepage.webp',
     altText: 'ICTBJ-2023',
     title: 'ICTBJ-2023',
     description:
@@ -117,7 +117,7 @@ export const projects = [
 
 export const archiveProjects = [
   {
-    imageSrc: '/assets/evotingproject.png',
+    imageSrc: '/assets/evotingproject.webp',
     altText: 'Decentralized Voting App',
     title: 'Decentralized Voting App',
     description: 'Blockchain voting with facial-recognition authentication (university experiment).',
@@ -127,7 +127,7 @@ export const archiveProjects = [
     githubLink: ''
   },
   {
-    imageSrc: '/assets/amarshopproject.png',
+    imageSrc: '/assets/amarshopproject.webp',
     altText: 'Amar Shop',
     title: 'Amar Shop',
     description: 'Shop management: inventory, financial reports, customer and sales tools (university project).',
