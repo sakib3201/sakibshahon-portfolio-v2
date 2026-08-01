@@ -1,7 +1,59 @@
 <script>
+  import { onMount } from "svelte";
   import { experience } from "$lib/data.js";
 
   const imageFailed = /** @type {Record<string, boolean>} */ ($state({}));
+
+  /** @type {Record<string, HTMLElement | undefined>} */
+  const cardRefs = {};
+  let unrolled = $state(false);
+  let stamped = $state(false);
+
+  onMount(() => {
+    const highlighted = experience.find((entry) => entry.highlight);
+    const card = highlighted ? cardRefs[highlighted.company] : undefined;
+    if (!card) return;
+    const reducedQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let observer = /** @type {IntersectionObserver | null} */ (null);
+
+    const start = () => {
+      if (unrolled || !("IntersectionObserver" in window)) return;
+      observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              unrolled = true;
+              observer?.disconnect();
+              observer = null;
+            }
+          }
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+      );
+      observer.observe(card);
+    };
+
+    const stop = () => {
+      observer?.disconnect();
+      observer = null;
+    };
+
+    const sync = () => (reducedQuery.matches ? stop() : start());
+    reducedQuery.addEventListener("change", sync);
+    sync();
+
+    return () => {
+      reducedQuery.removeEventListener("change", sync);
+      stop();
+    };
+  });
+
+  /** @param {AnimationEvent & { currentTarget: HTMLElement }} e */
+  function onUnrollEnd(e) {
+    if (!e.animationName.includes("ledger-page-unroll")) return;
+    e.currentTarget.style.willChange = "auto";
+    stamped = true;
+  }
 </script>
 
 <section class="relative bg-sumi text-inktext py-20 lg:py-28">
@@ -25,9 +77,12 @@
 
             <div class={`ml-12 md:ml-0 ${i % 2 === 0 ? "md:col-start-1" : "md:col-start-2"}`}>
               <article
+                bind:this={cardRefs[entry.company]}
+                onanimationend={onUnrollEnd}
                 class={`relative overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-deep neon-rim ${
                   entry.highlight ? "lacquer-raised gold-edge" : "skin-sheet"
                 }`}
+                class:ledger-unroll={entry.highlight && unrolled}
               >
                 <div class={`p-6 md:p-8 ${entry.highlight ? "" : "text-inkonpaper"}`}>
                   <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
@@ -65,7 +120,10 @@
                   </div>
 
                   {#if entry.badge}
-                    <span class="hanko inline-block px-3 py-1 brush text-base mb-4">
+                    <span
+                      class="hanko inline-block px-3 py-1 brush text-base mb-4"
+                      class:ledger-stamp={entry.highlight && stamped}
+                    >
                       {entry.badge}
                     </span>
                   {/if}
@@ -109,3 +167,64 @@
     </div>
   </div>
 </section>
+
+<style>
+  .ledger-unroll {
+    clip-path: inset(0 0 100% 0);
+    will-change: clip-path;
+    animation: ledger-page-unroll 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes ledger-page-unroll {
+    to {
+      clip-path: inset(0);
+    }
+  }
+
+  .ledger-stamp {
+    position: relative;
+    animation: ledger-hanko-stamp 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .ledger-stamp::after {
+    content: "";
+    position: absolute;
+    inset: -70%;
+    background: radial-gradient(
+      circle,
+      rgba(201, 162, 94, 0.5) 0%,
+      rgba(201, 162, 94, 0.14) 40%,
+      transparent 70%
+    );
+    opacity: 0;
+    pointer-events: none;
+    animation: ledger-gold-bloom 0.7s ease-out both;
+  }
+
+  @keyframes ledger-hanko-stamp {
+    0% {
+      transform: scale(1.6) rotate(-8deg);
+    }
+    55% {
+      transform: scale(0.94) rotate(4deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  @keyframes ledger-gold-bloom {
+    0% {
+      opacity: 0;
+      transform: scale(0.35);
+    }
+    35% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.3);
+    }
+  }
+</style>
