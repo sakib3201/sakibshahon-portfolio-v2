@@ -70,10 +70,11 @@
       <p class="marginalia text-inktextdim mt-5">A reply travels back by return post</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+    <div class="contact-grid grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
       <div class="lg:col-span-5 flex justify-center">
         <figure class="w-full max-w-sm perspective-scene">
-          <div class="medallion-float" data-reveal>
+          <div class="medallion-float relative" data-reveal>
+            <span class="portrait-ink-wash" aria-hidden="true"></span>
             <div class="lacquer-raised gold-edge p-3 md:p-4">
               <div class="bg-sumi border border-gold/30 p-3 md:p-4">
                 <div class="border border-gold/20 p-1.5">
@@ -99,7 +100,7 @@
             action="https://api.web3forms.com/submit"
             method="POST"
             novalidate
-            class="space-y-7"
+            class="contact-form space-y-7"
             onsubmit={handleSubmit}
           >
             <input type="hidden" name="access_key" value="06898dee-aec1-4979-a6a1-194c5dc8d41d" />
@@ -168,12 +169,20 @@
               </svg>
             </button>
 
-            <p
-              aria-live="polite"
-              class="marginalia text-center {statusKind === 'error' ? 'text-goldbright' : 'text-inktextdim'}"
-            >
-              {#if statusText !== ''}{statusText}{/if}
-            </p>
+            <div class="wax-seal-status">
+              {#if statusKind === 'success'}
+                <div class="wax-seal-anchor">
+                  <span class="wax-seal-bloom" aria-hidden="true"></span>
+                  <span class="hanko wax-seal brush" aria-hidden="true">済</span>
+                </div>
+              {/if}
+              <p
+                aria-live="polite"
+                class="marginalia text-center {statusKind === 'error' ? 'text-goldbright' : 'text-inktextdim'}"
+              >
+                {#if statusText !== ''}{statusText}{/if}
+              </p>
+            </div>
           </form>
         </div>
 
@@ -206,3 +215,104 @@
     </div>
   </div>
 </section>
+
+<style>
+  .wax-seal-status {
+    position: relative;
+  }
+
+  .wax-seal-anchor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .wax-seal {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.45rem;
+    border-radius: 9999px;
+    animation: wax-seal-stamp 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .wax-seal-bloom {
+    position: absolute;
+    inset: -55%;
+    z-index: 0;
+    background: radial-gradient(
+      circle,
+      rgba(232, 196, 126, 0.45) 0%,
+      rgba(201, 162, 94, 0.2) 38%,
+      transparent 70%
+    );
+    pointer-events: none;
+    animation: wax-gold-bloom 0.8s ease-out 0.05s both;
+  }
+
+  .contact-grid:has(.contact-form:focus-within) .portrait-ink-wash {
+    opacity: 1;
+  }
+
+  .portrait-ink-wash {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 32rem;
+    height: 32rem;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 9999px;
+    background: radial-gradient(
+      circle 16rem at 50% 50%,
+      rgba(232, 196, 126, 0.15) 0%,
+      rgba(201, 162, 94, 0.08) 45%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  @keyframes wax-seal-stamp {
+    0% {
+      opacity: 0;
+      transform: scale(2.6) rotate(-18deg);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.05) rotate(9deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(8deg);
+    }
+  }
+
+  @keyframes wax-gold-bloom {
+    0% {
+      opacity: 0;
+      transform: scale(0.35);
+    }
+    35% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.35);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wax-seal-anchor {
+      display: none;
+    }
+  }
+</style>
