@@ -1,15 +1,26 @@
 <script>
+  import { onDestroy, onMount } from "svelte";
+  import { initInkWash } from "$lib/motion.js";
+
   /** @typedef {{ title: string, description: string, imageSrc: string | null, altText: string, technologies?: string[], githubLink?: string, liveLink?: string, youtubeLink?: string, highlights?: string[] }} Project */
 
   /** @type {{ project: Project }} */
   let { project } = $props();
 
   let imageFailed = $state(false);
+  let inkWellEl = /** @type {HTMLDivElement | undefined} */ (undefined);
+  let destroyInkWash = () => {};
 
   /** @returns {void} */
   const handleImageError = () => {
     imageFailed = true;
   };
+
+  onMount(() => {
+    if (inkWellEl) destroyInkWash = initInkWash(inkWellEl);
+  });
+
+  onDestroy(() => destroyInkWash());
 </script>
 
 <article
@@ -19,7 +30,12 @@
   <div class="grid md:grid-cols-2">
     <div class="relative md:min-h-full">
       <div class="p-5 md:p-6 h-full">
-        <div class="relative h-64 md:h-full min-h-64 overflow-hidden rounded-sm bg-sumi border border-gold/30">
+        <div
+          class="ink-wash-well relative h-64 md:h-full min-h-64 overflow-hidden rounded-sm bg-sumi border border-gold/30"
+          data-inkwash
+          bind:this={inkWellEl}
+        >
+          <div class="ink-wash-bloom" aria-hidden="true"></div>
           {#if project.imageSrc && !imageFailed}
             <img
               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
@@ -130,3 +146,43 @@
     </div>
   </div>
 </article>
+
+<style>
+  .ink-wash-bloom {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    background-image: radial-gradient(
+      260px circle at var(--x, 50%) var(--y, 50%),
+      rgba(232, 196, 126, 0.3) 0%,
+      rgba(201, 162, 94, 0.12) 45%,
+      transparent 70%
+    );
+    transition: opacity 0.4s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .ink-wash-well {
+      filter: saturate(0.78) brightness(0.9);
+      transition: filter 0.5s ease;
+    }
+
+    .group:hover .ink-wash-well,
+    .group:focus-within .ink-wash-well {
+      filter: none;
+    }
+
+    .group:hover .ink-wash-bloom,
+    .group:focus-within .ink-wash-bloom {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ink-wash-bloom {
+      opacity: 0 !important;
+    }
+  }
+</style>
