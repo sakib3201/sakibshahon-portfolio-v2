@@ -1,0 +1,20 @@
+# Sakib Ahamed Shahon
+
+> Sakib Ahamed Shahon is a software engineer specializing in full-stack and AI development, shipping AI-powered WordPress plugins and SaaS products. Based in Gazipur, Bangladesh, and available for freelance and contract work.
+
+## Pages
+
+- [Home](https://sakibshahon.netlify.app/): Software engineer, full-stack and AI, based in Gazipur, Bangladesh.
+- [About](https://sakibshahon.netlify.app/about): Journey from a first glimpse of a computer to shipping AI-powered WordPress and SaaS products.
+- [Projects](https://sakibshahon.netlify.app/projects): Portfolio of products including Find My Race Pace and ICTBJ-2023.
+
+## Documents
+
+- [Resume](https://sakibshahon.netlify.app/assets/sakib_shahon_resume.pdf): PDF resume of Sakib Ahamed Shahon.
+
+## Socials
+
+- [GitHub](https://github.com/sakib3201): Open-source code and projects.
+- [LinkedIn](https://www.linkedin.com/in/sakib-shahon/): Professional profile and experience.
+- [YouTube](https://www.youtube.com/@sakibshahon): Tutorials and engineering stories on WordPress, AI, and full-stack development.
+- [dev.to](https://dev.to/sakib3201): Blog posts on software engineering.
