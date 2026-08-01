@@ -169,13 +169,13 @@
       transition: filter 0.5s ease;
     }
 
-    .group:hover .ink-wash-well,
-    .group:focus-within .ink-wash-well {
+    :global(.group):hover .ink-wash-well,
+    :global(.group):focus-within .ink-wash-well {
       filter: none;
     }
 
-    .group:hover .ink-wash-bloom,
-    .group:focus-within .ink-wash-bloom {
+    :global(.group):hover .ink-wash-bloom,
+    :global(.group):focus-within .ink-wash-bloom {
       opacity: 1;
     }
   }
