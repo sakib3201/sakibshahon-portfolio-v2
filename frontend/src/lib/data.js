@@ -6,6 +6,14 @@ export const siteMeta = {
   description:
     'Software engineer shipping AI-powered WordPress and SaaS products. Built a unified AI backend powering 20k+ plugin installs and cut AI integration cost by ~35%.',
   url: 'https://sakibshahon.netlify.app',
+  siteOrigin: 'https://sakibshahon.netlify.app',
+  ogImage: 'https://sakibshahon.netlify.app/assets/og-image.png',
+  ogImageAlt:
+    'Sakib Ahamed Shahon — software engineer shipping AI-powered WordPress and SaaS products',
+  twitterHandle: '@sakibshahon',
+  address: 'Gazipur, Bangladesh',
+  nationality: 'Bangladeshi',
+  alumniOf: 'Jatiya Kabi Kazi Nazrul Islam University',
   email: 'sakib3201@gmail.com',
   location: 'Gazipur, Bangladesh',
   resumeUrl: '/assets/sakib_shahon_resume.pdf'

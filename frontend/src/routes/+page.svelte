@@ -1,5 +1,6 @@
 <script>
   import { siteMeta } from "$lib/data.js";
+  import Seo from "$lib/components/Seo.svelte";
   import Navbar from "../lib/components/Navbar.svelte";
   import HomepageHero from "../lib/components/HomepageHero.svelte";
   import ImpactStats from "../lib/components/ImpactStats.svelte";
@@ -12,7 +13,6 @@
   import HomepageContactMe from "../lib/components/HomepageContactMe.svelte";
   import Footer from "../lib/components/Footer.svelte";
 
-  const title = "Sakib Ahamed Shahon — Software Engineer · Full-Stack & AI";
   const personLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -33,19 +33,11 @@
 </script>
 
 <svelte:head>
-  <title>{title}</title>
-  <meta name="description" content={siteMeta.description} />
-  <meta name="author" content="Sakib Ahamed Shahon" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={siteMeta.description} />
-  <meta property="og:url" content="{siteMeta.url}/" />
-  <meta property="og:image" content="{siteMeta.url}/assets/professional.webp" />
-  <meta property="og:site_name" content={siteMeta.name} />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={siteMeta.description} />
-  <link rel="canonical" href="{siteMeta.url}/" />
+  <Seo
+    title="Sakib Ahamed Shahon — Software Engineer · Full-Stack & AI"
+    description={siteMeta.description}
+    canonicalPath="/"
+  />
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html personLdScript}
 </svelte:head>

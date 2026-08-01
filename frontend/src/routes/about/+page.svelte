@@ -2,6 +2,7 @@
   import AboutTimeline from "../../lib/components/AboutTimeline.svelte";
   import Navbar from "../../lib/components/Navbar.svelte";
   import Footer from "../../lib/components/Footer.svelte";
+  import Seo from "../../lib/components/Seo.svelte";
   import { siteMeta, skills } from "../../lib/data.js";
 
   const icons = /** @type {Record<string, string>} */ ({
@@ -22,24 +23,10 @@
 </script>
 
 <svelte:head>
-  <title>About — Sakib Ahamed Shahon</title>
-  <meta
-    name="description"
-    content="About Sakib Ahamed Shahon — software engineer, competitive programmer, and problem solver."
-  />
-  <link rel="canonical" href="https://sakibshahon.netlify.app/about" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="About — Sakib Ahamed Shahon" />
-  <meta
-    property="og:description"
-    content="About Sakib Ahamed Shahon — software engineer, competitive programmer, and problem solver."
-  />
-  <meta property="og:url" content="https://sakibshahon.netlify.app/about" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="About — Sakib Ahamed Shahon" />
-  <meta
-    name="twitter:description"
-    content="About Sakib Ahamed Shahon — software engineer, competitive programmer, and problem solver."
+  <Seo
+    title="About — Sakib Ahamed Shahon"
+    description="About Sakib Ahamed Shahon — software engineer, competitive programmer, and problem solver."
+    canonicalPath="/about"
   />
 </svelte:head>
 
