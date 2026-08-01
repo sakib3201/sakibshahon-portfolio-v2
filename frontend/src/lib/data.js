@@ -30,7 +30,7 @@ export const productsShipped = [
   {
     name: 'Timetics AI',
     tag: 'SaaS',
-    image: '/assets/timetics-logo.webp',
+    image: null,
     description: 'Appointment and booking management SaaS with AI-assisted scheduling workflows.',
     role: 'Software engineer on the SaaS product (timetics.ai)',
     metrics: ['SaaS booking platform', 'AI scheduling features'],
@@ -40,7 +40,7 @@ export const productsShipped = [
   {
     name: 'Aisentic',
     tag: 'WordPress',
-    image: '/assets/aisentic-logo.webp',
+    image: null,
     description:
       'AI plugin that quietly powers WordPress products — chat-driven admin assistance across the Arraytics ecosystem.',
     role: 'Built unified AI backend infrastructure shared across company products',
@@ -51,7 +51,7 @@ export const productsShipped = [
   {
     name: 'Booktics',
     tag: 'WordPress',
-    image: '/assets/booktics-logo.webp',
+    image: null,
     description: 'WordPress booking plugin for service businesses — services, teams, payments, and automation.',
     role: 'Product engineering on Booktics (including greenfield work)',
     metrics: ['Service booking workflows', 'Calendar & payment integrations'],
@@ -71,7 +71,7 @@ export const productsShipped = [
   {
     name: 'Eventin',
     tag: 'WordPress',
-    image: '/assets/eventin-logo.webp',
+    image: null,
     description: 'WordPress event calendar and ticketing plugin for modern events.',
     role: 'Engineering on legacy Eventin codebase',
     metrics: ['Legacy platform contributions', 'AI-related product features'],
@@ -81,7 +81,7 @@ export const productsShipped = [
   {
     name: 'WPCafe',
     tag: 'WordPress',
-    image: '/assets/wpcafe-logo.webp',
+    image: null,
     description: 'Restaurant menu, online ordering, and table reservation plugin for WordPress.',
     role: 'Backend performance and analytics improvements',
     metrics: ['−0.24s analytics API (~14%)', 'Query caching & optimization'],
@@ -92,7 +92,7 @@ export const productsShipped = [
 
 export const projects = [
   {
-    imageSrc: '/assets/findracepace.webp',
+    imageSrc: null,
     altText: 'Find My Race Pace',
     title: 'Find My Race Pace',
     description:
