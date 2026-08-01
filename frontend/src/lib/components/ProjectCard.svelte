@@ -1,5 +1,5 @@
 <script>
-  /** @typedef {{ title: string, description: string, imageSrc: string, altText: string, technologies?: string[], githubLink?: string, liveLink?: string, youtubeLink?: string, highlights?: string[] }} Project */
+  /** @typedef {{ title: string, description: string, imageSrc: string | null, altText: string, technologies?: string[], githubLink?: string, liveLink?: string, youtubeLink?: string, highlights?: string[] }} Project */
 
   /** @type {{ project: Project }} */
   let { project } = $props();
