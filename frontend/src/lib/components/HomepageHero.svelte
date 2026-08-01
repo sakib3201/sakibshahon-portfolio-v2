@@ -298,7 +298,7 @@
                     <span class="brush gold-text text-sm md:text-base whitespace-nowrap">
                       {product.name}
                     </span>
-                    <span class="marginalia text-goldbright text-[0.55rem]">N°{String(i + 1).padStart(2, "0")}</span>
+                    <span class="marginalia text-goldbright text-[0.7rem]" aria-hidden="true">N°{String(i + 1).padStart(2, "0")}</span>
                   </span>
                 </span>
               </a>

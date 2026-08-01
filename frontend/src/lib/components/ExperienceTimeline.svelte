@@ -78,7 +78,7 @@
                     <ul class="space-y-2 mb-5">
                       {#each entry.metrics as metric (metric)}
                         <li class={`flex items-start gap-2.5 text-[0.95rem] ${entry.highlight ? "text-inktextdim" : "text-inkonpaper/90"}`}>
-                          <svg class={`w-[0.6rem] h-[0.6rem] mt-1.5 flex-shrink-0 ${entry.highlight ? "text-gold" : "text-golddeep"}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
+                          <svg class="w-[0.6rem] h-[0.6rem] mt-1.5 flex-shrink-0 text-gold" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M6 1.5 L10.5 6 L6 10.5 L1.5 6 Z" /></svg>
                           <span>{metric}</span>
                         </li>
                       {/each}
