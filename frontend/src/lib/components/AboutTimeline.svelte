@@ -23,15 +23,19 @@
 
     <div class="relative">
       <div
-        class="needle-line absolute left-5 md:left-1/2 top-0 bottom-0 -translate-x-1/2 opacity-60"
+        class="absolute left-5 md:left-1/2 top-0 bottom-0 -translate-x-1/2"
+        data-reveal
+        data-reveal-trigger
         aria-hidden="true"
-      ></div>
+      >
+        <div class="needle-line ledger-spine h-full opacity-60"></div>
+      </div>
 
       <div class="space-y-12 md:space-y-16">
         {#each aboutTimeline as item (item.title)}
-          <div class="relative md:grid md:grid-cols-2 md:gap-16">
+          <div class="relative md:grid md:grid-cols-2 md:gap-16" data-reveal data-reveal-trigger>
             <div class="absolute left-5 md:left-1/2 top-2 -translate-x-1/2" aria-hidden="true">
-              <span class="medallion block w-3 h-3"></span>
+              <span class="medallion reveal-stamp block w-3 h-3" data-reveal></span>
             </div>
 
             <div class={`ml-12 md:ml-0 ${item.align === 'start' ? 'md:col-start-1' : 'md:col-start-2'}`}>

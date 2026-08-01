@@ -1,9 +1,29 @@
 <script>
+  import { onMount } from "svelte";
   import AboutTimeline from "../../lib/components/AboutTimeline.svelte";
   import Navbar from "../../lib/components/Navbar.svelte";
   import Footer from "../../lib/components/Footer.svelte";
   import Seo from "../../lib/components/Seo.svelte";
   import { siteMeta, skills } from "../../lib/data.js";
+
+  let entrancePlayed = $state(false);
+
+  onMount(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let played = false;
+    try {
+      played = sessionStorage.getItem("about-entrance-played") === "1";
+    } catch {
+      played = false;
+    }
+    if (played) return;
+    try {
+      sessionStorage.setItem("about-entrance-played", "1");
+    } catch {
+      /* the entrance still plays this visit */
+    }
+    entrancePlayed = true;
+  });
 
   const icons = /** @type {Record<string, string>} */ ({
     code: 'M16 18l6-6-6-6M8 6l-6 6 6 6',
@@ -45,13 +65,14 @@
     <!-- Hero section -->
     <section class="py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
-        <div class="perspective-scene w-56 h-56 md:w-64 md:h-64 mx-auto mb-10">
+        <div class="perspective-scene w-56 h-56 md:w-64 md:h-64 mx-auto mb-10" data-tilt data-tilt-max="6">
           <div class="medallion-float w-full h-full">
             <div class="lacquer-raised gold-edge p-2.5 w-full h-full">
               <div class="relative w-full h-full overflow-hidden bg-sumi border border-gold/30 p-2">
                 <img
                   src="/assets/professional.webp"
                   alt="Sakib Ahamed Shahon"
+                  class:portrait-ink={entrancePlayed}
                   class="w-full h-full object-cover"
                 />
                 <div class="absolute inset-2 border border-gold/30 pointer-events-none" aria-hidden="true"></div>
@@ -59,10 +80,10 @@
             </div>
           </div>
         </div>
-        <h1 class="brush gold-text tracking-[0.02em] text-4xl md:text-6xl">
+        <h1 class:headline-ink={entrancePlayed} class="brush gold-text tracking-[0.02em] text-4xl md:text-6xl">
           About Me
         </h1>
-        <p class="text-lg md:text-xl text-inktextdim mt-4">
+        <p class:lede-ink={entrancePlayed} class="text-lg md:text-xl text-inktextdim mt-4">
           Passionate full-stack developer crafting exceptional digital experiences
         </p>
       </div>
@@ -147,3 +168,55 @@
     <Footer />
   </div>
 </main>
+
+<style>
+  .portrait-ink {
+    animation: portrait-ink-in 1.3s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+    will-change: filter;
+  }
+
+  .headline-ink {
+    animation: headline-ink-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.1s both;
+  }
+
+  .lede-ink {
+    animation: lede-ink-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.75s both;
+  }
+
+  @keyframes portrait-ink-in {
+    0% {
+      filter: grayscale(1) blur(6px);
+      transform: scale(1.06);
+      opacity: 0.85;
+    }
+    100% {
+      filter: grayscale(0) blur(0);
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes headline-ink-in {
+    0% {
+      filter: blur(8px);
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    100% {
+      filter: blur(0);
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes lede-ink-in {
+    0% {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
