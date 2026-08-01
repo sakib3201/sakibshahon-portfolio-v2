@@ -317,3 +317,31 @@ export const aboutTimeline = [
     description: 'Joined Arraytics as a Software Engineer. Worked on timetics.ai, Aisentic (20k+ installs), Eventin, WP Timetics, Booktics, and WPCafe. Built unified AI backend infrastructure cutting AI integration cost by ~35%, improved delivery speed ~2× with harness engineering, and shipped measurable performance wins on Timetics and WPCafe.'
   }
 ];
+
+export const faq = [
+  {
+    question: 'What does Sakib Shahon do?',
+    answer:
+      'Sakib Ahamed Shahon is a software engineer who ships AI-powered WordPress and SaaS products. He currently works at Arraytics on products including timetics.ai, Aisentic, Eventin, WP Timetics, Booktics, and WPCafe.'
+  },
+  {
+    question: 'What products has Sakib Shahon shipped?',
+    answer:
+      'Sakib has shipped the SaaS booking platform timetics.ai and the WordPress plugins Aisentic, Booktics, WP Timetics, Eventin, and WPCafe, plus independent projects such as Find My Race Pace and the ICTBJ-2023 conference website. Aisentic alone has 20k+ active installations across the Arraytics ecosystem.'
+  },
+  {
+    question: "What is Sakib Shahon's tech stack?",
+    answer:
+      'Sakib works with PHP, JavaScript, and Python, using frameworks such as Laravel, React.js, Next.js, Node.js, Express.js, and FastAPI, and WordPress plugin engineering in PHP and React. He uses Postgres, MySQL, and MongoDB for data, with GitHub Actions, Docker, and Bitbucket for tooling.'
+  },
+  {
+    question: 'Has Sakib Shahon worked as a freelancer?',
+    answer:
+      'Sakib started working as a part-time freelance software engineer in 2023, focused on machine learning, data analytics, and web development projects for clients, before joining Incevio full-time in November 2023.'
+  },
+  {
+    question: 'How can I contact Sakib Shahon?',
+    answer:
+      'Sakib can be reached by email at sakib3201@gmail.com, and his GitHub, LinkedIn, YouTube, and Dev.to profiles are linked in the contact section of this site.'
+  }
+];
