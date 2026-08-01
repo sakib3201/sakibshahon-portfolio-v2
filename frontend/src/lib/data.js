@@ -257,8 +257,19 @@ export const awards = [
 export const youtube = {
   channelUrl: 'https://www.youtube.com/@sakibshahon',
   handle: '@sakibshahon',
-  blurb: 'Tutorials, engineering stories, and behind-the-scenes of shipping software — WordPress, AI, and full-stack development.',
-  featured: []
+  blurb: 'CSE Untaught — the things university doesn’t teach you: engineering fundamentals, the industry gap, and lessons learned the hard way.',
+  featured: [
+    {
+      id: 'gAfTh2aAI38',
+      title: 'CSE Untaught Episode 0: যে জিনিসগুলো ইউনিভার্সিটিতে শেখায় না',
+      description: 'Where the CSE curriculum leaves an 80–85% gap between academics and the industry — and how to close it through open source, mentorship, and long-term projects.'
+    },
+    {
+      id: 'niEJGF0tGxw',
+      title: 'CSE Untaught Episode 1: Basics আসলে কী?',
+      description: 'What “basics” really mean to working engineers — the ten core pillars, from computational thinking and debugging to production awareness and engineering judgment.'
+    }
+  ]
 };
 
 export const aboutTimeline = [
