@@ -22,6 +22,7 @@
 		"@tailwindcss/typography": "^0.5.18",
 		"@tailwindcss/vite": "^4.1.13",
 		"@types/node": "^22",
+		"@types/three": "^0.185.3",
 		"eslint": "^9.36.0",
 		"eslint-plugin-svelte": "^3.12.4",
 		"globals": "^16.4.0",
@@ -38,6 +39,7 @@
 		]
 	},
 	"dependencies": {
-		"svelte-icons": "^2.1.0"
+		"svelte-icons": "^2.1.0",
+		"three": "^0.185.1"
 	}
 }
