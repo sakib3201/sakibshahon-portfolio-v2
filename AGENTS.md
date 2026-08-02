@@ -21,6 +21,10 @@ SvelteKit portfolio for Sakib Ahamed Shahon. This file is the entry point for ag
 
 All three must pass before merging. Windows PowerShell 5.1: chain commands with `;` (`&&` does not work); prefer the tool's `workdir` over `cd`.
 
+## Review Constraint
+
+- During code-review passes, do not execute scripts from `.agents/skills/impeccable/scripts/` unless the user explicitly requests it. Review the source directly and use the standard project verification commands instead.
+
 ## Lazy Rule Loading (CRITICAL)
 
 When a task matches a domain below, use the Read tool to load the referenced file(s) BEFORE doing the work. Do NOT preemptively load all rule files — load only what the task needs. Loaded rule files are mandatory instructions.

@@ -8,6 +8,11 @@
   let bookEnabled = $state(false);
   let announce = $state('');
   let startX = 0;
+  let hintVisible = $state(false);
+  let hintFading = $state(false);
+
+  const JOURNAL_TURN_MS = 840;
+  const JOURNAL_HINT_KEY = 'about-journal-flip-hint-seen';
 
   const leaves = /** @type {Array<
     | { kind: 'cover' }
@@ -22,6 +27,22 @@
 
   /** @type {ReturnType<typeof setTimeout> | undefined} */
   let flipTimer;
+  /** @type {ReturnType<typeof setTimeout> | undefined} */
+  let hintTimer;
+
+  function dismissHint() {
+    if (!hintVisible || hintFading) return;
+    hintFading = true;
+    try {
+      window.sessionStorage.setItem(JOURNAL_HINT_KEY, '1');
+    } catch {
+      // Session storage can be unavailable in privacy-restricted contexts.
+    }
+    hintTimer = setTimeout(() => {
+      hintVisible = false;
+      hintFading = false;
+    }, 320);
+  }
 
   /** @param {'forward' | 'back'} dir */
   function flip(dir) {
@@ -29,6 +50,8 @@
     const next = page + (dir === 'forward' ? 1 : -1);
     if (next < 0 || next > last) return false;
     turning = dir;
+    dismissHint();
+    clearTimeout(flipTimer);
     flipTimer = setTimeout(() => {
       page = next;
       turning = null;
@@ -41,7 +64,7 @@
       } else {
         announce = 'The final leaf — the story is still being written.';
       }
-    }, 720);
+    }, JOURNAL_TURN_MS);
     return true;
   }
 
@@ -81,6 +104,11 @@
         clearTimeout(flipTimer);
       }
     };
+    try {
+      hintVisible = window.sessionStorage.getItem(JOURNAL_HINT_KEY) !== '1';
+    } catch {
+      hintVisible = true;
+    }
     sync();
     reduced.addEventListener('change', sync);
     window.addEventListener('keydown', onKeydown);
@@ -88,6 +116,8 @@
       reduced.removeEventListener('change', sync);
       window.removeEventListener('keydown', onKeydown);
       clearTimeout(flipTimer);
+      clearTimeout(hintTimer);
+      document.documentElement.classList.remove('book-enabled');
     };
   });
 </script>
@@ -118,60 +148,37 @@
       <JournalStage {leaves} {page} {turning} />
 
       {#if bookEnabled}
-        {#if page > 0}
+        <div class="journal-hit-layer" aria-label="Journal page controls">
           <button
             type="button"
-            class="journal-tab journal-tab-left"
+            class="journal-hit-zone journal-hit-zone-left"
             onclick={() => flip('back')}
-            aria-label="Turn to the previous page"
+            disabled={page === 0 || Boolean(turning)}
+            aria-label="Click the left page to turn back"
           >
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 18l-6-6 6-6" />
-            </svg>
+            <span class="sr-only">Previous page</span>
           </button>
-        {/if}
-        {#if page < last}
           <button
             type="button"
-            class="journal-tab journal-tab-right"
+            class="journal-hit-zone journal-hit-zone-right"
             onclick={() => flip('forward')}
-            aria-label="Turn to the next page"
+            disabled={page === last || Boolean(turning)}
+            aria-label="Click the right page to turn forward"
           >
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 18l6-6-6-6" />
-            </svg>
+            <span class="sr-only">Next page</span>
           </button>
-        {/if}
+        </div>
       {/if}
     </div>
 
     {#if bookEnabled}
-      <div class="journal-controls">
-        <button
-          type="button"
-          class="journal-turn"
-          onclick={() => flip('back')}
-          disabled={page === 0}
-          aria-label="Turn to the previous page"
-        >
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 18l-6-6 6-6" />
-          </svg>
-        </button>
-        <span class="marginalia text-inktextdim">
-          Leaf {String(page + 1).padStart(2, '0')} / {String(leaves.length).padStart(2, '0')}
-        </span>
-        <button
-          type="button"
-          class="journal-turn"
-          onclick={() => flip('forward')}
-          disabled={page === last}
-          aria-label="Turn to the next page"
-        >
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 18l6-6-6-6" />
-          </svg>
-        </button>
+      <div class="journal-hint-slot">
+        {#if hintVisible}
+          <p class="journal-hint marginalia" class:journal-hint-fading={hintFading}>Click a page to flip</p>
+        {/if}
+      </div>
+      <div class="journal-counter marginalia text-inktextdim" aria-label={`Leaf ${page + 1} of ${leaves.length}`}>
+        Leaf {String(page + 1).padStart(2, '0')} / {String(leaves.length).padStart(2, '0')}
       </div>
     {/if}
 
