@@ -1,9 +1,10 @@
 <script>
   export let item;
+  export let extraClass = '';
 </script>
 
-<article class="skin-sheet p-6 md:p-8 ledger-page">
-  <time class="gold-plate px-3 py-1.5 marginalia text-sumi inline-block mb-4 ledger-plate">
+<article class={`skin-sheet p-6 md:p-8 ${extraClass}`}>
+  <time class="gold-plate px-3 py-1.5 marginalia text-sumi inline-block mb-4">
     {item.time}
   </time>
 

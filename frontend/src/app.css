@@ -30,6 +30,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* The journal's turned leaves pile off-screen left on small screens; clip
+     keeps them from creating a horizontal scrollbar without flattening 3D. */
+  overflow-x: clip;
 }
 
 body {
@@ -244,51 +247,279 @@ body {
     animation: reveal-pulse 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
-  /* Ledger family: the observed trigger carries [data-reveal] and stays
-     unclipped — a clipped target's intersection rect is zero, so it could
-     never reveal itself. Pages, spine, and plates fire off the trigger's
-     is-visible. */
-  html.motion-init [data-reveal][data-reveal-trigger] {
-    opacity: 1;
-    transform: none;
+  /* The Journal (about journey): the career reads as a bound book. Default
+     state is a static stack of leaves — fully readable with no JS or under
+     reduced motion. With JS + motion (html.motion-init.book-enabled, toggled
+     by AboutTimeline), the leaves collapse into one grid cell and turn over
+     the spine in 3D. */
+  .journal-stage {
+    touch-action: pan-y;
   }
 
-  html.motion-init [data-reveal][data-reveal-trigger] .ledger-page {
-    clip-path: inset(0 0 100% 0);
+  .journal-book {
+    display: grid;
+    gap: 1.5rem;
+    box-shadow: var(--shadow-deep);
   }
 
-  html.motion-init [data-reveal][data-reveal-trigger].is-visible .ledger-page {
-    animation: ledger-page-unroll 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  .journal-leaf {
+    position: relative;
   }
 
-  html.motion-init [data-reveal][data-reveal-trigger] .ledger-spine {
-    clip-path: inset(0 0 100% 0);
+  .journal-leaf-front {
+    position: relative;
   }
 
-  html.motion-init [data-reveal][data-reveal-trigger].is-visible .ledger-spine {
-    animation: ledger-spine-draw 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  /* Higher specificity than the colophon/inside-cover display rules so back
+     faces stay hidden in the stacked fallback. */
+  .journal-leaf > .journal-leaf-back {
+    display: none;
   }
 
-  html.motion-init [data-reveal][data-reveal-trigger] .ledger-plate {
+  /* --- bound book mode --- */
+  html.motion-init.book-enabled .journal-stage {
+    perspective: 2600px;
+  }
+
+  html.motion-init.book-enabled .journal-book {
+    gap: 0;
+    box-shadow: none;
+    transform-style: preserve-3d;
+  }
+
+  html.motion-init.book-enabled .journal-leaf {
+    grid-area: 1 / 1;
+    justify-self: end;
+    width: 50%;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    transition:
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.7s ease;
+    will-change: transform;
+  }
+
+  /* The fold crease where the leaf meets the spine. Backface-hidden so it
+     never ghosts through to the colophon side. */
+  html.motion-init.book-enabled .journal-leaf::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2.5rem;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.32), transparent);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  html.motion-init.book-enabled .journal-leaf-front {
+    min-height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  html.motion-init.book-enabled .journal-leaf-back {
+    display: block;
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: rotateY(180deg);
+  }
+
+  html.motion-init.book-enabled .journal-leaf-current {
+    transform: rotateY(0);
+    z-index: 30;
+  }
+
+  html.motion-init.book-enabled .journal-leaf-next {
+    transform: rotateY(0);
+    z-index: 20;
+  }
+
+  html.motion-init.book-enabled .journal-leaf-hidden {
     opacity: 0;
-    transform: scale(0.4);
+    pointer-events: none;
+    z-index: 10;
   }
 
-  html.motion-init [data-reveal][data-reveal-trigger].is-visible .ledger-plate {
-    opacity: 1;
-    transform: none;
-    animation: stamp-ink 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both;
+  /* Read pages pile behind the spine: each one shifted a hair down-left and
+     stacked a level lower as the pile grows. */
+  html.motion-init.book-enabled .journal-leaf-left {
+    transform: rotateY(-180deg) translateX(calc(var(--depth) * 4px)) translateY(calc(var(--depth) * 4px));
+    z-index: calc(20 - var(--depth));
   }
 
-  html.motion-init [data-reveal].reveal-stamp {
-    opacity: 0;
-    transform: scale(0.4);
+  html.motion-init.book-enabled .journal-leaf-returning {
+    transform: rotateY(0);
+    z-index: 40;
   }
 
-  html.motion-init [data-reveal].reveal-stamp.is-visible {
-    opacity: 1;
-    transform: none;
-    animation: stamp-ink 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  /* On small screens a leaf spans the full book width and turns over the
+     book's left edge; the read pages pile off-screen to the left. */
+  @media (max-width: 767px) {
+    html.motion-init.book-enabled .journal-leaf {
+      justify-self: stretch;
+      width: 100%;
+    }
+  }
+
+  .journal-tab {
+    position: absolute;
+    top: -0.875rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(165deg, #221b14 0%, #16110c 55%, #0e0b08 100%);
+    border: 1px solid var(--color-gold);
+    box-shadow: var(--shadow-lacquer);
+    transform: rotate(45deg);
+    z-index: 50;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .journal-tab:hover {
+    box-shadow: var(--shadow-deep);
+  }
+
+  .journal-tab-left {
+    left: 0.875rem;
+  }
+
+  .journal-tab-right {
+    right: 0.875rem;
+  }
+
+  .journal-tab svg {
+    width: 1rem;
+    height: 1rem;
+    color: var(--color-goldbright);
+    transform: rotate(-45deg);
+  }
+
+  .journal-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.75rem;
+  }
+
+  .journal-turn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--color-gold);
+    color: var(--color-goldbright);
+    box-shadow: var(--shadow-lacquer);
+    transition:
+      box-shadow 0.3s ease,
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .journal-turn:hover:not(:disabled) {
+    box-shadow: var(--shadow-deep);
+    transform: translateY(-2px);
+  }
+
+  .journal-turn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  .journal-turn svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .journal-cover {
+    position: relative;
+    background: linear-gradient(165deg, #221b14 0%, #14100c 55%, #0e0b08 100%);
+    border: 1px solid #362c20;
+    box-shadow: var(--shadow-lacquer);
+  }
+
+  .journal-cover-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    text-align: center;
+    min-height: 16rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .journal-cover-inner::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(201, 162, 94, 0.3);
+    pointer-events: none;
+  }
+
+  .journal-fin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .journal-colophon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-paperdim);
+    border: 1px solid #3a2c13;
+  }
+
+  .journal-inside-cover {
+    background: var(--color-paperdim);
+    border: 1px solid #3a2c13;
+  }
+
+  .journal-colophon-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    height: 100%;
+    padding: 1.5rem;
+  }
+
+  .journal-seal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .journal-seal .brush {
+    font-size: 1.5rem;
+    color: var(--color-inktext);
+  }
+
+  .journal-year-seal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .journal-year-seal .brush {
+    font-size: 1.3rem;
+    color: var(--color-inktext);
   }
 
   .draw-needle {
@@ -426,33 +657,6 @@ body {
   100% {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-@keyframes stamp-ink {
-  0% {
-    opacity: 0;
-    transform: scale(0.4);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.3);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes ledger-page-unroll {
-  to {
-    clip-path: inset(0);
-  }
-}
-
-@keyframes ledger-spine-draw {
-  to {
-    clip-path: inset(0);
   }
 }
 

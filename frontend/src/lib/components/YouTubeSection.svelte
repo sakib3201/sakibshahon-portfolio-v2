@@ -82,21 +82,7 @@
               <h3 class="brush text-xl text-inktext mb-2 transition-colors duration-200 group-hover:text-goldbright">
                 {item.title}
               </h3>
-              <p class="text-inktextdim text-[0.95rem] leading-relaxed mb-5">{item.description}</p>
-
-              <div class="mt-auto flex justify-end">
-                <span
-                  class="play-seal pointer-events-none w-10 h-10 md:w-12 md:h-12"
-                  aria-hidden="true"
-                >
-                  <span class="play-seal__ring"></span>
-                  <span class="play-seal__ink">
-                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </span>
-                </span>
-              </div>
+              <p class="text-inktextdim text-[0.95rem] leading-relaxed">{item.description}</p>
             </div>
           </a>
         {/each}
@@ -113,65 +99,6 @@
 </section>
 
 <style>
-  .play-seal__ring {
-    position: absolute;
-    inset: -5px;
-    border: 1px solid rgba(201, 162, 94, 0.45);
-    border-radius: 2px;
-    opacity: 0;
-    transition:
-      opacity 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  .play-seal__ink {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-cinnabar);
-    color: var(--color-inktext);
-    transform: rotate(10deg);
-    clip-path: polygon(
-      0.6% 2%, 4% 0.4%, 9% 1.4%, 14% 0.6%, 20% 1.6%, 26% 0.5%, 33% 1.3%, 40% 0.6%, 48% 1.5%,
-      56% 0.4%, 64% 1.4%, 72% 0.6%, 80% 1.5%, 88% 0.5%, 95% 1.3%, 99.4% 0.8%, 99.6% 8%,
-      99.4% 16%, 99.6% 24%, 99.4% 32%, 99.6% 40%, 99.4% 48%, 99.6% 56%, 99.4% 64%, 99.6% 72%,
-      99.4% 80%, 99.6% 88%, 99.5% 96%, 96% 99.5%, 88% 98.6%, 80% 99.5%, 72% 98.6%, 64% 99.5%,
-      56% 98.6%, 48% 99.5%, 40% 98.6%, 33% 99.5%, 26% 98.6%, 20% 99.5%, 14% 98.6%, 9% 99.4%,
-      4% 98.5%, 0.4% 99%, 0.6% 92%, 0.4% 84%, 0.6% 76%, 0.4% 68%, 0.6% 60%, 0.4% 52%, 0.6% 44%,
-      0.4% 36%, 0.6% 28%, 0.4% 20%, 0.6% 12%
-    );
-    box-shadow: 0 6px 14px rgba(192, 40, 24, 0.35);
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    :global(.group):hover .play-seal__ink,
-    :global(.group):focus-visible .play-seal__ink {
-      animation: play-restamp 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    :global(.group):hover .play-seal__ring,
-    :global(.group):focus-visible .play-seal__ring {
-      opacity: 1;
-      box-shadow:
-        0 0 14px rgba(201, 162, 94, 0.3),
-        inset 0 0 8px rgba(201, 162, 94, 0.18);
-    }
-  }
-
-  @keyframes play-restamp {
-    0% {
-      transform: rotate(10deg) scale(1.55);
-    }
-    55% {
-      transform: rotate(5deg) scale(0.92);
-    }
-    100% {
-      transform: rotate(10deg) scale(1);
-    }
-  }
-
   .empty-seal {
     position: relative;
     width: 5rem;
