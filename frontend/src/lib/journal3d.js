@@ -283,16 +283,16 @@ export class Journal3D {
    *   leafHeight: number,
    *   pageCount: number,
    *   getTexture: (page: number, face: 'front' | 'back') => THREE.Texture | null,
-   *   onReady?: () => void,
-   *   onTurnComplete?: (dir: 'forward' | 'back') => void
+   *   onReady?: () => void
    * }} opts
    */
   constructor(opts) {
     this.opts = opts;
     this.page = 0;
     this.turning = null; // 'forward' | 'back'
+    /** @type {null | 'forward' | 'back'} */
+    this._lastTurnDir = null;
     this.elapsed = 0;
-    this.committed = false;
     this.ready = false;
     this.running = false;
     this.disposed = false;
@@ -339,8 +339,11 @@ export class Journal3D {
     this.scene.add(this.desk);
 
     this.leafMeshes = [createLeafMesh(), createLeafMesh(), createLeafMesh()];
+    /** @type {THREE.Mesh} */
     this.currentMesh = this.leafMeshes[0];
+    /** @type {THREE.Mesh} */
     this.nextMesh = this.leafMeshes[1];
+    /** @type {THREE.Mesh} */
     this.pileMesh = this.leafMeshes[2];
     /** @type {THREE.Mesh | null} */
     this.turnMesh = null;
@@ -380,61 +383,109 @@ export class Journal3D {
       /** @param {PointerEvent} e */
       this.onPointer = (e) => {
         const rect = opts.canvas.getBoundingClientRect();
+        if (rect.width === 0 || rect.height === 0) return;
         this.pointerX = (e.clientX - rect.left) / rect.width - 0.5;
         this.pointerY = (e.clientY - rect.top) / rect.height - 0.5;
       };
-      opts.canvas.addEventListener('pointermove', this.onPointer);
+      // Window-level: the canvas is pointer-events: none (the DOM book stays
+      // interactive); the rect check keeps the parallax confined to the stage.
+      window.addEventListener('pointermove', this.onPointer, { passive: true });
     }
 
     this.setSpread(0);
   }
 
   /** @param {number} page */
+  /**
+   * Commits a spread state. The stage is authoritative on `page` and calls
+   * this when its flip() machine commits (~720 ms). Mid-settle calls rotate
+   * the three mesh roles so the settle tail finishes on the new pile-top
+   * (forward) or current (back) leaf; the settling mesh is never re-posed.
+   * @param {number} page
+   */
   setSpread(page) {
-    const last = this.opts.pageCount - 1;
-    this.page = page;
-    this.turning = null;
+    const settling = this.turning !== null && this.elapsed >= TURN_MS;
+    const dir = this._lastTurnDir;
 
-    /** @param {number} p @param {THREE.Mesh} fallbackMesh */
-    const atlasOf = (p, fallbackMesh) => {
-      const atlas = this.ensureAtlas(p);
-      if (!atlas && !this.ready) {
-        throw new Error('journal texture failure — falling back to the CSS book');
-      }
-      return atlas ?? /** @type {THREE.MeshLambertMaterial} */ (fallbackMesh.material).map ?? null;
-    };
-
-    // Current leaf (front face, right half).
-    this.applyPose(this.currentMesh, { p: 0, darken: 1 });
-    this.currentMesh.visible = page <= last;
-    this.currentMesh.material.map = atlasOf(page, this.currentMesh);
-
-    // Next leaf (front face, a hair beneath).
-    const next = page + 1 <= last;
-    this.nextMesh.visible = next;
-    if (next) {
-      this.applyPose(this.nextMesh, { p: 0, z: NEXT_Z, darken: 1 });
-      this.nextMesh.material.map = atlasOf(page + 1, this.nextMesh);
+    if (settling && dir === 'forward') {
+      // The turned leaf (old current, still settling) becomes the pile top;
+      // the old next becomes current, the old pile-top mesh becomes next.
+      const oldCurrent = this.currentMesh;
+      const oldNext = this.nextMesh;
+      this.currentMesh = oldNext;
+      this.nextMesh = this.pileMesh;
+      this.pileMesh = oldCurrent;
+      this.poseCurrent(page);
+      this.poseNext(page);
+    } else if (settling && dir === 'back') {
+      // The returned leaf (old pile top, still settling) becomes current;
+      // the old current becomes next, the old next mesh becomes the pile top.
+      const oldCurrent = this.currentMesh;
+      const oldNext = this.nextMesh;
+      this.currentMesh = this.turnMesh ?? this.pileMesh;
+      this.nextMesh = oldCurrent;
+      this.pileMesh = oldNext;
+      this.poseNext(page);
+      this.posePile(page);
+    } else {
+      this.poseCurrent(page);
+      this.poseNext(page);
+      this.posePile(page);
     }
 
-    // Pile top (back face up, offset down-left, darkened).
-    const pile = page > 0;
-    this.pileMesh.visible = pile;
-    if (pile) {
-      this.applyPose(this.pileMesh, { p: 1, offsetX: -PILE_OFFSET, offsetY: -PILE_OFFSET, darken: PILE_DARKEN });
-      this.pileMesh.material.map = atlasOf(page - 1, this.pileMesh);
-    }
-
-    // Deeper pile: two static dark slabs for the 4px slivers.
     for (let i = 0; i < this.slabs.length; i++) {
       this.slabs[i].visible = page > i + 1;
     }
 
+    this.page = page;
     if (!this.ready) {
       this.ready = true;
       this.renderer.render(this.scene, this.camera);
       this.resume();
       this.opts.onReady?.();
+    }
+  }
+
+  /** @param {number} page */
+  poseCurrent(page) {
+    const mesh = this.currentMesh;
+    mesh.visible = true;
+    this.applyPose(mesh, { p: 0, darken: 1 });
+    const atlas = this.ensureAtlas(page);
+    if (!atlas && !this.ready) {
+      throw new Error('journal texture failure — falling back to the CSS book');
+    }
+    if (atlas) {
+      const mat = /** @type {THREE.MeshLambertMaterial} */ (mesh.material);
+      mat.map = atlas;
+    }
+  }
+
+  /** @param {number} page */
+  poseNext(page) {
+    const mesh = this.nextMesh;
+    const next = page + 1 <= this.opts.pageCount - 1;
+    mesh.visible = next;
+    if (!next) return;
+    this.applyPose(mesh, { p: 0, z: NEXT_Z, darken: 1 });
+    const atlas = this.ensureAtlas(page + 1);
+    if (atlas) {
+      const mat = /** @type {THREE.MeshLambertMaterial} */ (mesh.material);
+      mat.map = atlas;
+    }
+  }
+
+  /** @param {number} page */
+  posePile(page) {
+    const mesh = this.pileMesh;
+    const pile = page > 0;
+    mesh.visible = pile;
+    if (!pile) return;
+    this.applyPose(mesh, { p: 1, offsetX: -PILE_OFFSET, offsetY: -PILE_OFFSET, darken: PILE_DARKEN });
+    const atlas = this.ensureAtlas(page - 1);
+    if (atlas) {
+      const mat = /** @type {THREE.MeshLambertMaterial} */ (mesh.material);
+      mat.map = atlas;
     }
   }
 
@@ -494,16 +545,24 @@ export class Journal3D {
   }
 
   /** Starts a turn of the current leaf (forward) or the pile top (back).
-   * Returns false when a turn is already running or out of range.
+   * Returns false when the previous fold is still running or out of range.
+   * A new turn may start while the settle tail is running — the settling
+   * mesh is snapped to its final pose first.
    * @param {'forward' | 'back'} dir */
   turn(dir) {
     const last = this.opts.pageCount - 1;
-    if (this.turning) return false;
+    if (this.turning && this.elapsed < TURN_MS) return false;
     if (dir === 'forward' && this.page >= last) return false;
     if (dir === 'back' && this.page <= 0) return false;
+    if (this.turning && this.turnMesh) {
+      const settled = this._lastTurnDir === 'forward';
+      this.applyPose(this.turnMesh, settled
+        ? { p: 1, offsetX: -PILE_OFFSET, offsetY: -PILE_OFFSET, darken: PILE_DARKEN }
+        : { p: 0, darken: 1 });
+    }
+    this._lastTurnDir = dir;
     this.turning = dir;
     this.elapsed = 0;
-    this.committed = false;
     this.turnMesh = dir === 'forward' ? this.currentMesh : this.pileMesh;
     this.turnMesh.visible = true;
     return true;
@@ -515,16 +574,11 @@ export class Journal3D {
     this.last = now;
     if (this.turning) {
       this.elapsed += dt;
-      if (this.elapsed >= TURN_MS && !this.committed) {
-        this.committed = true;
-        const dir = this.turning;
-        queueMicrotask(() => this.opts.onTurnComplete?.(dir));
-      }
       this.writeTurnMesh();
       if (this.elapsed >= TURN_MS + SETTLE_MS) {
-        const dir = this.turning;
+        // The settle tail finished; the stage already committed the page via
+        // setSpread (mid-settle role rotation), so the mesh is in place.
         this.turning = null;
-        this.setSpread(this.page + (dir === 'forward' ? 1 : -1));
       }
     }
     this.applyParallax();
@@ -598,7 +652,7 @@ export class Journal3D {
     this.pause();
     this.io.disconnect();
     document.removeEventListener('visibilitychange', this.onVisibility);
-    if (this.onPointer) this.opts.canvas.removeEventListener('pointermove', this.onPointer);
+    if (this.onPointer) window.removeEventListener('pointermove', this.onPointer);
     for (const tex of this.atlases.values()) tex.dispose();
     this.atlases.clear();
     for (const mesh of this.leafMeshes) {

@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { aboutTimeline } from '$lib/data.js';
-  import TimelineItem from './TimelineItem.svelte';
+  import JournalStage from './JournalStage.svelte';
 
   let page = $state(0);
   let turning = $state(/** @type {null | 'forward' | 'back'} */ (null));
@@ -22,14 +22,6 @@
 
   /** @type {ReturnType<typeof setTimeout> | undefined} */
   let flipTimer;
-
-  /** @param {number} i */
-  function leafState(i) {
-    if (i < page) return 'left';
-    if (i === page) return 'current';
-    if (i === page + 1) return 'next';
-    return 'hidden';
-  }
 
   /** @param {'forward' | 'back'} dir */
   function flip(dir) {
@@ -123,61 +115,7 @@
       onpointerdown={onPointerDown}
       onpointerup={onPointerUp}
     >
-      <div class="journal-book">
-        {#each leaves as leaf, i (i)}
-          <div
-            class="journal-leaf"
-            class:journal-leaf-left={leafState(i) === 'left'}
-            class:journal-leaf-current={leafState(i) === 'current'}
-            class:journal-leaf-next={leafState(i) === 'next'}
-            class:journal-leaf-hidden={leafState(i) === 'hidden'}
-            class:journal-leaf-returning={turning === 'back' && i === page - 1}
-            style={`--depth: ${Math.max(0, page - i)}`}
-          >
-            {#if leaf.kind === 'entry'}
-              <TimelineItem item={leaf.item} extraClass="journal-leaf-front" />
-              <div class="journal-leaf-back journal-colophon" aria-hidden="true">
-                <div class="journal-colophon-inner">
-                  <span class="hanko journal-year-seal">
-                    <span class="brush">{leaf.item.time}</span>
-                  </span>
-                  <div class="needle-line-h w-16 opacity-60"></div>
-                  <h4 class="brush text-xl text-inkonpaper/80">{leaf.item.title}</h4>
-                </div>
-              </div>
-            {:else if leaf.kind === 'cover'}
-              <div class="journal-leaf-front journal-cover">
-                <div class="journal-cover-inner">
-                  <span class="hanko journal-seal" aria-hidden="true">
-                    <span class="brush">誌</span>
-                  </span>
-                  <div class="needle-line-h w-24 opacity-60"></div>
-                  <h3 class="brush gold-text text-4xl md:text-5xl tracking-[0.02em]">My Journey</h3>
-                  <p class="marginalia text-inktextdim">The chapters that bound this shelf together</p>
-                </div>
-              </div>
-              <div class="journal-leaf-back journal-inside-cover" aria-hidden="true">
-                <div class="journal-colophon-inner">
-                  <p class="brush text-2xl text-inkonpaper/60">Sakib Ahamed Shahon</p>
-                  <div class="needle-line-h w-16 opacity-40"></div>
-                  <p class="marginalia text-inktextdim/70">The family ledger, bound</p>
-                </div>
-              </div>
-            {:else}
-              <div class="journal-leaf-front journal-fin skin-sheet">
-                <div class="journal-colophon-inner">
-                  <span class="hanko journal-seal" aria-hidden="true">
-                    <span class="brush">完</span>
-                  </span>
-                  <h3 class="brush text-3xl text-inkonpaper">The story is still being written</h3>
-                  <p class="marginalia text-inktextdim">fin</p>
-                </div>
-              </div>
-              <div class="journal-leaf-back journal-inside-cover" aria-hidden="true"></div>
-            {/if}
-          </div>
-        {/each}
-      </div>
+      <JournalStage {leaves} {page} {turning} />
 
       {#if bookEnabled}
         {#if page > 0}

@@ -367,6 +367,22 @@ body {
     }
   }
 
+  /* WebGL journal layer: `html.webgl-journal` is added by JournalStage only
+     when the three.js engine reports a live first frame. The DOM leaves
+     become layout placeholders (the stage keeps its height) and the canvas
+     fills the stage slot; nothing changes until the upgrade succeeds. */
+  html.webgl-journal .journal-leaf {
+    visibility: hidden;
+  }
+
+  html.webgl-journal .journal-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
   .journal-tab {
     position: absolute;
     top: -0.875rem;
