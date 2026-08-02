@@ -1,10 +1,12 @@
 ---
 id: 45
 title: 'EPIC — The Curled Journal: three.js page-turn for the /about journey'
-status: todo
+status: done
 priority: high
 created: 2026-08-02T12:54:13.7031421+06:00
-updated: 2026-08-02T12:54:13.7031421+06:00
+updated: 2026-08-02T16:29:42.339663+06:00
+started: 2026-08-02T16:29:42.3508098+06:00
+completed: 2026-08-02T16:29:42.3508098+06:00
 tags:
     - epic
     - threejs

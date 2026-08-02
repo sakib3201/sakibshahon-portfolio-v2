@@ -1,10 +1,12 @@
 ---
 id: 49
 title: CSS gating, DESIGN.md, acceptance verification
-status: todo
+status: done
 priority: high
 created: 2026-08-02T12:54:25.2533038+06:00
-updated: 2026-08-02T12:54:25.2533038+06:00
+updated: 2026-08-02T16:29:49.635828+06:00
+started: 2026-08-02T16:29:49.6432405+06:00
+completed: 2026-08-02T16:29:49.6432405+06:00
 tags:
     - threejs
     - journal
