@@ -330,3 +330,34 @@
 {"timestamp":"2026-08-01T15:35:58.502542+06:00","action":"edit","task_id":44,"detail":"Contact form: wax-seal stamp on send + portrait ink-wash"}
 {"timestamp":"2026-08-01T15:35:58.5217389+06:00","action":"release","task_id":44,"detail":"mink-fjord"}
 {"timestamp":"2026-08-01T15:35:58.6989411+06:00","action":"move","task_id":44,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-02T12:54:13.7132911+06:00","action":"create","task_id":45,"detail":"EPIC — The Curled Journal: three.js page-turn for the /about journey"}
+{"timestamp":"2026-08-02T12:54:19.0761948+06:00","action":"create","task_id":46,"detail":"three.js dependency + curl engine (journal3d.js)"}
+{"timestamp":"2026-08-02T12:54:19.194812+06:00","action":"create","task_id":47,"detail":"DOM texture snapshot pipeline (journalTexture.js)"}
+{"timestamp":"2026-08-02T12:54:25.0501321+06:00","action":"create","task_id":48,"detail":"JournalStage.svelte + AboutTimeline wiring"}
+{"timestamp":"2026-08-02T12:54:25.2984131+06:00","action":"create","task_id":49,"detail":"CSS gating, DESIGN.md, acceptance verification"}
+{"timestamp":"2026-08-02T12:55:38.965185+06:00","action":"edit","task_id":46,"detail":"three.js dependency + curl engine (journal3d.js)"}
+{"timestamp":"2026-08-02T12:55:38.9974249+06:00","action":"claim","task_id":46,"detail":"heron-foam"}
+{"timestamp":"2026-08-02T12:55:39.2861846+06:00","action":"move","task_id":46,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-02T12:55:39.3711104+06:00","action":"edit","task_id":47,"detail":"DOM texture snapshot pipeline (journalTexture.js)"}
+{"timestamp":"2026-08-02T12:55:39.4054697+06:00","action":"claim","task_id":47,"detail":"mink-linen"}
+{"timestamp":"2026-08-02T12:55:39.6376857+06:00","action":"move","task_id":47,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-02T12:57:02.0713068+06:00","action":"edit","task_id":46,"detail":"three.js dependency + curl engine (journal3d.js)"}
+{"timestamp":"2026-08-02T12:57:11.3787167+06:00","action":"edit","task_id":46,"detail":"three.js dependency + curl engine (journal3d.js)"}
+{"timestamp":"2026-08-02T12:57:11.3914423+06:00","action":"release","task_id":46,"detail":"heron-foam"}
+{"timestamp":"2026-08-02T12:57:11.4819014+06:00","action":"move","task_id":46,"detail":"in-progress -\u003e todo"}
+{"timestamp":"2026-08-02T12:57:15.8955634+06:00","action":"edit","task_id":47,"detail":"DOM texture snapshot pipeline (journalTexture.js)"}
+{"timestamp":"2026-08-02T12:57:15.9858464+06:00","action":"edit","task_id":47,"detail":"DOM texture snapshot pipeline (journalTexture.js)"}
+{"timestamp":"2026-08-02T12:57:15.9943899+06:00","action":"release","task_id":47,"detail":"mink-linen"}
+{"timestamp":"2026-08-02T12:57:16.1655037+06:00","action":"move","task_id":47,"detail":"in-progress -\u003e todo"}
+{"timestamp":"2026-08-02T12:57:52.6346608+06:00","action":"edit","task_id":46,"detail":"three.js dependency + curl engine (journal3d.js)"}
+{"timestamp":"2026-08-02T12:57:52.6429865+06:00","action":"claim","task_id":46,"detail":"tiger-rapid"}
+{"timestamp":"2026-08-02T12:57:52.7425943+06:00","action":"move","task_id":46,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-02T12:57:52.9064178+06:00","action":"edit","task_id":47,"detail":"DOM texture snapshot pipeline (journalTexture.js)"}
+{"timestamp":"2026-08-02T12:57:52.9254302+06:00","action":"claim","task_id":47,"detail":"fable-glen"}
+{"timestamp":"2026-08-02T12:57:53.0409945+06:00","action":"move","task_id":47,"detail":"todo -\u003e in-progress"}
+{"timestamp":"2026-08-02T14:01:21.2250403+06:00","action":"edit","task_id":46,"detail":"three.js dependency + curl engine (journal3d.js)"}
+{"timestamp":"2026-08-02T14:01:21.2433148+06:00","action":"release","task_id":46,"detail":"tiger-rapid"}
+{"timestamp":"2026-08-02T14:01:21.3615207+06:00","action":"move","task_id":46,"detail":"in-progress -\u003e done"}
+{"timestamp":"2026-08-02T14:01:21.6576854+06:00","action":"edit","task_id":47,"detail":"DOM texture snapshot pipeline (journalTexture.js)"}
+{"timestamp":"2026-08-02T14:01:21.6822785+06:00","action":"release","task_id":47,"detail":"fable-glen"}
+{"timestamp":"2026-08-02T14:01:21.9817129+06:00","action":"move","task_id":47,"detail":"in-progress -\u003e done"}
