@@ -370,12 +370,19 @@ body {
   /* WebGL journal layer: `html.webgl-journal` is added by JournalStage only
      when the three.js engine reports a live first frame. The DOM leaves
      become layout placeholders (the stage keeps its height) and the canvas
-     fills the stage slot; nothing changes until the upgrade succeeds. */
+     fills the stage slot; nothing changes until the upgrade succeeds. The
+     canvas is display:none by default so it never renders as a blank box in
+     CSS-book, reduced-motion, or no-JS states. */
+  .journal-canvas {
+    display: none;
+  }
+
   html.webgl-journal .journal-leaf {
     visibility: hidden;
   }
 
   html.webgl-journal .journal-canvas {
+    display: block;
     position: absolute;
     inset: 0;
     width: 100%;

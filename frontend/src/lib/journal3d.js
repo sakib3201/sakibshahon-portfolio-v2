@@ -292,6 +292,7 @@ export class Journal3D {
     this.turning = null; // 'forward' | 'back'
     /** @type {null | 'forward' | 'back'} */
     this._lastTurnDir = null;
+    this._commitDone = false;
     this.elapsed = 0;
     this.ready = false;
     this.running = false;
@@ -404,10 +405,18 @@ export class Journal3D {
    * @param {number} page
    */
   setSpread(page) {
-    const settling = this.turning !== null && this.elapsed >= TURN_MS;
+    const wasTurning = this.turning !== null;
+    if (wasTurning && this.elapsed < TURN_MS) {
+      // The stage's flip timer commits at 720 ms, which usually lands between
+      // rAF ticks (elapsed ≈ 703–718 ms). Snap the fold to completion so the
+      // settle tail drives the rest — never re-pose a live turn.
+      this.elapsed = TURN_MS;
+    }
+    const rotate = wasTurning && !this._commitDone;
+    if (rotate) this._commitDone = true;
     const dir = this._lastTurnDir;
 
-    if (settling && dir === 'forward') {
+    if (rotate && dir === 'forward') {
       // The turned leaf (old current, still settling) becomes the pile top;
       // the old next becomes current, the old pile-top mesh becomes next.
       const oldCurrent = this.currentMesh;
@@ -417,7 +426,7 @@ export class Journal3D {
       this.pileMesh = oldCurrent;
       this.poseCurrent(page);
       this.poseNext(page);
-    } else if (settling && dir === 'back') {
+    } else if (rotate && dir === 'back') {
       // The returned leaf (old pile top, still settling) becomes current;
       // the old current becomes next, the old next mesh becomes the pile top.
       const oldCurrent = this.currentMesh;
@@ -563,6 +572,7 @@ export class Journal3D {
     this._lastTurnDir = dir;
     this.turning = dir;
     this.elapsed = 0;
+    this._commitDone = false;
     this.turnMesh = dir === 'forward' ? this.currentMesh : this.pileMesh;
     this.turnMesh.visible = true;
     return true;
