@@ -226,11 +226,11 @@ function createLeafMesh() {
       const c = a + cols;
       const d = c + 1;
       indices[k++] = a;
-      indices[k++] = b;
       indices[k++] = c;
       indices[k++] = b;
+      indices[k++] = c;
       indices[k++] = d;
-      indices[k++] = c;
+      indices[k++] = b;
     }
   }
   geometry.setIndex(new THREE.BufferAttribute(indices, 1));
