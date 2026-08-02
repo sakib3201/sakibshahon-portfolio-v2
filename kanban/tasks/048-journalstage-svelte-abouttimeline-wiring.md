@@ -4,7 +4,7 @@ title: JournalStage.svelte + AboutTimeline wiring
 status: todo
 priority: high
 created: 2026-08-02T12:54:25.0355015+06:00
-updated: 2026-08-02T12:54:25.0355015+06:00
+updated: 2026-08-02T14:27:43.2230358+06:00
 tags:
     - threejs
     - journal
@@ -12,6 +12,8 @@ parent: 45
 depends_on:
     - 46
     - 47
+claimed_by: vault-pulse
+claimed_at: 2026-08-02T14:27:43.2235686+06:00
 class: standard
 ---
 
